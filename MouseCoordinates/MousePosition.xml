@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfMousePosition>
+  <MousePosition>
+    <X>10</X>
+    <Y>0</Y>
+    <FunctionName>Launch_FreeMyApps</FunctionName>
+  </MousePosition>
+  <MousePosition>
+    <X>0</X>
+    <Y>0</Y>
+    <FunctionName>Install_Application</FunctionName>
+  </MousePosition>
+  <MousePosition>
+    <X>0</X>
+    <Y>0</Y>
+    <FunctionName>Open_Application</FunctionName>
+  </MousePosition>
+</ArrayOfMousePosition>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Automation">
+</Property><Property Name="Solution File" Value="D:\TranHNB\CFF\FreeMyApp\SourceCode\Automation\Automation.sln">
+</Property><Property Name="Date" Value="Tuesday, April 08, 2014">
+</Property><Property Name="Time" Value="20:24 PM">
+</Property></Properties><Event ErrorLevel="0" Project="Automation" Source="Automation.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Automation" Source="Automation.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MouseCoordinates" Source="..\MouseCoordinates\MouseCoordinates.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="MouseCoordinates" Source="..\MouseCoordinates\MouseCoordinates.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Activity" Source="..\Activity\Activity.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Activity" Source="..\Activity\Activity.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Automation.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Automation.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Automation" Source="Automation.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="MouseCoordinates" Source="..\MouseCoordinates\MouseCoordinates.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Activity" Source="..\Activity\Activity.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

@@ -1,0 +1,9 @@
+#################
+## Projetc output files
+#################
+Automation/bin/
+Automation/obj/
+MouseCoordinates/bin/
+MouseCoordinates/obj/
+Activity/bin/
+Activity/obj/

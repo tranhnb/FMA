@@ -1,0 +1,12 @@
+﻿I. Change Manufacture and ModelName
+	1. Update system folder permission: mount -o remount,rw /dev/sda1 /
+		//http://askubuntu.com/questions/175739/how-do-i-remount-a-filesystem-as-read-write
+	2. Update configuration file: /init.x86.rc:
+		Comment 2 lines
+		# device information
+	    #setprop ro.product.manufacturer $[/sys/class/dmi/id/sys_vendor]
+		#setprop ro.product.model $[/sys/class/dmi/id/product_name]
+
+		//https://groups.google.com/forum/#!msg/android-x86/PJYQi0pBIF8/XR_PjVPJEncJ
+	3. 		
+		 

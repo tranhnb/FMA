@@ -1,0 +1,51 @@
+Sorry, I realized that it wasn't very throughout. :oops:
+
+Firstly; here is the modified Interop DLL I've created in case you just wish to use it. (For VirtualBox 4.2.12). : https://dl.dropboxusercontent.com/u/10857097/VirtualBox.Interop.Custom.dll.zip
+
+To get your code to work, all you should need to do is remove the reference to VirtualBox in Visual Studio and add a reference to this DLL instead.
+
+You're right that it will need to be updated, although it should only be necessary when there are changes to the COM API, not just when new versions of VirtualBox are released. How exactly to mitigate the problem I'm not sure; it might be possible to modify the TLB that VirtualBox generates so that it is correctly marshalled by Visual Studio, but it may also just be that Visual Studio can't correctly marshal arrays of signed integers automatically. (This is what causes the problem; VirtualBox uses arrays of signed integers for the byte arrays it returns/receives, but VS tries to marshal them as unsigned integers, which doesn't work.)
+
+Now as for the process to create it:
+* You'll need VirtualBox.tlb - this is found in the VirtualBox SDK under bindings\mscom\lib.
+* TlbImp is found in the Windows SDK under NETFX 4.0 Tools, as is IlDAsm.
+* IlAsm should be present by standard in the dotNET framework folder under C:\Windows.
+
+Run the following commands:
+
+Code: Select all   Expand view
+    TlbImp.exe "[path to VirtualBox.tlb"] /out:VirtualBox.Interop.dll
+
+Code: Select all   Expand view
+    IlDasm.exe VirtualBox.Interop.dll /out=VirtualBox.Interop.il
+
+
+
+You should delete VirtualBox.Interop.dll.
+
+Now you have the VirtualBox.Interop.il that contains the MSIL source code. Edit this file and replace any instance of "marshal (safearray unsigned int8)" with "marshal (safearray int8)"
+
+Now run:
+
+Code: Select all   Expand view
+    IlAsm.exe /DLL VirtualBox.Interop.il
+
+
+
+If everything went as it should, you'll now have a VirtualBox.Interop.dll that is identical to the one I uploaded.
+
+Hope it helps :)
+
+Magnus Madsen
+     
+    Posts: 10
+    Joined: 11. Jun 2013, 08:35
+    Primary OS: MS Windows 7
+    VBox Version: PUEL
+    Guest OSses: WinXP, WinVista, Win7, Win8
+
+
+
+TlbImp.exe Libs/VirtualBox.tlb /out:Libs/VirtualBox.Interop.dll
+IlDasm.exe VirtualBox.Interop.dll /out=VirtualBox.Interop.il
+IlAsm.exe /DLL VirtualBox.Interop.il
