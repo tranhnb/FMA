@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using VirtualBox;
+using Utils;
 
 namespace Automation
 {
@@ -38,9 +39,10 @@ namespace Automation
             }
 
             IEventListener listener = machineSession.Console.Mouse.EventSource.CreateListener();
-            
-            machineSession.Console.Mouse.PutMouseEvent(0, 0, 0, 0, 0x001);
-            machineSession.Console.Mouse.PutMouseEvent(0, 0, 0, 0, 0x000);
+
+
+            //machineSession.Console.Mouse.PutMouseEvent(0, 0, 0, 0, 0x001);
+            //machineSession.Console.Mouse.PutMouseEvent(0, 0, 0, 0, 0x000);
         }
 
         private void button2_Click(object sender, EventArgs e)
