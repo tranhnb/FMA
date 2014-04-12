@@ -60,6 +60,12 @@
     <OutputPath>bin\x86\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Interop.MODI, Version=11.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Libs\Interop.MODI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -105,6 +111,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="buildVirtualBoxAPI.txt" />
+    <Content Include="Libs\Interop.MODI.dll" />
     <Content Include="Libs\VirtualBox.dll" />
     <Content Include="Notes\ConfigAndroidX86.txt" />
     <None Include="App.config" />
