@@ -63,14 +63,23 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="VirtualBox">
+      <HintPath>..\Automation\Libs\VirtualBox.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activity.cs" />
     <Compile Include="IActivity.cs" />
-    <Compile Include="LaunchFreeMyApp.cs" />
+    <Compile Include="InstallApplicationAvtivity.cs" />
+    <Compile Include="LaunchFreeMyAppActivity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Constants\Constants.csproj">
+      <Project>{582B8675-9AE7-48C8-9109-1031EDA2EAC8}</Project>
+      <Name>Constants</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MouseCoordinates\MouseCoordinates.csproj">
       <Project>{4D612802-2121-4D63-84F1-D1810206967D}</Project>
       <Name>MouseCoordinates</Name>
