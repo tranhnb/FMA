@@ -113,6 +113,9 @@
     <Content Include="buildVirtualBoxAPI.txt" />
     <Content Include="Libs\Interop.MODI.dll" />
     <Content Include="Libs\VirtualBox.dll" />
+    <Content Include="MousePosition.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Notes\ConfigAndroidX86.txt" />
     <None Include="App.config" />
     <None Include="Libs\VirtualBox.Interop.il" />
@@ -132,6 +135,10 @@
     <ProjectReference Include="..\Activity\Activity.csproj">
       <Project>{BCF24C4B-7DB3-4B0B-B384-E8F4BD753ADD}</Project>
       <Name>Activity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Constants\Constants.csproj">
+      <Project>{582B8675-9AE7-48C8-9109-1031EDA2EAC8}</Project>
+      <Name>Constants</Name>
     </ProjectReference>
     <ProjectReference Include="..\Utils\Utils.csproj">
       <Project>{C6CC6DED-F1C1-4040-B089-97BDF9EA9217}</Project>

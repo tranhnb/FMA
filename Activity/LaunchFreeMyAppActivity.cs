@@ -10,7 +10,8 @@ namespace Activity
     /// </summary>
     class LaunchFreeMyAppActivity: Activity
     {
-        public LaunchFreeMyAppActivity(int mousePositionX, int mousePositionY) : base(mousePositionX, mousePositionY)
+        public LaunchFreeMyAppActivity(int mousePositionX, int mousePositionY, VirtualBox.IMouse Mouse)
+            : base(mousePositionX, mousePositionY, Mouse)
         {
             this._ActivityName = Constants.ActivityName.LAUNCH_FREE_MY_APPS;
         }

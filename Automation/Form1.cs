@@ -21,6 +21,7 @@ namespace Automation
         VirtualBoxClient vBoxClient;
         IMachine machine;
         Session machineSession;
+
         private void button1_Click(object sender, EventArgs e)
         {
             //VirtualBox.VirtualBox virtualBox = new VirtualBox.VirtualBox();
@@ -38,7 +39,7 @@ namespace Automation
                 machine.LockMachine(machineSession, LockType.LockType_Shared);
             }
 
-            IEventListener listener = machineSession.Console.Mouse.EventSource.CreateListener();
+            //IEventListener listener = machineSession.Console.Mouse.EventSource.CreateListener();
 
 
             //machineSession.Console.Mouse.PutMouseEvent(0, 0, 0, 0, 0x001);
@@ -48,6 +49,19 @@ namespace Automation
         private void button2_Click(object sender, EventArgs e)
         {
           
+        }
+
+        /// <summary>
+        /// Click to install application on Google Play screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnInstallApp_Click(object sender, EventArgs e)
+        {
+            string a = Constants.ActivityName.INSTALL_APPLICATION;
+
+            Activity.IActivity installActivity = Activity.Activity.CreateActivity(Constants.ActivityName.INSTALL_APPLICATION, machineSession.Console.Mouse);
+            installActivity.Start();
         }
 
     }
