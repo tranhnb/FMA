@@ -91,6 +91,9 @@ namespace Activity
                     case Constants.ActivityName.LAUNCH_FREE_MY_APPS:
                         return new LaunchFreeMyAppActivity(mousePosition.X, mousePosition.Y, Mouse);
 
+                    case Constants.ActivityName.ACCEPT_INSTALLATION:
+                        return new AcceptInstallationActivity(mousePosition.X, mousePosition.Y, Mouse);
+
                     default:
                         throw new Exception("Not implementation");
 

@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcceptInstallationActivity.cs" />
     <Compile Include="Activity.cs" />
     <Compile Include="IActivity.cs" />
     <Compile Include="InstallApplicationAvtivity.cs" />

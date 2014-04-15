@@ -64,6 +64,17 @@ namespace Automation
         }
 
         /// <summary>
+        /// Accept installation on the popup
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAcceptInstallation_Click(object sender, EventArgs e)
+        {
+            Activity.IActivity acceptInstallation = Activity.Activity.CreateActivity(Constants.ActivityName.ACCEPT_INSTALLATION, machineSession.Console.Mouse);
+            acceptInstallation.Start();
+        }
+
+        /// <summary>
         /// Take VirtualMachine ScreenShot
         /// </summary>
         /// <param name="sender"></param>
@@ -83,5 +94,7 @@ namespace Automation
             return returnImage;
 
         }
+
+        
     }
 }

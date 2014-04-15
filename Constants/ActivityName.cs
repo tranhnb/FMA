@@ -12,5 +12,8 @@ namespace Constants
     {
         public const string INSTALL_APPLICATION = "Install_Application";
         public const string LAUNCH_FREE_MY_APPS = "Launch_FreeMyApp";
+        public const string ACCEPT_INSTALLATION = "Accept_Installation";
+        
     }
 }
+

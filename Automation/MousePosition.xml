@@ -6,9 +6,14 @@
     <FunctionName>Launch_FreeMyApps</FunctionName>
   </MousePosition>
   <MousePosition>
-    <X>100</X>
-    <Y>900</Y>
+    <X>740</X>
+    <Y>150</Y>
     <FunctionName>Install_Application</FunctionName>
+  </MousePosition>
+  <MousePosition>
+    <X>510</X>
+    <Y>375</Y>
+    <FunctionName>Accept_Installation</FunctionName>
   </MousePosition>
   <MousePosition>
     <X>0</X>

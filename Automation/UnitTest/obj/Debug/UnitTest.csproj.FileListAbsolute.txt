@@ -1,0 +1,5 @@
+D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\bin\Debug\UnitTest.dll
+D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\bin\Debug\UnitTest.pdb
+D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\obj\Debug\ResolveAssemblyReference.cache
+D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\obj\Debug\UnitTest.dll
+D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\obj\Debug\UnitTest.pdb

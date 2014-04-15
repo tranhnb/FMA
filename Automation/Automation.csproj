@@ -115,6 +115,7 @@
     <Content Include="Libs\VirtualBox.dll" />
     <Content Include="MousePosition.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Notes\ConfigAndroidX86.txt" />
     <None Include="App.config" />
