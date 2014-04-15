@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using VirtualBox;
 using Utils;
+using System.IO;
 
 namespace Automation
 {
@@ -58,11 +59,29 @@ namespace Automation
         /// <param name="e"></param>
         private void btnInstallApp_Click(object sender, EventArgs e)
         {
-            string a = Constants.ActivityName.INSTALL_APPLICATION;
-
             Activity.IActivity installActivity = Activity.Activity.CreateActivity(Constants.ActivityName.INSTALL_APPLICATION, machineSession.Console.Mouse);
             installActivity.Start();
         }
 
+        /// <summary>
+        /// Take VirtualMachine ScreenShot
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnTakeScreenShot_Click(object sender, EventArgs e)
+        {
+            Utils.CaptureScreen screen = new CaptureScreen();
+            byte[] byteArray = screen.TakeScreenShot(machineSession.Console.Display);
+            Image img = byteArrayToImage(byteArray);
+            img.Save(@"C:\ScreenShot.png");
+        }
+
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+
+        }
     }
 }

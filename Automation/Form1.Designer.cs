@@ -30,6 +30,7 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.btnInstallApp = new System.Windows.Forms.Button();
+            this.btnTakeScreenShot = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -52,15 +53,26 @@
             this.btnInstallApp.UseVisualStyleBackColor = true;
             this.btnInstallApp.Click += new System.EventHandler(this.btnInstallApp_Click);
             // 
+            // btnTakeScreenShot
+            // 
+            this.btnTakeScreenShot.Location = new System.Drawing.Point(12, 70);
+            this.btnTakeScreenShot.Name = "btnTakeScreenShot";
+            this.btnTakeScreenShot.Size = new System.Drawing.Size(194, 23);
+            this.btnTakeScreenShot.TabIndex = 1;
+            this.btnTakeScreenShot.Text = "Take ScreenShot";
+            this.btnTakeScreenShot.UseVisualStyleBackColor = true;
+            this.btnTakeScreenShot.Click += new System.EventHandler(this.btnTakeScreenShot_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 266);
+            this.ClientSize = new System.Drawing.Size(465, 266);
+            this.Controls.Add(this.btnTakeScreenShot);
             this.Controls.Add(this.btnInstallApp);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Testing Form";
             this.ResumeLayout(false);
 
         }
@@ -69,6 +81,7 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnInstallApp;
+        private System.Windows.Forms.Button btnTakeScreenShot;
     }
 }
 

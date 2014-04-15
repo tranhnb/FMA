@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using VirtualBox;
+using System.IO;
 
 namespace Utils
 {
@@ -19,5 +20,6 @@ namespace Utils
             display.GetScreenResolution(0, out width, out height, out bitsPerPixel, out aXOrigin, out aYOrigin);
             return display.TakeScreenShotPNGToArray(0, width, height);
         }
+
     }
 }
