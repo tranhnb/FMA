@@ -75,24 +75,31 @@ namespace Activity
         /// <summary>
         /// Create Activity Instance by ActivityName
         /// </summary>
-        /// <param name="functionName"></param>
+        /// <param name="activityName"></param>
+        /// <param name="Mouse"></param>
+        /// <param name="mousePosX">Define a runtime Mouse Position X. Applied when work with control(button) has dynamic position. This is optional parameter</param>
+        /// <param name="mousePosY">Like mousePosX. This is optional parameter</param>
         /// <returns></returns>
-        public static IActivity CreateActivity(string activityName, IMouse Mouse)
+        public static IActivity CreateActivity(string activityName, IMouse Mouse, int mousePosX = -1, int mousePosY = -1)
         {
             //Assign FunctionName, Mouse.X and Mouse.Y
             MousePosition mousePosition = mousePositionList[activityName] as MousePosition;
+            
             if (mousePosition != null)
             {
+                int x = mousePosX != -1 ? mousePosX : mousePosition.X;
+                int y = mousePosY != -1 ? mousePosY : mousePosition.Y;
+
                 switch (activityName)
                 {
-                    case Constants.ActivityName.INSTALL_APPLICATION:
-                        return new InstallApplicationAvtivity(mousePosition.X, mousePosition.Y, Mouse);
-
                     case Constants.ActivityName.LAUNCH_FREE_MY_APPS:
-                        return new LaunchFreeMyAppActivity(mousePosition.X, mousePosition.Y, Mouse);
+                        return new LaunchFreeMyAppActivity(x, y, Mouse);
+
+                    case Constants.ActivityName.INSTALL_APPLICATION:
+                        return new InstallApplicationAvtivity(x, y, Mouse);
 
                     case Constants.ActivityName.ACCEPT_INSTALLATION:
-                        return new AcceptInstallationActivity(mousePosition.X, mousePosition.Y, Mouse);
+                        return new AcceptInstallationActivity(x, y, Mouse);
 
                     default:
                         throw new Exception("Not implementation");

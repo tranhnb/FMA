@@ -32,6 +32,10 @@
             this.btnInstallApp = new System.Windows.Forms.Button();
             this.btnTakeScreenShot = new System.Windows.Forms.Button();
             this.btnAcceptInstallation = new System.Windows.Forms.Button();
+            this.btnModi = new System.Windows.Forms.Button();
+            this.btnFindSubImage = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -74,17 +78,49 @@
             this.btnAcceptInstallation.UseVisualStyleBackColor = true;
             this.btnAcceptInstallation.Click += new System.EventHandler(this.btnAcceptInstallation_Click);
             // 
+            // btnModi
+            // 
+            this.btnModi.Location = new System.Drawing.Point(12, 128);
+            this.btnModi.Name = "btnModi";
+            this.btnModi.Size = new System.Drawing.Size(194, 23);
+            this.btnModi.TabIndex = 3;
+            this.btnModi.Text = "Test Modi";
+            this.btnModi.UseVisualStyleBackColor = true;
+            this.btnModi.Click += new System.EventHandler(this.btnModi_Click);
+            // 
+            // btnFindSubImage
+            // 
+            this.btnFindSubImage.Location = new System.Drawing.Point(12, 157);
+            this.btnFindSubImage.Name = "btnFindSubImage";
+            this.btnFindSubImage.Size = new System.Drawing.Size(194, 23);
+            this.btnFindSubImage.TabIndex = 4;
+            this.btnFindSubImage.Text = "Find SubImage";
+            this.btnFindSubImage.UseVisualStyleBackColor = true;
+            this.btnFindSubImage.Click += new System.EventHandler(this.btnFindSubImage_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(247, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(327, 355);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 266);
+            this.ClientSize = new System.Drawing.Size(586, 425);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnFindSubImage);
+            this.Controls.Add(this.btnModi);
             this.Controls.Add(this.btnAcceptInstallation);
             this.Controls.Add(this.btnTakeScreenShot);
             this.Controls.Add(this.btnInstallApp);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Testing Form";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -95,6 +131,9 @@
         private System.Windows.Forms.Button btnInstallApp;
         private System.Windows.Forms.Button btnTakeScreenShot;
         private System.Windows.Forms.Button btnAcceptInstallation;
+        private System.Windows.Forms.Button btnModi;
+        private System.Windows.Forms.Button btnFindSubImage;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

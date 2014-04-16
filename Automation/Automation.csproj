@@ -111,6 +111,15 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="buildVirtualBoxAPI.txt" />
+    <Content Include="Images\Test\Accept1.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Test\Accept2.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Test\Accept_FullScreen_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Libs\Interop.MODI.dll" />
     <Content Include="Libs\VirtualBox.dll" />
     <Content Include="MousePosition.xml">

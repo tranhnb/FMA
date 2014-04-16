@@ -12,5 +12,12 @@ namespace Activity
         {
             this._ActivityName = Constants.ActivityName.ACCEPT_INSTALLATION;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void ReEvaluateMousePosition()
+        { 
+        }
     }
 }
