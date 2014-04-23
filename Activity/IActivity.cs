@@ -34,6 +34,11 @@ namespace Activity
         #endregion
 
         /// <summary>
+        /// Do initialize before start the activity such as: Capture screen, check the current screen is match Activty working criteria
+        /// </summary>
+        void Init();
+
+        /// <summary>
         /// Send Mouse click event to virtual machine to start an activity
         /// </summary>
         void Start();

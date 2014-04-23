@@ -15,21 +15,17 @@ namespace Utils
         public static Point? FindAllPixelLocation(Bitmap img, Color color, Point startPoint, Point endPoint)
         {
             int c = color.ToArgb();
-            
-            
-
             for (int x = startPoint.X; x <= endPoint.X; x++)
             {
                 for (int y = startPoint.Y; y < endPoint.Y; y++)
                 {
-                    Color color1 = img.GetPixel(x, y);
-                    //img.SetPixel(x, y, Color.Red);
-                    Console.WriteLine(color1.R + ", " + color1.G + ", " + color1.B);
                     if (c.Equals(img.GetPixel(x, y).ToArgb()))
+                    {
                         return new Point(x, y);
+                    }
+                        
                 }
             }
-            //img.Save("C:\\test.png");
             return null;
         }
     }

@@ -25,8 +25,6 @@ namespace Automation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //VirtualBox.VirtualBox virtualBox = new VirtualBox.VirtualBox();
-            //IMachine machine =  virtualBox.FindMachine("test");
             if(vBoxClient == null)
                 vBoxClient = new VirtualBoxClient();
             if (machine == null)
@@ -55,7 +53,7 @@ namespace Automation
         /// <param name="e"></param>
         private void btnInstallApp_Click(object sender, EventArgs e)
         {
-            Activity.IActivity installActivity = Activity.Activity.CreateActivity(Constants.ActivityName.INSTALL_APPLICATION, machineSession.Console.Mouse);
+            Activity.IActivity installActivity = Activity.Activity.CreateActivity(Constants.ActivityName.INSTALL_APPLICATION, machineSession.Console.Mouse, machineSession.Console.Display);
             installActivity.Start();
         }
 
@@ -66,15 +64,8 @@ namespace Automation
         /// <param name="e"></param>
         private void btnAcceptInstallation_Click(object sender, EventArgs e)
         {
-            //Calculate Accept button position
-
-            Bitmap big = new Bitmap(@"Images\Test\Accept_FullScreen_1.png");
-            Point startPoint = new Point(469, 365);
-            Point endPoint = new Point(471, 369);
-            Color c = Color.FromArgb(176, 200, 56);
-            Point? point = SubImageChecker.FindAllPixelLocation(big, c, startPoint, endPoint);
-            //Activity.IActivity acceptInstallation = Activity.Activity.CreateActivity(Constants.ActivityName.ACCEPT_INSTALLATION, machineSession.Console.Mouse);
-            //acceptInstallation.Start();
+            Activity.IActivity acceptInstallation = Activity.Activity.CreateActivity(Constants.ActivityName.ACCEPT_INSTALLATION, machineSession.Console.Mouse, machineSession.Console.Display);
+            acceptInstallation.Start();
         }
 
         /// <summary>

@@ -11,10 +11,9 @@ namespace Activity
     /// </summary>
     class InstallApplicationAvtivity : Activity
     {
-        public InstallApplicationAvtivity(int mousePositionX, int mousePositionY, VirtualBox.IMouse Mouse)
-            : base(mousePositionX, mousePositionY, Mouse)
+        public InstallApplicationAvtivity(int mousePositionX, int mousePositionY, VirtualBox.IMouse Mouse, VirtualBox.IDisplay Display)
+            : base(mousePositionX, mousePositionY, Mouse, Display)
         {
-            this._ActivityName = Constants.ActivityName.INSTALL_APPLICATION;
         }   
     }
 }

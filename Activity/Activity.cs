@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using VirtualBox;
 using MouseCoordinates;
+using System.Drawing;
+using Utils;
+
 
 namespace Activity
 {
@@ -11,7 +14,16 @@ namespace Activity
     {
         #region Variable and Property
 
+        private const int LEFT_MOUSE_CLICK = 0x001;
+        private const int LEFT_MOUSE_RELEASE = 0x000;
+
         public IMouse Mouse
+        {
+            get;
+            set;
+        }
+
+        public IDisplay Display
         {
             get;
             set;
@@ -60,10 +72,11 @@ namespace Activity
         /// </summary>
         /// <param name="mousePositionX"></param>
         /// <param name="mousePositionY"></param>
-        public Activity(int mousePositionX, int mousePositionY, IMouse Mouse)
+        public Activity(int mousePositionX, int mousePositionY, IMouse Mouse, IDisplay Display)
         {
             // TODO: Complete member initialization
             this.Mouse = Mouse;
+            this.Display = Display;
             this.MousePositionX = mousePositionX;
             this.MousePositionY = mousePositionY;
         }
@@ -80,7 +93,7 @@ namespace Activity
         /// <param name="mousePosX">Define a runtime Mouse Position X. Applied when work with control(button) has dynamic position. This is optional parameter</param>
         /// <param name="mousePosY">Like mousePosX. This is optional parameter</param>
         /// <returns></returns>
-        public static IActivity CreateActivity(string activityName, IMouse Mouse, int mousePosX = -1, int mousePosY = -1)
+        public static IActivity CreateActivity(string activityName, IMouse Mouse, IDisplay Display, int mousePosX = -1, int mousePosY = -1)
         {
             //Assign FunctionName, Mouse.X and Mouse.Y
             MousePosition mousePosition = mousePositionList[activityName] as MousePosition;
@@ -93,13 +106,19 @@ namespace Activity
                 switch (activityName)
                 {
                     case Constants.ActivityName.LAUNCH_FREE_MY_APPS:
-                        return new LaunchFreeMyAppActivity(x, y, Mouse);
+                        return new LaunchFreeMyAppActivity(x, y, Mouse, Display) { 
+                            _ActivityName = Constants.ActivityName.LAUNCH_FREE_MY_APPS
+                        };
 
                     case Constants.ActivityName.INSTALL_APPLICATION:
-                        return new InstallApplicationAvtivity(x, y, Mouse);
+                        return new InstallApplicationAvtivity(x, y, Mouse, Display) {
+                            _ActivityName = Constants.ActivityName.INSTALL_APPLICATION
+                        };
 
                     case Constants.ActivityName.ACCEPT_INSTALLATION:
-                        return new AcceptInstallationActivity(x, y, Mouse);
+                        return new AcceptInstallationActivity(x, y, Mouse, Display) {
+                            _ActivityName = Constants.ActivityName.ACCEPT_INSTALLATION
+                        };
 
                     default:
                         throw new Exception("Not implementation");
@@ -113,13 +132,46 @@ namespace Activity
             
         }
 
+        protected Image CaptureScreen()
+        {
+            //Take screenshot
+            CaptureScreen screen = new CaptureScreen();
+            byte[] byteArray = screen.TakeScreenShot(this.Display);
+
+            using (System.IO.MemoryStream ms = new System.IO.MemoryStream(byteArray))
+            {
+                Image returnImage = Image.FromStream(ms);
+                byteArray = null;
+                return returnImage;
+            }
+        }
+
+
+
+        /// <summary>
+        /// Find point to send mouse click
+        /// </summary>
+        /// <returns></returns>
+        protected virtual void InitPoint()
+        {
+        }
+        
+        /// <summary>
+        /// Init variable
+        /// </summary>
+        public virtual void Init() 
+        {
+   
+        }
+
         /// <summary>
         /// Send Mouse click event to virtual machine to start an activity
         /// </summary>
         public virtual void Start()
         {
-            this.Mouse.PutMouseEventAbsolute(this.MousePositionX, this.MousePositionY, 0, 0, 0x001);
-            this.Mouse.PutMouseEventAbsolute(this.MousePositionX, this.MousePositionY, 0, 0, 0x000);
+            this.Init();
+            this.Mouse.PutMouseEventAbsolute(this.MousePositionX, this.MousePositionY, 0, 0, LEFT_MOUSE_CLICK);
+            this.Mouse.PutMouseEventAbsolute(this.MousePositionX, this.MousePositionY, 0, 0, LEFT_MOUSE_RELEASE);
 
           
         }

@@ -55,6 +55,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -84,6 +85,10 @@
     <ProjectReference Include="..\MouseCoordinates\MouseCoordinates.csproj">
       <Project>{4D612802-2121-4D63-84F1-D1810206967D}</Project>
       <Name>MouseCoordinates</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{C6CC6DED-F1C1-4040-B089-97BDF9EA9217}</Project>
+      <Name>Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
