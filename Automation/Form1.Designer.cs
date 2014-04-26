@@ -35,6 +35,10 @@
             this.btnModi = new System.Windows.Forms.Button();
             this.btnFindSubImage = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnDetermineApplication = new System.Windows.Forms.Button();
+            this.btnConfirmDownload = new System.Windows.Forms.Button();
+            this.btnConfirmUsingPlayStore = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,11 +110,55 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(12, 186);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(194, 23);
+            this.btnRefresh.TabIndex = 6;
+            this.btnRefresh.Text = "Refresh Free My App";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnDetermineApplication
+            // 
+            this.btnDetermineApplication.Location = new System.Drawing.Point(12, 215);
+            this.btnDetermineApplication.Name = "btnDetermineApplication";
+            this.btnDetermineApplication.Size = new System.Drawing.Size(194, 23);
+            this.btnDetermineApplication.TabIndex = 6;
+            this.btnDetermineApplication.Text = "Determine FMA has application";
+            this.btnDetermineApplication.UseVisualStyleBackColor = true;
+            this.btnDetermineApplication.Click += new System.EventHandler(this.btnDetermineApplication_Click);
+            // 
+            // btnConfirmDownload
+            // 
+            this.btnConfirmDownload.Location = new System.Drawing.Point(12, 244);
+            this.btnConfirmDownload.Name = "btnConfirmDownload";
+            this.btnConfirmDownload.Size = new System.Drawing.Size(194, 23);
+            this.btnConfirmDownload.TabIndex = 6;
+            this.btnConfirmDownload.Text = "Confirm Download Application";
+            this.btnConfirmDownload.UseVisualStyleBackColor = true;
+            this.btnConfirmDownload.Click += new System.EventHandler(this.btnConfirmDownload_Click);
+            // 
+            // btnConfirmUsingPlayStore
+            // 
+            this.btnConfirmUsingPlayStore.Location = new System.Drawing.Point(12, 273);
+            this.btnConfirmUsingPlayStore.Name = "btnConfirmUsingPlayStore";
+            this.btnConfirmUsingPlayStore.Size = new System.Drawing.Size(194, 23);
+            this.btnConfirmUsingPlayStore.TabIndex = 6;
+            this.btnConfirmUsingPlayStore.Text = "Confirm Using Google PlayStore";
+            this.btnConfirmUsingPlayStore.UseVisualStyleBackColor = true;
+            this.btnConfirmUsingPlayStore.Click += new System.EventHandler(this.btnConfirmUsingPlayStore_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 425);
+            this.Controls.Add(this.btnConfirmUsingPlayStore);
+            this.Controls.Add(this.btnConfirmDownload);
+            this.Controls.Add(this.btnDetermineApplication);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnFindSubImage);
             this.Controls.Add(this.btnModi);
@@ -134,6 +182,10 @@
         private System.Windows.Forms.Button btnModi;
         private System.Windows.Forms.Button btnFindSubImage;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnDetermineApplication;
+        private System.Windows.Forms.Button btnConfirmDownload;
+        private System.Windows.Forms.Button btnConfirmUsingPlayStore;
     }
 }
 

@@ -120,6 +120,30 @@ namespace Activity
                             _ActivityName = Constants.ActivityName.ACCEPT_INSTALLATION
                         };
 
+                    case Constants.ActivityName.REFRESH_FREE_MY_APP:
+                        return new RefreshActivity(x, y, Mouse, Display)
+                        {
+                            _ActivityName = Constants.ActivityName.REFRESH_FREE_MY_APP
+                        };
+
+                    case Constants.ActivityName.DETERMINE_APPLICATION:
+                        return new DetermineApplicationActivity(x, y, Mouse, Display)
+                        {
+                            _ActivityName = Constants.ActivityName.DETERMINE_APPLICATION
+                        };
+
+                    case Constants.ActivityName.CONFIRM_DOWNLOAD:
+                        return new ConfirmDownloadActivity(x, y, Mouse, Display)
+                        {
+                            _ActivityName = Constants.ActivityName.CONFIRM_DOWNLOAD
+                        };
+
+                    case Constants.ActivityName.CONFIRM_USING_PLAYSTORE:
+                        return new ConfirmUsingPlayStoreActivity(x, y, Mouse, Display)
+                        {
+                            _ActivityName = Constants.ActivityName.CONFIRM_USING_PLAYSTORE
+                        };
+                        
                     default:
                         throw new Exception("Not implementation");
 
@@ -132,36 +156,21 @@ namespace Activity
             
         }
 
-        protected Image CaptureScreen()
-        {
-            //Take screenshot
-            CaptureScreen screen = new CaptureScreen();
-            byte[] byteArray = screen.TakeScreenShot(this.Display);
-
-            using (System.IO.MemoryStream ms = new System.IO.MemoryStream(byteArray))
-            {
-                Image returnImage = Image.FromStream(ms);
-                byteArray = null;
-                return returnImage;
-            }
-        }
-
-
-
-        /// <summary>
-        /// Find point to send mouse click
-        /// </summary>
-        /// <returns></returns>
-        protected virtual void InitPoint()
-        {
-        }
-        
         /// <summary>
         /// Init variable
         /// </summary>
-        public virtual void Init() 
+        public virtual void Init()
         {
-   
+
+        }
+
+        /// <summary>
+        /// Check the current status is matched criteria for starting an activity
+        /// </summary>
+        /// <returns></returns>
+        protected virtual bool IsMatchCriteria()
+        {
+            return true;
         }
 
         /// <summary>
@@ -170,10 +179,18 @@ namespace Activity
         public virtual void Start()
         {
             this.Init();
-            this.Mouse.PutMouseEventAbsolute(this.MousePositionX, this.MousePositionY, 0, 0, LEFT_MOUSE_CLICK);
-            this.Mouse.PutMouseEventAbsolute(this.MousePositionX, this.MousePositionY, 0, 0, LEFT_MOUSE_RELEASE);
+            if (IsMatchCriteria())
+            {
+                this.Mouse.PutMouseEventAbsolute(this.MousePositionX, this.MousePositionY, 0, 0, LEFT_MOUSE_CLICK);
+                this.Mouse.PutMouseEventAbsolute(this.MousePositionX, this.MousePositionY, 0, 0, LEFT_MOUSE_RELEASE);
+            }
+            else
+            {
+                //TODO: Throw new exception to notification
+            }
 
-          
+
+
         }
 
         /// <summary>
@@ -191,6 +208,56 @@ namespace Activity
         {
 
         }
+
+        /// <summary>
+        /// Take a screenshot of entrie screen
+        /// </summary>
+        /// <returns></returns>
+        protected Image CaptureScreen()
+        {
+            //Take screenshot
+            CaptureScreen screen = new CaptureScreen();
+            byte[] byteArray = screen.TakeScreenShot(this.Display);
+
+            return ImageFromByteArray(byteArray);
+        }
+
+        /// <summary>
+        /// Take a part of screen shot
+        /// </summary>
+        /// <param name="offsetX"></param>
+        /// <param name="offsetY"></param>
+        /// <param name="image_width"></param>
+        /// <param name="image_height"></param>
+        /// <returns></returns>
+        protected Image CaptureScreen(int offsetX, int offsetY, int image_width, int image_height)
+        {
+            //Take screenshot
+            CaptureScreen screen = new CaptureScreen();
+            byte[] byteArray = screen.TakeScreenShot(this.Display, offsetX, offsetY, image_width, image_height);
+            return ImageFromByteArray(byteArray);
+            
+        }
+
+        private Image ImageFromByteArray(byte[] byteArray)
+        {
+            using (System.IO.MemoryStream ms = new System.IO.MemoryStream(byteArray))
+            {
+                Image returnImage = Image.FromStream(ms);
+                return returnImage;
+            }
+        }
+
+
+        /// <summary>
+        /// Find point to send mouse click
+        /// </summary>
+        /// <returns></returns>
+        protected virtual void InitPoint()
+        {
+        }
+        
+        
 
         #endregion Methods
     }

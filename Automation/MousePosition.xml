@@ -20,4 +20,25 @@
     <Y>0</Y>
     <FunctionName>Open_Application</FunctionName>
   </MousePosition>
+  <MousePosition>
+    <X>410</X>
+    <Y>240</Y>
+    <FunctionName>Refresh_FreeMyApp</FunctionName>
+  </MousePosition>
+  <MousePosition>
+    <X>750</X>
+    <Y>210</Y>
+    <FunctionName>Determine_Application</FunctionName>
+  </MousePosition>
+  <MousePosition>
+    <X>400</X>
+    <Y>290</Y>
+    <FunctionName>Confirm_Download</FunctionName>
+  </MousePosition>
+  <MousePosition>
+    <X>275</X>
+    <Y>380</Y>
+    <FunctionName>Confirm_Using_PlayStore</FunctionName>
+  </MousePosition>
+  
 </ArrayOfMousePosition>

@@ -51,6 +51,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Interop.MODI">
+      <HintPath>..\Automation\Libs\Interop.MODI.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -72,10 +77,14 @@
   <ItemGroup>
     <Compile Include="AcceptInstallationActivity.cs" />
     <Compile Include="Activity.cs" />
+    <Compile Include="ConfirmDownloadActivity.cs" />
+    <Compile Include="ConfirmUsingPlayStoreActivity.cs" />
+    <Compile Include="DetermineApplicationActivity.cs" />
     <Compile Include="IActivity.cs" />
     <Compile Include="InstallApplicationAvtivity.cs" />
     <Compile Include="LaunchFreeMyAppActivity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefreshActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Constants\Constants.csproj">

@@ -13,7 +13,7 @@ namespace Activity
         public LaunchFreeMyAppActivity(int mousePositionX, int mousePositionY, VirtualBox.IMouse Mouse, VirtualBox.IDisplay Display)
             : base(mousePositionX, mousePositionY, Mouse, Display)
         {
-            this._ActivityName = Constants.ActivityName.LAUNCH_FREE_MY_APPS;
+
         }
     }
 }

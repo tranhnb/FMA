@@ -111,7 +111,7 @@ namespace Automation
 
             Point startPoint = new Point(0, 0);
             Point endPoint = new Point(big.Width, big.Height);
-            Point? point = SubImageChecker.FindAllPixelLocation(big, c, startPoint, endPoint);
+            Point? point = ImageUtils.FindAllPixelLocation(big, c, startPoint, endPoint);
 
             if (!point.HasValue)
             {
@@ -140,6 +140,31 @@ namespace Automation
             //ImageChecker checker = new ImageChecker(big, small);
             //Point p = checker.bigContainsSmall(102, 27, 0, 100, 0, 100);
             //MessageBox.Show("X: " + p.X.ToString() + "---Y: " + p.Y.ToString());
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Activity.IActivity refreshFMA = Activity.Activity.CreateActivity(Constants.ActivityName.REFRESH_FREE_MY_APP, machineSession.Console.Mouse, machineSession.Console.Display);
+            refreshFMA.Start();
+        }
+
+
+        private void btnDetermineApplication_Click(object sender, EventArgs e)
+        {
+            Activity.IActivity determineApplication = Activity.Activity.CreateActivity(Constants.ActivityName.DETERMINE_APPLICATION, machineSession.Console.Mouse, machineSession.Console.Display);
+            determineApplication.Start();
+        }
+
+        private void btnConfirmDownload_Click(object sender, EventArgs e)
+        {
+            Activity.IActivity confirmDownloadApp = Activity.Activity.CreateActivity(Constants.ActivityName.CONFIRM_DOWNLOAD, machineSession.Console.Mouse, machineSession.Console.Display);
+            confirmDownloadApp.Start();
+        }
+
+        private void btnConfirmUsingPlayStore_Click(object sender, EventArgs e)
+        {
+            Activity.IActivity confirmUsingPlayStore = Activity.Activity.CreateActivity(Constants.ActivityName.CONFIRM_USING_PLAYSTORE, machineSession.Console.Mouse, machineSession.Console.Display);
+            confirmUsingPlayStore.Start();
         }
 
         

@@ -111,6 +111,23 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="buildVirtualBoxAPI.txt" />
+    <Content Include="Images\Template\ConfirmUsingGoolePlay.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Template\Confirm_Download_App.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Template\FreeMyApp_Step1.png" />
+    <Content Include="Images\Template\FreeMyApp_Step2.png" />
+    <Content Include="Images\Template\FreeMyApp_Step3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Template\Refresh.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Test\FreeMyApp_Complete_App.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Test\Accept1.JPG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -174,6 +191,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Docs\" />
+    <Folder Include="Temp\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

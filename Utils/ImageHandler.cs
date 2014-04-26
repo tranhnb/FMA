@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Security.Cryptography;
+using System.IO;
 
 namespace Utils
 {
@@ -10,8 +12,16 @@ namespace Utils
     /// <summary>
     /// Find subImage position by Color pixel
     /// </summary>
-    public class SubImageChecker
+    public class ImageUtils
     {
+        /// <summary>
+        /// Find a color is existed at an specific point
+        /// </summary>
+        /// <param name="img"></param>
+        /// <param name="color"></param>
+        /// <param name="startPoint"></param>
+        /// <param name="endPoint"></param>
+        /// <returns></returns>
         public static Point? FindAllPixelLocation(Bitmap img, Color color, Point startPoint, Point endPoint)
         {
             int c = color.ToArgb();
@@ -28,169 +38,25 @@ namespace Utils
             }
             return null;
         }
-    }
-
-    public class LockedFastImage
-    {
-        private Bitmap image;
-        private byte[] rgbValues;
-        private System.Drawing.Imaging.BitmapData bmpData;
-
-        private IntPtr ptr;
-        private int bytes;
-
-        public LockedFastImage(Bitmap image)
-        {
-            this.image = image;
-            Rectangle rect = new Rectangle(0, 0, image.Width, image.Height);
-            bmpData = image.LockBits(rect, System.Drawing.Imaging.ImageLockMode.ReadWrite, image.PixelFormat);
-
-            ptr = bmpData.Scan0;
-            bytes = Math.Abs(bmpData.Stride) * image.Height;
-            rgbValues = new byte[bytes];
-            System.Runtime.InteropServices.Marshal.Copy(ptr, rgbValues, 0, bytes);
-        }
-
-        ~LockedFastImage()
-        {
-            try
-            {
-                image.UnlockBits(bmpData);
-            }
-            catch { }
-        }
 
         /// <summary>
-        /// Returns or sets a pixel of the image. 
+        /// Hash image file to byte array
         /// </summary>
-        /// <param name="x">x parameter of the pixel</param>
-        /// <param name="y">y parameter of the pixel</param>
-        public Color this[int x, int y]
+        /// <param name="file"></param>
+        /// <returns></returns>
+        public static byte[] Sha256HashFile(string file)
         {
-            get
+            using (SHA256 sha256 = SHA256.Create())
             {
-                int index = (x + (y * image.Width)) * 4;
-                if (rgbValues.Length >= index + 3)
+                using (Stream input = File.OpenRead(file))
                 {
-                    return Color.FromArgb(rgbValues[index + 3], rgbValues[index + 2], rgbValues[index + 1], rgbValues[index]);
-                }
-                else
-                {
-                    return Color.FromArgb(rgbValues[3], rgbValues[2], rgbValues[1], rgbValues[0]);
+                    return sha256.ComputeHash(input);
                 }
             }
-
-            set
-            {
-                int index = (x + (y * image.Width)) * 4;
-                rgbValues[index] = value.B;
-                rgbValues[index + 1] = value.G;
-                rgbValues[index + 2] = value.R;
-                rgbValues[index + 3] = value.A;
-            }
-        }
-
-        /// <summary>
-        /// Width of the image. 
-        /// </summary>
-        public int Width
-        {
-            get
-            {
-                return image.Width;
-            }
-        }
-
-        /// <summary>
-        /// Height of the image. 
-        /// </summary>
-        public int Height
-        {
-            get
-            {
-                return image.Height;
-            }
-        }
-
-        /// <summary>
-        /// Returns the modified Bitmap. 
-        /// </summary>
-        public Bitmap asBitmap()
-        {
-            System.Runtime.InteropServices.Marshal.Copy(rgbValues, 0, ptr, bytes);
-            return image;
         }
     }
 
-    class ImageChecker
-    {
 
-        private LockedFastImage big_image;
-        private LockedFastImage small_image;
-
-        /// <summary>
-        /// Error return value.
-        /// </summary>
-        static public Point CHECKFAILED = new Point(-1, -1);
-
-        /// <summary>
-        /// Constructor of the ImageChecker
-        /// </summary>
-        /// <param name="big_image">The image containing the small image.</param>
-        /// <param name="small_image">The image located in the big image.</param>
-        public ImageChecker(Bitmap big_image, Bitmap small_image)
-        {
-            this.big_image = new LockedFastImage(big_image);
-            this.small_image = new LockedFastImage(small_image);
-        }
-
-        /// <summary>
-        /// Returns the location of the small image in the big image. Returns CHECKFAILED if not found.
-        /// </summary>
-        /// <param name="x_speedUp">speeding up at x achsis.</param>
-        /// <param name="y_speedUp">speeding up at y achsis.</param>
-        /// <param name="begin_percent_x">Reduces the search rect. 0 - 100</param>
-        /// <param name="end_percent_x">Reduces the search rect. 0 - 100</param>
-        /// <param name="begin_percent_x">Reduces the search rect. 0 - 100</param>
-        /// <param name="end_percent_y">Reduces the search rect. 0 - 100</param>
-        public Point bigContainsSmall(int x_speedUp = 1, int y_speedUp = 1, int begin_percent_x = 0, int end_percent_x = 100, int begin_percent_y = 0, int end_percent_y = 100)
-        {
-            DateTime begin = DateTime.Now;
-
-            if (x_speedUp < 1) x_speedUp = 1;
-            if (y_speedUp < 1) y_speedUp = 1;
-            if (begin_percent_x < 0 || begin_percent_x > 100) begin_percent_x = 0;
-            if (begin_percent_y < 0 || begin_percent_y > 100) begin_percent_y = 0;
-            if (end_percent_x < 0 || end_percent_x > 100) end_percent_x = 100;
-            if (end_percent_y < 0 || end_percent_y > 100) end_percent_y = 100;
-
-            int x_start = (int)((double)big_image.Width * ((double)begin_percent_x / 100.0));
-            int x_end = (int)((double)big_image.Width * ((double)end_percent_x / 100.0));
-            int y_start = (int)((double)big_image.Height * ((double)begin_percent_y / 100.0));
-            int y_end = (int)((double)big_image.Height * ((double)end_percent_y / 100.0));
-
-
-            //+ 1 because first pixel is in picture. - small because image have to be fully in the other image
-            for (int x = x_start; x < x_end - small_image.Width + 1; x++)
-                for (int y = y_start; y < y_end - small_image.Height + 1; y++)
-                {
-                    //now we check if all pixels matches
-                    for (int sx = 0; sx < small_image.Width; sx += x_speedUp)
-                        for (int sy = 0; sy < small_image.Height; sy += y_speedUp)
-                        {
-                            if (small_image[sx, sy] != big_image[x + sx, y + sy])
-                                goto CheckFailed;
-                        }
-
-                    //check ok
-                    return new Point(x, y);
-
-                CheckFailed: ;
-                }
-
-            return CHECKFAILED;
-        }
-    }
 
     
 }
