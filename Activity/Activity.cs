@@ -161,7 +161,7 @@ namespace Activity
         /// </summary>
         public virtual void Init()
         {
-
+            this.InitPoint();
         }
 
         /// <summary>
@@ -178,7 +178,7 @@ namespace Activity
         /// </summary>
         public virtual void Start()
         {
-            this.Init();
+            Init();
             if (IsMatchCriteria())
             {
                 this.Mouse.PutMouseEventAbsolute(this.MousePositionX, this.MousePositionY, 0, 0, LEFT_MOUSE_CLICK);
