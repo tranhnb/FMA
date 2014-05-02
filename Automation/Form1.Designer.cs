@@ -39,6 +39,8 @@
             this.btnDetermineApplication = new System.Windows.Forms.Button();
             this.btnConfirmDownload = new System.Windows.Forms.Button();
             this.btnConfirmUsingPlayStore = new System.Windows.Forms.Button();
+            this.btnInstalledApps = new System.Windows.Forms.Button();
+            this.btnLaunchApp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,6 +152,26 @@
             this.btnConfirmUsingPlayStore.UseVisualStyleBackColor = true;
             this.btnConfirmUsingPlayStore.Click += new System.EventHandler(this.btnConfirmUsingPlayStore_Click);
             // 
+            // btnInstalledApps
+            // 
+            this.btnInstalledApps.Location = new System.Drawing.Point(12, 343);
+            this.btnInstalledApps.Name = "btnInstalledApps";
+            this.btnInstalledApps.Size = new System.Drawing.Size(194, 23);
+            this.btnInstalledApps.TabIndex = 1;
+            this.btnInstalledApps.Text = "Get installed apps";
+            this.btnInstalledApps.UseVisualStyleBackColor = true;
+            this.btnInstalledApps.Click += new System.EventHandler(this.btnInstalledApps_Click);
+            // 
+            // btnLaunchApp
+            // 
+            this.btnLaunchApp.Location = new System.Drawing.Point(12, 372);
+            this.btnLaunchApp.Name = "btnLaunchApp";
+            this.btnLaunchApp.Size = new System.Drawing.Size(194, 23);
+            this.btnLaunchApp.TabIndex = 1;
+            this.btnLaunchApp.Text = "Open app in 30s";
+            this.btnLaunchApp.UseVisualStyleBackColor = true;
+            this.btnLaunchApp.Click += new System.EventHandler(this.btnLaunchApp_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,6 +185,8 @@
             this.Controls.Add(this.btnFindSubImage);
             this.Controls.Add(this.btnModi);
             this.Controls.Add(this.btnAcceptInstallation);
+            this.Controls.Add(this.btnLaunchApp);
+            this.Controls.Add(this.btnInstalledApps);
             this.Controls.Add(this.btnTakeScreenShot);
             this.Controls.Add(this.btnInstallApp);
             this.Controls.Add(this.button1);
@@ -186,6 +210,8 @@
         private System.Windows.Forms.Button btnDetermineApplication;
         private System.Windows.Forms.Button btnConfirmDownload;
         private System.Windows.Forms.Button btnConfirmUsingPlayStore;
+        private System.Windows.Forms.Button btnInstalledApps;
+        private System.Windows.Forms.Button btnLaunchApp;
     }
 }
 

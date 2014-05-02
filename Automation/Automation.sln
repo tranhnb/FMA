@@ -1,14 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C9E921D6-8EB9-44A6-BFF2-E4C8AA8E00B3}"
-	ProjectSection(SolutionItems) = preProject
-		Automation.vsmdi = Automation.vsmdi
-		buildVirtualBoxAPI.bat = buildVirtualBoxAPI.bat
-		Local.testsettings = Local.testsettings
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automation", "Automation.csproj", "{05AFC565-07D1-4A08-B938-C26C5CBAB08E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseCoordinates", "..\MouseCoordinates\MouseCoordinates.csproj", "{4D612802-2121-4D63-84F1-D1810206967D}"

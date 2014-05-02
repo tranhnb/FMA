@@ -1,0 +1,838 @@
+﻿res/drawable/background.xml
+res/drawable/bg.png
+res/drawable/bg_gradient_bluegray.xml
+res/drawable/bg_gradient_platinum.xml
+res/drawable/btnblue.xml
+res/drawable/img_arrow.png
+res/drawable/splash.jpg
+res/layout/liststory.xml
+res/layout/liststoryitem.xml
+res/layout/main.xml
+res/layout/xemchitay.xml
+res/layout/xemtruyen.xml
+AndroidManifest.xml
+resources.arsc
+res/drawable-hdpi/ic_launcher.png
+res/drawable-hdpi/iconback.png
+res/drawable-hdpi/no_photo.png
+res/drawable-ldpi/ic_launcher.png
+res/drawable-ldpi/no_photo.png
+res/drawable-mdpi/ic_launcher.png
+res/drawable-mdpi/no_photo.png
+res/drawable-xhdpi/ic_launcher.png
+res/drawable-xhdpi/no_photo.png
+res/drawable-xxhdpi/ic_launcher.png
+classes.dex
+manifest
+com/androidquery/util/web_image.html
+jsr305_annotations/Jsr305_annotations.gwt.xml
+jsr305_annotations/v0_r47/V0_r47.gwt.xml
+META-INF/MANIFEST.MF
+META-INF/CERT.SF
+META-INF/CERT.RSA
+
+Resource table:
+Package Groups (1)
+Package Group 0 id=127 packageCount=1 name=com.minhtt.xemchitay
+  Package 0 id=127 name=com.minhtt.xemchitay typeCount=9
+    type 0 configCount=0 entryCount=0
+    type 1 configCount=6 entryCount=10
+      spec resource 0x7f020000 com.minhtt.xemchitay:drawable/background: flags=0x00000000
+      spec resource 0x7f020001 com.minhtt.xemchitay:drawable/bg: flags=0x00000000
+      spec resource 0x7f020002 com.minhtt.xemchitay:drawable/bg_gradient_bluegray: flags=0x00000000
+      spec resource 0x7f020003 com.minhtt.xemchitay:drawable/bg_gradient_platinum: flags=0x00000000
+      spec resource 0x7f020004 com.minhtt.xemchitay:drawable/btnblue: flags=0x00000000
+      spec resource 0x7f020005 com.minhtt.xemchitay:drawable/ic_launcher: flags=0x00000100
+      spec resource 0x7f020006 com.minhtt.xemchitay:drawable/iconback: flags=0x00000000
+      spec resource 0x7f020007 com.minhtt.xemchitay:drawable/img_arrow: flags=0x00000000
+      spec resource 0x7f020008 com.minhtt.xemchitay:drawable/no_photo: flags=0x00000100
+      spec resource 0x7f020009 com.minhtt.xemchitay:drawable/splash: flags=0x00000000
+      config (default):
+        resource 0x7f020000 com.minhtt.xemchitay:drawable/background: t=0x03 d=0x00000000 (s=0x0008 r=0x00)
+        resource 0x7f020001 com.minhtt.xemchitay:drawable/bg: t=0x03 d=0x00000001 (s=0x0008 r=0x00)
+        resource 0x7f020002 com.minhtt.xemchitay:drawable/bg_gradient_bluegray: t=0x03 d=0x00000002 (s=0x0008 r=0x00)
+        resource 0x7f020003 com.minhtt.xemchitay:drawable/bg_gradient_platinum: t=0x03 d=0x00000003 (s=0x0008 r=0x00)
+        resource 0x7f020004 com.minhtt.xemchitay:drawable/btnblue: t=0x03 d=0x00000004 (s=0x0008 r=0x00)
+        resource 0x7f020007 com.minhtt.xemchitay:drawable/img_arrow: t=0x03 d=0x00000005 (s=0x0008 r=0x00)
+        resource 0x7f020009 com.minhtt.xemchitay:drawable/splash: t=0x03 d=0x00000006 (s=0x0008 r=0x00)
+      config ldpi-v4:
+        resource 0x7f020005 com.minhtt.xemchitay:drawable/ic_launcher: t=0x03 d=0x0000000c (s=0x0008 r=0x00)
+        resource 0x7f020008 com.minhtt.xemchitay:drawable/no_photo: t=0x03 d=0x0000000d (s=0x0008 r=0x00)
+      config mdpi-v4:
+        resource 0x7f020005 com.minhtt.xemchitay:drawable/ic_launcher: t=0x03 d=0x0000000e (s=0x0008 r=0x00)
+        resource 0x7f020008 com.minhtt.xemchitay:drawable/no_photo: t=0x03 d=0x0000000f (s=0x0008 r=0x00)
+      config hdpi-v4:
+        resource 0x7f020005 com.minhtt.xemchitay:drawable/ic_launcher: t=0x03 d=0x00000010 (s=0x0008 r=0x00)
+        resource 0x7f020006 com.minhtt.xemchitay:drawable/iconback: t=0x03 d=0x00000011 (s=0x0008 r=0x00)
+        resource 0x7f020008 com.minhtt.xemchitay:drawable/no_photo: t=0x03 d=0x00000012 (s=0x0008 r=0x00)
+      config xhdpi-v4:
+        resource 0x7f020005 com.minhtt.xemchitay:drawable/ic_launcher: t=0x03 d=0x00000013 (s=0x0008 r=0x00)
+        resource 0x7f020008 com.minhtt.xemchitay:drawable/no_photo: t=0x03 d=0x00000014 (s=0x0008 r=0x00)
+      config xxhdpi-v4:
+        resource 0x7f020005 com.minhtt.xemchitay:drawable/ic_launcher: t=0x03 d=0x00000015 (s=0x0008 r=0x00)
+    type 2 configCount=1 entryCount=5
+      spec resource 0x7f030000 com.minhtt.xemchitay:layout/liststory: flags=0x00000000
+      spec resource 0x7f030001 com.minhtt.xemchitay:layout/liststoryitem: flags=0x00000000
+      spec resource 0x7f030002 com.minhtt.xemchitay:layout/main: flags=0x00000000
+      spec resource 0x7f030003 com.minhtt.xemchitay:layout/xemchitay: flags=0x00000000
+      spec resource 0x7f030004 com.minhtt.xemchitay:layout/xemtruyen: flags=0x00000000
+      config (default):
+        resource 0x7f030000 com.minhtt.xemchitay:layout/liststory: t=0x03 d=0x00000007 (s=0x0008 r=0x00)
+        resource 0x7f030001 com.minhtt.xemchitay:layout/liststoryitem: t=0x03 d=0x00000008 (s=0x0008 r=0x00)
+        resource 0x7f030002 com.minhtt.xemchitay:layout/main: t=0x03 d=0x00000009 (s=0x0008 r=0x00)
+        resource 0x7f030003 com.minhtt.xemchitay:layout/xemchitay: t=0x03 d=0x0000000a (s=0x0008 r=0x00)
+        resource 0x7f030004 com.minhtt.xemchitay:layout/xemtruyen: t=0x03 d=0x0000000b (s=0x0008 r=0x00)
+    type 3 configCount=1 entryCount=7
+      spec resource 0x7f040000 com.minhtt.xemchitay:string/app_name: flags=0x00000000
+      spec resource 0x7f040001 com.minhtt.xemchitay:string/ga_trackingId: flags=0x00000000
+      spec resource 0x7f040002 com.minhtt.xemchitay:string/alt: flags=0x00000000
+      spec resource 0x7f040003 com.minhtt.xemchitay:string/lblCloseApp: flags=0x00000000
+      spec resource 0x7f040004 com.minhtt.xemchitay:string/lblConfirmClose: flags=0x00000000
+      spec resource 0x7f040005 com.minhtt.xemchitay:string/lblYes: flags=0x00000000
+      spec resource 0x7f040006 com.minhtt.xemchitay:string/lblNo: flags=0x00000000
+      config (default):
+        resource 0x7f040000 com.minhtt.xemchitay:string/app_name: t=0x03 d=0x00000016 (s=0x0008 r=0x00)
+        resource 0x7f040001 com.minhtt.xemchitay:string/ga_trackingId: t=0x03 d=0x00000017 (s=0x0008 r=0x00)
+        resource 0x7f040002 com.minhtt.xemchitay:string/alt: t=0x03 d=0x00000018 (s=0x0008 r=0x00)
+        resource 0x7f040003 com.minhtt.xemchitay:string/lblCloseApp: t=0x03 d=0x00000019 (s=0x0008 r=0x00)
+        resource 0x7f040004 com.minhtt.xemchitay:string/lblConfirmClose: t=0x03 d=0x0000001a (s=0x0008 r=0x00)
+        resource 0x7f040005 com.minhtt.xemchitay:string/lblYes: t=0x03 d=0x0000001b (s=0x0008 r=0x00)
+        resource 0x7f040006 com.minhtt.xemchitay:string/lblNo: t=0x03 d=0x0000001c (s=0x0008 r=0x00)
+    type 4 configCount=1 entryCount=2
+      spec resource 0x7f050000 com.minhtt.xemchitay:bool/ga_autoActivityTracking: flags=0x00000000
+      spec resource 0x7f050001 com.minhtt.xemchitay:bool/ga_reportUncaughtExceptions: flags=0x00000000
+      config (default):
+        resource 0x7f050000 com.minhtt.xemchitay:bool/ga_autoActivityTracking: t=0x12 d=0xffffffff (s=0x0008 r=0x00)
+        resource 0x7f050001 com.minhtt.xemchitay:bool/ga_reportUncaughtExceptions: t=0x12 d=0xffffffff (s=0x0008 r=0x00)
+    type 5 configCount=1 entryCount=328
+      spec resource 0x7f060000 com.minhtt.xemchitay:color/black: flags=0x00000000
+      spec resource 0x7f060001 com.minhtt.xemchitay:color/gunmetal: flags=0x00000000
+      spec resource 0x7f060002 com.minhtt.xemchitay:color/midnight: flags=0x00000000
+      spec resource 0x7f060003 com.minhtt.xemchitay:color/charcoal: flags=0x00000000
+      spec resource 0x7f060004 com.minhtt.xemchitay:color/darkslategray: flags=0x00000000
+      spec resource 0x7f060005 com.minhtt.xemchitay:color/oil: flags=0x00000000
+      spec resource 0x7f060006 com.minhtt.xemchitay:color/blackcat: flags=0x00000000
+      spec resource 0x7f060007 com.minhtt.xemchitay:color/blackeel: flags=0x00000000
+      spec resource 0x7f060008 com.minhtt.xemchitay:color/blackcow: flags=0x00000000
+      spec resource 0x7f060009 com.minhtt.xemchitay:color/graywolf: flags=0x00000000
+      spec resource 0x7f06000a com.minhtt.xemchitay:color/vampiregray: flags=0x00000000
+      spec resource 0x7f06000b com.minhtt.xemchitay:color/graydolphin: flags=0x00000000
+      spec resource 0x7f06000c com.minhtt.xemchitay:color/carbongray: flags=0x00000000
+      spec resource 0x7f06000d com.minhtt.xemchitay:color/ashgray: flags=0x00000000
+      spec resource 0x7f06000e com.minhtt.xemchitay:color/cloudygray: flags=0x00000000
+      spec resource 0x7f06000f com.minhtt.xemchitay:color/smokeygray: flags=0x00000000
+      spec resource 0x7f060010 com.minhtt.xemchitay:color/gray: flags=0x00000000
+      spec resource 0x7f060011 com.minhtt.xemchitay:color/granite: flags=0x00000000
+      spec resource 0x7f060012 com.minhtt.xemchitay:color/battleshipgray: flags=0x00000000
+      spec resource 0x7f060013 com.minhtt.xemchitay:color/graycloud: flags=0x00000000
+      spec resource 0x7f060014 com.minhtt.xemchitay:color/graygoose: flags=0x00000000
+      spec resource 0x7f060015 com.minhtt.xemchitay:color/platinum: flags=0x00000000
+      spec resource 0x7f060016 com.minhtt.xemchitay:color/metallicsilver: flags=0x00000000
+      spec resource 0x7f060017 com.minhtt.xemchitay:color/bluegray: flags=0x00000000
+      spec resource 0x7f060018 com.minhtt.xemchitay:color/lightslategray: flags=0x00000000
+      spec resource 0x7f060019 com.minhtt.xemchitay:color/slategray: flags=0x00000000
+      spec resource 0x7f06001a com.minhtt.xemchitay:color/jetgray: flags=0x00000000
+      spec resource 0x7f06001b com.minhtt.xemchitay:color/mistblue: flags=0x00000000
+      spec resource 0x7f06001c com.minhtt.xemchitay:color/marbleblue: flags=0x00000000
+      spec resource 0x7f06001d com.minhtt.xemchitay:color/steelblue: flags=0x00000000
+      spec resource 0x7f06001e com.minhtt.xemchitay:color/bluejay: flags=0x00000000
+      spec resource 0x7f06001f com.minhtt.xemchitay:color/darkslateblue: flags=0x00000000
+      spec resource 0x7f060020 com.minhtt.xemchitay:color/midnightblue: flags=0x00000000
+      spec resource 0x7f060021 com.minhtt.xemchitay:color/navyblue: flags=0x00000000
+      spec resource 0x7f060022 com.minhtt.xemchitay:color/bluewhale: flags=0x00000000
+      spec resource 0x7f060023 com.minhtt.xemchitay:color/lapisblue: flags=0x00000000
+      spec resource 0x7f060024 com.minhtt.xemchitay:color/earthblue: flags=0x00000000
+      spec resource 0x7f060025 com.minhtt.xemchitay:color/cobaltblue: flags=0x00000000
+      spec resource 0x7f060026 com.minhtt.xemchitay:color/blueberryblue: flags=0x00000000
+      spec resource 0x7f060027 com.minhtt.xemchitay:color/sapphireblue: flags=0x00000000
+      spec resource 0x7f060028 com.minhtt.xemchitay:color/blueeyes: flags=0x00000000
+      spec resource 0x7f060029 com.minhtt.xemchitay:color/royalblue: flags=0x00000000
+      spec resource 0x7f06002a com.minhtt.xemchitay:color/blueorchid: flags=0x00000000
+      spec resource 0x7f06002b com.minhtt.xemchitay:color/bluelotus: flags=0x00000000
+      spec resource 0x7f06002c com.minhtt.xemchitay:color/lightslateblue: flags=0x00000000
+      spec resource 0x7f06002d com.minhtt.xemchitay:color/slateblue: flags=0x00000000
+      spec resource 0x7f06002e com.minhtt.xemchitay:color/silkblue: flags=0x00000000
+      spec resource 0x7f06002f com.minhtt.xemchitay:color/blueivy: flags=0x00000000
+      spec resource 0x7f060030 com.minhtt.xemchitay:color/bluekoi: flags=0x00000000
+      spec resource 0x7f060031 com.minhtt.xemchitay:color/columbiablue: flags=0x00000000
+      spec resource 0x7f060032 com.minhtt.xemchitay:color/babyblue: flags=0x00000000
+      spec resource 0x7f060033 com.minhtt.xemchitay:color/lightsteelblue: flags=0x00000000
+      spec resource 0x7f060034 com.minhtt.xemchitay:color/oceanblue: flags=0x00000000
+      spec resource 0x7f060035 com.minhtt.xemchitay:color/blueribbon: flags=0x00000000
+      spec resource 0x7f060036 com.minhtt.xemchitay:color/bluedress: flags=0x00000000
+      spec resource 0x7f060037 com.minhtt.xemchitay:color/dodgerblue: flags=0x00000000
+      spec resource 0x7f060038 com.minhtt.xemchitay:color/cornflowerblue: flags=0x00000000
+      spec resource 0x7f060039 com.minhtt.xemchitay:color/butterflyblue: flags=0x00000000
+      spec resource 0x7f06003a com.minhtt.xemchitay:color/iceberg: flags=0x00000000
+      spec resource 0x7f06003b com.minhtt.xemchitay:color/crystalblue: flags=0x00000000
+      spec resource 0x7f06003c com.minhtt.xemchitay:color/deepskyblue: flags=0x00000000
+      spec resource 0x7f06003d com.minhtt.xemchitay:color/denimblue: flags=0x00000000
+      spec resource 0x7f06003e com.minhtt.xemchitay:color/lightskyblue: flags=0x00000000
+      spec resource 0x7f06003f com.minhtt.xemchitay:color/skyblue: flags=0x00000000
+      spec resource 0x7f060040 com.minhtt.xemchitay:color/jeansblue: flags=0x00000000
+      spec resource 0x7f060041 com.minhtt.xemchitay:color/blueangel: flags=0x00000000
+      spec resource 0x7f060042 com.minhtt.xemchitay:color/pastelblue: flags=0x00000000
+      spec resource 0x7f060043 com.minhtt.xemchitay:color/seablue: flags=0x00000000
+      spec resource 0x7f060044 com.minhtt.xemchitay:color/powderblue: flags=0x00000000
+      spec resource 0x7f060045 com.minhtt.xemchitay:color/coralblue: flags=0x00000000
+      spec resource 0x7f060046 com.minhtt.xemchitay:color/lightblue: flags=0x00000000
+      spec resource 0x7f060047 com.minhtt.xemchitay:color/robineggblue: flags=0x00000000
+      spec resource 0x7f060048 com.minhtt.xemchitay:color/palebluelily: flags=0x00000000
+      spec resource 0x7f060049 com.minhtt.xemchitay:color/lightcyan: flags=0x00000000
+      spec resource 0x7f06004a com.minhtt.xemchitay:color/water: flags=0x00000000
+      spec resource 0x7f06004b com.minhtt.xemchitay:color/aliceblue: flags=0x00000000
+      spec resource 0x7f06004c com.minhtt.xemchitay:color/azure: flags=0x00000000
+      spec resource 0x7f06004d com.minhtt.xemchitay:color/lightslate: flags=0x00000000
+      spec resource 0x7f06004e com.minhtt.xemchitay:color/lightaquamarine: flags=0x00000000
+      spec resource 0x7f06004f com.minhtt.xemchitay:color/electricblue: flags=0x00000000
+      spec resource 0x7f060050 com.minhtt.xemchitay:color/aquamarine: flags=0x00000000
+      spec resource 0x7f060051 com.minhtt.xemchitay:color/cyanoraqua: flags=0x00000000
+      spec resource 0x7f060052 com.minhtt.xemchitay:color/tronblue: flags=0x00000000
+      spec resource 0x7f060053 com.minhtt.xemchitay:color/bluezircon: flags=0x00000000
+      spec resource 0x7f060054 com.minhtt.xemchitay:color/bluelagoon: flags=0x00000000
+      spec resource 0x7f060055 com.minhtt.xemchitay:color/celeste: flags=0x00000000
+      spec resource 0x7f060056 com.minhtt.xemchitay:color/bluediamond: flags=0x00000000
+      spec resource 0x7f060057 com.minhtt.xemchitay:color/tiffanyblue: flags=0x00000000
+      spec resource 0x7f060058 com.minhtt.xemchitay:color/cyanopaque: flags=0x00000000
+      spec resource 0x7f060059 com.minhtt.xemchitay:color/bluehosta: flags=0x00000000
+      spec resource 0x7f06005a com.minhtt.xemchitay:color/northernlightsblue: flags=0x00000000
+      spec resource 0x7f06005b com.minhtt.xemchitay:color/mediumturquoise: flags=0x00000000
+      spec resource 0x7f06005c com.minhtt.xemchitay:color/turquoise: flags=0x00000000
+      spec resource 0x7f06005d com.minhtt.xemchitay:color/jellyfish: flags=0x00000000
+      spec resource 0x7f06005e com.minhtt.xemchitay:color/mascawbluegreen: flags=0x00000000
+      spec resource 0x7f06005f com.minhtt.xemchitay:color/lightseagreen: flags=0x00000000
+      spec resource 0x7f060060 com.minhtt.xemchitay:color/darkturquoise: flags=0x00000000
+      spec resource 0x7f060061 com.minhtt.xemchitay:color/seaturtlegreen: flags=0x00000000
+      spec resource 0x7f060062 com.minhtt.xemchitay:color/mediumaquamarine: flags=0x00000000
+      spec resource 0x7f060063 com.minhtt.xemchitay:color/greenishblue: flags=0x00000000
+      spec resource 0x7f060064 com.minhtt.xemchitay:color/grayishturquoise: flags=0x00000000
+      spec resource 0x7f060065 com.minhtt.xemchitay:color/beetlegreen: flags=0x00000000
+      spec resource 0x7f060066 com.minhtt.xemchitay:color/teal: flags=0x00000000
+      spec resource 0x7f060067 com.minhtt.xemchitay:color/seagreen: flags=0x00000000
+      spec resource 0x7f060068 com.minhtt.xemchitay:color/camouflagegreen: flags=0x00000000
+      spec resource 0x7f060069 com.minhtt.xemchitay:color/hazelgreen: flags=0x00000000
+      spec resource 0x7f06006a com.minhtt.xemchitay:color/venomgreen: flags=0x00000000
+      spec resource 0x7f06006b com.minhtt.xemchitay:color/ferngreen: flags=0x00000000
+      spec resource 0x7f06006c com.minhtt.xemchitay:color/darkforrestgreen: flags=0x00000000
+      spec resource 0x7f06006d com.minhtt.xemchitay:color/mediumseagreen: flags=0x00000000
+      spec resource 0x7f06006e com.minhtt.xemchitay:color/mediumforestgreen: flags=0x00000000
+      spec resource 0x7f06006f com.minhtt.xemchitay:color/seaweedgreen: flags=0x00000000
+      spec resource 0x7f060070 com.minhtt.xemchitay:color/pinegreen: flags=0x00000000
+      spec resource 0x7f060071 com.minhtt.xemchitay:color/junglegreen: flags=0x00000000
+      spec resource 0x7f060072 com.minhtt.xemchitay:color/shamrockgreen: flags=0x00000000
+      spec resource 0x7f060073 com.minhtt.xemchitay:color/mediumspringgreen: flags=0x00000000
+      spec resource 0x7f060074 com.minhtt.xemchitay:color/forestgreen: flags=0x00000000
+      spec resource 0x7f060075 com.minhtt.xemchitay:color/greenonion: flags=0x00000000
+      spec resource 0x7f060076 com.minhtt.xemchitay:color/springgreen: flags=0x00000000
+      spec resource 0x7f060077 com.minhtt.xemchitay:color/limegreen: flags=0x00000000
+      spec resource 0x7f060078 com.minhtt.xemchitay:color/clovergreen: flags=0x00000000
+      spec resource 0x7f060079 com.minhtt.xemchitay:color/greensnake: flags=0x00000000
+      spec resource 0x7f06007a com.minhtt.xemchitay:color/aliengreen: flags=0x00000000
+      spec resource 0x7f06007b com.minhtt.xemchitay:color/greenapple: flags=0x00000000
+      spec resource 0x7f06007c com.minhtt.xemchitay:color/yellowgreen: flags=0x00000000
+      spec resource 0x7f06007d com.minhtt.xemchitay:color/kellygreen: flags=0x00000000
+      spec resource 0x7f06007e com.minhtt.xemchitay:color/zombiegreen: flags=0x00000000
+      spec resource 0x7f06007f com.minhtt.xemchitay:color/froggreen: flags=0x00000000
+      spec resource 0x7f060080 com.minhtt.xemchitay:color/greenpeas: flags=0x00000000
+      spec resource 0x7f060081 com.minhtt.xemchitay:color/dollarbillgreen: flags=0x00000000
+      spec resource 0x7f060082 com.minhtt.xemchitay:color/darkseagreen: flags=0x00000000
+      spec resource 0x7f060083 com.minhtt.xemchitay:color/iguanagreen: flags=0x00000000
+      spec resource 0x7f060084 com.minhtt.xemchitay:color/avocadogreen: flags=0x00000000
+      spec resource 0x7f060085 com.minhtt.xemchitay:color/pistachiogreen: flags=0x00000000
+      spec resource 0x7f060086 com.minhtt.xemchitay:color/saladgreen: flags=0x00000000
+      spec resource 0x7f060087 com.minhtt.xemchitay:color/hummingbirdgreen: flags=0x00000000
+      spec resource 0x7f060088 com.minhtt.xemchitay:color/nebulagreen: flags=0x00000000
+      spec resource 0x7f060089 com.minhtt.xemchitay:color/stoplightgogreen: flags=0x00000000
+      spec resource 0x7f06008a com.minhtt.xemchitay:color/algaegreen: flags=0x00000000
+      spec resource 0x7f06008b com.minhtt.xemchitay:color/jade: flags=0x00000000
+      spec resource 0x7f06008c com.minhtt.xemchitay:color/green: flags=0x00000000
+      spec resource 0x7f06008d com.minhtt.xemchitay:color/emeraldgreen: flags=0x00000000
+      spec resource 0x7f06008e com.minhtt.xemchitay:color/lawngreen: flags=0x00000000
+      spec resource 0x7f06008f com.minhtt.xemchitay:color/chartreuse: flags=0x00000000
+      spec resource 0x7f060090 com.minhtt.xemchitay:color/dragongreen: flags=0x00000000
+      spec resource 0x7f060091 com.minhtt.xemchitay:color/mintgreen: flags=0x00000000
+      spec resource 0x7f060092 com.minhtt.xemchitay:color/greenthumb: flags=0x00000000
+      spec resource 0x7f060093 com.minhtt.xemchitay:color/lightjade: flags=0x00000000
+      spec resource 0x7f060094 com.minhtt.xemchitay:color/teagreen: flags=0x00000000
+      spec resource 0x7f060095 com.minhtt.xemchitay:color/greenyellow: flags=0x00000000
+      spec resource 0x7f060096 com.minhtt.xemchitay:color/slimegreen: flags=0x00000000
+      spec resource 0x7f060097 com.minhtt.xemchitay:color/goldenrod: flags=0x00000000
+      spec resource 0x7f060098 com.minhtt.xemchitay:color/harvestgold: flags=0x00000000
+      spec resource 0x7f060099 com.minhtt.xemchitay:color/sunyellow: flags=0x00000000
+      spec resource 0x7f06009a com.minhtt.xemchitay:color/yellow: flags=0x00000000
+      spec resource 0x7f06009b com.minhtt.xemchitay:color/cornyellow: flags=0x00000000
+      spec resource 0x7f06009c com.minhtt.xemchitay:color/parchment: flags=0x00000000
+      spec resource 0x7f06009d com.minhtt.xemchitay:color/cream: flags=0x00000000
+      spec resource 0x7f06009e com.minhtt.xemchitay:color/lemonchiffon: flags=0x00000000
+      spec resource 0x7f06009f com.minhtt.xemchitay:color/cornsilk: flags=0x00000000
+      spec resource 0x7f0600a0 com.minhtt.xemchitay:color/beige: flags=0x00000000
+      spec resource 0x7f0600a1 com.minhtt.xemchitay:color/antiquewhite: flags=0x00000000
+      spec resource 0x7f0600a2 com.minhtt.xemchitay:color/blanchedalmond: flags=0x00000000
+      spec resource 0x7f0600a3 com.minhtt.xemchitay:color/vanilla: flags=0x00000000
+      spec resource 0x7f0600a4 com.minhtt.xemchitay:color/tanbrown: flags=0x00000000
+      spec resource 0x7f0600a5 com.minhtt.xemchitay:color/peach: flags=0x00000000
+      spec resource 0x7f0600a6 com.minhtt.xemchitay:color/mustard: flags=0x00000000
+      spec resource 0x7f0600a7 com.minhtt.xemchitay:color/rubberduckyyellow: flags=0x00000000
+      spec resource 0x7f0600a8 com.minhtt.xemchitay:color/brightgold: flags=0x00000000
+      spec resource 0x7f0600a9 com.minhtt.xemchitay:color/golden: flags=0x00000000
+      spec resource 0x7f0600aa com.minhtt.xemchitay:color/macaroniandcheese: flags=0x00000000
+      spec resource 0x7f0600ab com.minhtt.xemchitay:color/saffron: flags=0x00000000
+      spec resource 0x7f0600ac com.minhtt.xemchitay:color/beer: flags=0x00000000
+      spec resource 0x7f0600ad com.minhtt.xemchitay:color/cantaloupe: flags=0x00000000
+      spec resource 0x7f0600ae com.minhtt.xemchitay:color/beeyellow: flags=0x00000000
+      spec resource 0x7f0600af com.minhtt.xemchitay:color/brownsugar: flags=0x00000000
+      spec resource 0x7f0600b0 com.minhtt.xemchitay:color/burlywood: flags=0x00000000
+      spec resource 0x7f0600b1 com.minhtt.xemchitay:color/deeppeach: flags=0x00000000
+      spec resource 0x7f0600b2 com.minhtt.xemchitay:color/gingerbrown: flags=0x00000000
+      spec resource 0x7f0600b3 com.minhtt.xemchitay:color/schoolbusyellow: flags=0x00000000
+      spec resource 0x7f0600b4 com.minhtt.xemchitay:color/sandybrown: flags=0x00000000
+      spec resource 0x7f0600b5 com.minhtt.xemchitay:color/fallleafbrown: flags=0x00000000
+      spec resource 0x7f0600b6 com.minhtt.xemchitay:color/gold: flags=0x00000000
+      spec resource 0x7f0600b7 com.minhtt.xemchitay:color/sand: flags=0x00000000
+      spec resource 0x7f0600b8 com.minhtt.xemchitay:color/cookiebrown: flags=0x00000000
+      spec resource 0x7f0600b9 com.minhtt.xemchitay:color/caramel: flags=0x00000000
+      spec resource 0x7f0600ba com.minhtt.xemchitay:color/brass: flags=0x00000000
+      spec resource 0x7f0600bb com.minhtt.xemchitay:color/khaki: flags=0x00000000
+      spec resource 0x7f0600bc com.minhtt.xemchitay:color/camelbrown: flags=0x00000000
+      spec resource 0x7f0600bd com.minhtt.xemchitay:color/bronze: flags=0x00000000
+      spec resource 0x7f0600be com.minhtt.xemchitay:color/tigerorange: flags=0x00000000
+      spec resource 0x7f0600bf com.minhtt.xemchitay:color/cinnamon: flags=0x00000000
+      spec resource 0x7f0600c0 com.minhtt.xemchitay:color/darkgoldenrod: flags=0x00000000
+      spec resource 0x7f0600c1 com.minhtt.xemchitay:color/copper: flags=0x00000000
+      spec resource 0x7f0600c2 com.minhtt.xemchitay:color/wood: flags=0x00000000
+      spec resource 0x7f0600c3 com.minhtt.xemchitay:color/oakbrown: flags=0x00000000
+      spec resource 0x7f0600c4 com.minhtt.xemchitay:color/moccasin: flags=0x00000000
+      spec resource 0x7f0600c5 com.minhtt.xemchitay:color/armybrown: flags=0x00000000
+      spec resource 0x7f0600c6 com.minhtt.xemchitay:color/sandstone: flags=0x00000000
+      spec resource 0x7f0600c7 com.minhtt.xemchitay:color/mocha: flags=0x00000000
+      spec resource 0x7f0600c8 com.minhtt.xemchitay:color/taupe: flags=0x00000000
+      spec resource 0x7f0600c9 com.minhtt.xemchitay:color/coffee: flags=0x00000000
+      spec resource 0x7f0600ca com.minhtt.xemchitay:color/brownbear: flags=0x00000000
+      spec resource 0x7f0600cb com.minhtt.xemchitay:color/reddirt: flags=0x00000000
+      spec resource 0x7f0600cc com.minhtt.xemchitay:color/sepia: flags=0x00000000
+      spec resource 0x7f0600cd com.minhtt.xemchitay:color/orangesalmon: flags=0x00000000
+      spec resource 0x7f0600ce com.minhtt.xemchitay:color/rust: flags=0x00000000
+      spec resource 0x7f0600cf com.minhtt.xemchitay:color/redfox: flags=0x00000000
+      spec resource 0x7f0600d0 com.minhtt.xemchitay:color/chocolate: flags=0x00000000
+      spec resource 0x7f0600d1 com.minhtt.xemchitay:color/sedona: flags=0x00000000
+      spec resource 0x7f0600d2 com.minhtt.xemchitay:color/papayaorange: flags=0x00000000
+      spec resource 0x7f0600d3 com.minhtt.xemchitay:color/halloweenorange: flags=0x00000000
+      spec resource 0x7f0600d4 com.minhtt.xemchitay:color/pumpkinorange: flags=0x00000000
+      spec resource 0x7f0600d5 com.minhtt.xemchitay:color/constructionconeorange: flags=0x00000000
+      spec resource 0x7f0600d6 com.minhtt.xemchitay:color/sunriseorange: flags=0x00000000
+      spec resource 0x7f0600d7 com.minhtt.xemchitay:color/mangoorange: flags=0x00000000
+      spec resource 0x7f0600d8 com.minhtt.xemchitay:color/darkorange: flags=0x00000000
+      spec resource 0x7f0600d9 com.minhtt.xemchitay:color/coral: flags=0x00000000
+      spec resource 0x7f0600da com.minhtt.xemchitay:color/basketballorange: flags=0x00000000
+      spec resource 0x7f0600db com.minhtt.xemchitay:color/lightsalmon: flags=0x00000000
+      spec resource 0x7f0600dc com.minhtt.xemchitay:color/tangerine: flags=0x00000000
+      spec resource 0x7f0600dd com.minhtt.xemchitay:color/darksalmon: flags=0x00000000
+      spec resource 0x7f0600de com.minhtt.xemchitay:color/lightcoral: flags=0x00000000
+      spec resource 0x7f0600df com.minhtt.xemchitay:color/beanred: flags=0x00000000
+      spec resource 0x7f0600e0 com.minhtt.xemchitay:color/valentinered: flags=0x00000000
+      spec resource 0x7f0600e1 com.minhtt.xemchitay:color/shockingorange: flags=0x00000000
+      spec resource 0x7f0600e2 com.minhtt.xemchitay:color/red: flags=0x00000000
+      spec resource 0x7f0600e3 com.minhtt.xemchitay:color/scarlet: flags=0x00000000
+      spec resource 0x7f0600e4 com.minhtt.xemchitay:color/rubyred: flags=0x00000000
+      spec resource 0x7f0600e5 com.minhtt.xemchitay:color/ferrarired: flags=0x00000000
+      spec resource 0x7f0600e6 com.minhtt.xemchitay:color/fireenginered: flags=0x00000000
+      spec resource 0x7f0600e7 com.minhtt.xemchitay:color/lavared: flags=0x00000000
+      spec resource 0x7f0600e8 com.minhtt.xemchitay:color/lovered: flags=0x00000000
+      spec resource 0x7f0600e9 com.minhtt.xemchitay:color/grapefruit: flags=0x00000000
+      spec resource 0x7f0600ea com.minhtt.xemchitay:color/chestnutred: flags=0x00000000
+      spec resource 0x7f0600eb com.minhtt.xemchitay:color/cherryred: flags=0x00000000
+      spec resource 0x7f0600ec com.minhtt.xemchitay:color/mahagany: flags=0x00000000
+      spec resource 0x7f0600ed com.minhtt.xemchitay:color/chillipepper: flags=0x00000000
+      spec resource 0x7f0600ee com.minhtt.xemchitay:color/cranberry: flags=0x00000000
+      spec resource 0x7f0600ef com.minhtt.xemchitay:color/redwine: flags=0x00000000
+      spec resource 0x7f0600f0 com.minhtt.xemchitay:color/burgundy: flags=0x00000000
+      spec resource 0x7f0600f1 com.minhtt.xemchitay:color/bloodred: flags=0x00000000
+      spec resource 0x7f0600f2 com.minhtt.xemchitay:color/sienna: flags=0x00000000
+      spec resource 0x7f0600f3 com.minhtt.xemchitay:color/sangria: flags=0x00000000
+      spec resource 0x7f0600f4 com.minhtt.xemchitay:color/firebrick: flags=0x00000000
+      spec resource 0x7f0600f5 com.minhtt.xemchitay:color/maroon: flags=0x00000000
+      spec resource 0x7f0600f6 com.minhtt.xemchitay:color/plumpie: flags=0x00000000
+      spec resource 0x7f0600f7 com.minhtt.xemchitay:color/velvetmaroon: flags=0x00000000
+      spec resource 0x7f0600f8 com.minhtt.xemchitay:color/plumvelvet: flags=0x00000000
+      spec resource 0x7f0600f9 com.minhtt.xemchitay:color/rosyfinch: flags=0x00000000
+      spec resource 0x7f0600fa com.minhtt.xemchitay:color/puce: flags=0x00000000
+      spec resource 0x7f0600fb com.minhtt.xemchitay:color/dullpurple: flags=0x00000000
+      spec resource 0x7f0600fc com.minhtt.xemchitay:color/rosybrown: flags=0x00000000
+      spec resource 0x7f0600fd com.minhtt.xemchitay:color/khakirose: flags=0x00000000
+      spec resource 0x7f0600fe com.minhtt.xemchitay:color/pinkbow: flags=0x00000000
+      spec resource 0x7f0600ff com.minhtt.xemchitay:color/lipstickpink: flags=0x00000000
+      spec resource 0x7f060100 com.minhtt.xemchitay:color/rose: flags=0x00000000
+      spec resource 0x7f060101 com.minhtt.xemchitay:color/desertsand: flags=0x00000000
+      spec resource 0x7f060102 com.minhtt.xemchitay:color/pigpink: flags=0x00000000
+      spec resource 0x7f060103 com.minhtt.xemchitay:color/cottoncandy: flags=0x00000000
+      spec resource 0x7f060104 com.minhtt.xemchitay:color/pinkbubblegum: flags=0x00000000
+      spec resource 0x7f060105 com.minhtt.xemchitay:color/mistyrose: flags=0x00000000
+      spec resource 0x7f060106 com.minhtt.xemchitay:color/pink: flags=0x00000000
+      spec resource 0x7f060107 com.minhtt.xemchitay:color/lightpink: flags=0x00000000
+      spec resource 0x7f060108 com.minhtt.xemchitay:color/flamingopink: flags=0x00000000
+      spec resource 0x7f060109 com.minhtt.xemchitay:color/pinkrose: flags=0x00000000
+      spec resource 0x7f06010a com.minhtt.xemchitay:color/pinkdaisy: flags=0x00000000
+      spec resource 0x7f06010b com.minhtt.xemchitay:color/cadillacpink: flags=0x00000000
+      spec resource 0x7f06010c com.minhtt.xemchitay:color/blushred: flags=0x00000000
+      spec resource 0x7f06010d com.minhtt.xemchitay:color/hotpink: flags=0x00000000
+      spec resource 0x7f06010e com.minhtt.xemchitay:color/watermelonpink: flags=0x00000000
+      spec resource 0x7f06010f com.minhtt.xemchitay:color/violetred: flags=0x00000000
+      spec resource 0x7f060110 com.minhtt.xemchitay:color/deeppink: flags=0x00000000
+      spec resource 0x7f060111 com.minhtt.xemchitay:color/pinkcupcake: flags=0x00000000
+      spec resource 0x7f060112 com.minhtt.xemchitay:color/pinklemonade: flags=0x00000000
+      spec resource 0x7f060113 com.minhtt.xemchitay:color/neonpink: flags=0x00000000
+      spec resource 0x7f060114 com.minhtt.xemchitay:color/magenta: flags=0x00000000
+      spec resource 0x7f060115 com.minhtt.xemchitay:color/dimorphothecamagenta: flags=0x00000000
+      spec resource 0x7f060116 com.minhtt.xemchitay:color/brightneonpink: flags=0x00000000
+      spec resource 0x7f060117 com.minhtt.xemchitay:color/palevioletred: flags=0x00000000
+      spec resource 0x7f060118 com.minhtt.xemchitay:color/tulippink: flags=0x00000000
+      spec resource 0x7f060119 com.minhtt.xemchitay:color/mediumvioletred: flags=0x00000000
+      spec resource 0x7f06011a com.minhtt.xemchitay:color/roguepink: flags=0x00000000
+      spec resource 0x7f06011b com.minhtt.xemchitay:color/burntpink: flags=0x00000000
+      spec resource 0x7f06011c com.minhtt.xemchitay:color/bashfulpink: flags=0x00000000
+      spec resource 0x7f06011d com.minhtt.xemchitay:color/carnationpink: flags=0x00000000
+      spec resource 0x7f06011e com.minhtt.xemchitay:color/plum: flags=0x00000000
+      spec resource 0x7f06011f com.minhtt.xemchitay:color/violapurple: flags=0x00000000
+      spec resource 0x7f060120 com.minhtt.xemchitay:color/purpleiris: flags=0x00000000
+      spec resource 0x7f060121 com.minhtt.xemchitay:color/plumpurple: flags=0x00000000
+      spec resource 0x7f060122 com.minhtt.xemchitay:color/indigo: flags=0x00000000
+      spec resource 0x7f060123 com.minhtt.xemchitay:color/purplemonster: flags=0x00000000
+      spec resource 0x7f060124 com.minhtt.xemchitay:color/purplehaze: flags=0x00000000
+      spec resource 0x7f060125 com.minhtt.xemchitay:color/eggplant: flags=0x00000000
+      spec resource 0x7f060126 com.minhtt.xemchitay:color/grape: flags=0x00000000
+      spec resource 0x7f060127 com.minhtt.xemchitay:color/purplejam: flags=0x00000000
+      spec resource 0x7f060128 com.minhtt.xemchitay:color/darkorchid: flags=0x00000000
+      spec resource 0x7f060129 com.minhtt.xemchitay:color/purpleflower: flags=0x00000000
+      spec resource 0x7f06012a com.minhtt.xemchitay:color/mediumorchid: flags=0x00000000
+      spec resource 0x7f06012b com.minhtt.xemchitay:color/purpleamethyst: flags=0x00000000
+      spec resource 0x7f06012c com.minhtt.xemchitay:color/darkviolet: flags=0x00000000
+      spec resource 0x7f06012d com.minhtt.xemchitay:color/violet: flags=0x00000000
+      spec resource 0x7f06012e com.minhtt.xemchitay:color/purplesagebush: flags=0x00000000
+      spec resource 0x7f06012f com.minhtt.xemchitay:color/lovelypurple: flags=0x00000000
+      spec resource 0x7f060130 com.minhtt.xemchitay:color/purple: flags=0x00000000
+      spec resource 0x7f060131 com.minhtt.xemchitay:color/aztechpurple: flags=0x00000000
+      spec resource 0x7f060132 com.minhtt.xemchitay:color/mediumpurple: flags=0x00000000
+      spec resource 0x7f060133 com.minhtt.xemchitay:color/jasminepurple: flags=0x00000000
+      spec resource 0x7f060134 com.minhtt.xemchitay:color/purpledaffodil: flags=0x00000000
+      spec resource 0x7f060135 com.minhtt.xemchitay:color/tyrianpurple: flags=0x00000000
+      spec resource 0x7f060136 com.minhtt.xemchitay:color/crocuspurple: flags=0x00000000
+      spec resource 0x7f060137 com.minhtt.xemchitay:color/purplemimosa: flags=0x00000000
+      spec resource 0x7f060138 com.minhtt.xemchitay:color/heliotropepurple: flags=0x00000000
+      spec resource 0x7f060139 com.minhtt.xemchitay:color/crimson: flags=0x00000000
+      spec resource 0x7f06013a com.minhtt.xemchitay:color/purpledragon: flags=0x00000000
+      spec resource 0x7f06013b com.minhtt.xemchitay:color/lilac: flags=0x00000000
+      spec resource 0x7f06013c com.minhtt.xemchitay:color/blushpink: flags=0x00000000
+      spec resource 0x7f06013d com.minhtt.xemchitay:color/mauve: flags=0x00000000
+      spec resource 0x7f06013e com.minhtt.xemchitay:color/wiseriapurple: flags=0x00000000
+      spec resource 0x7f06013f com.minhtt.xemchitay:color/blossompink: flags=0x00000000
+      spec resource 0x7f060140 com.minhtt.xemchitay:color/thistle: flags=0x00000000
+      spec resource 0x7f060141 com.minhtt.xemchitay:color/periwinkle: flags=0x00000000
+      spec resource 0x7f060142 com.minhtt.xemchitay:color/lavenderpinocchio: flags=0x00000000
+      spec resource 0x7f060143 com.minhtt.xemchitay:color/lavender: flags=0x00000000
+      spec resource 0x7f060144 com.minhtt.xemchitay:color/pearl: flags=0x00000000
+      spec resource 0x7f060145 com.minhtt.xemchitay:color/seashell: flags=0x00000000
+      spec resource 0x7f060146 com.minhtt.xemchitay:color/milkwhite: flags=0x00000000
+      spec resource 0x7f060147 com.minhtt.xemchitay:color/white: flags=0x00000000
+      config (default):
+        resource 0x7f060000 com.minhtt.xemchitay:color/black: t=0x1d d=0xff000000 (s=0x0008 r=0x00)
+        resource 0x7f060001 com.minhtt.xemchitay:color/gunmetal: t=0x1d d=0xff2c3539 (s=0x0008 r=0x00)
+        resource 0x7f060002 com.minhtt.xemchitay:color/midnight: t=0x1d d=0xff2b1b17 (s=0x0008 r=0x00)
+        resource 0x7f060003 com.minhtt.xemchitay:color/charcoal: t=0x1d d=0xff34282c (s=0x0008 r=0x00)
+        resource 0x7f060004 com.minhtt.xemchitay:color/darkslategray: t=0x1d d=0xff25383c (s=0x0008 r=0x00)
+        resource 0x7f060005 com.minhtt.xemchitay:color/oil: t=0x1d d=0xff3b3131 (s=0x0008 r=0x00)
+        resource 0x7f060006 com.minhtt.xemchitay:color/blackcat: t=0x1d d=0xff413839 (s=0x0008 r=0x00)
+        resource 0x7f060007 com.minhtt.xemchitay:color/blackeel: t=0x1d d=0xff463e3f (s=0x0008 r=0x00)
+        resource 0x7f060008 com.minhtt.xemchitay:color/blackcow: t=0x1d d=0xff4c4646 (s=0x0008 r=0x00)
+        resource 0x7f060009 com.minhtt.xemchitay:color/graywolf: t=0x1d d=0xff504a4b (s=0x0008 r=0x00)
+        resource 0x7f06000a com.minhtt.xemchitay:color/vampiregray: t=0x1d d=0xff565051 (s=0x0008 r=0x00)
+        resource 0x7f06000b com.minhtt.xemchitay:color/graydolphin: t=0x1d d=0xff5c5858 (s=0x0008 r=0x00)
+        resource 0x7f06000c com.minhtt.xemchitay:color/carbongray: t=0x1d d=0xff625d5d (s=0x0008 r=0x00)
+        resource 0x7f06000d com.minhtt.xemchitay:color/ashgray: t=0x1d d=0xff666362 (s=0x0008 r=0x00)
+        resource 0x7f06000e com.minhtt.xemchitay:color/cloudygray: t=0x1d d=0xff6d6968 (s=0x0008 r=0x00)
+        resource 0x7f06000f com.minhtt.xemchitay:color/smokeygray: t=0x1d d=0xff726e6d (s=0x0008 r=0x00)
+        resource 0x7f060010 com.minhtt.xemchitay:color/gray: t=0x1d d=0xff736f6e (s=0x0008 r=0x00)
+        resource 0x7f060011 com.minhtt.xemchitay:color/granite: t=0x1d d=0xff837e7c (s=0x0008 r=0x00)
+        resource 0x7f060012 com.minhtt.xemchitay:color/battleshipgray: t=0x1d d=0xff848482 (s=0x0008 r=0x00)
+        resource 0x7f060013 com.minhtt.xemchitay:color/graycloud: t=0x1d d=0xffb6b6b4 (s=0x0008 r=0x00)
+        resource 0x7f060014 com.minhtt.xemchitay:color/graygoose: t=0x1d d=0xffd1d0ce (s=0x0008 r=0x00)
+        resource 0x7f060015 com.minhtt.xemchitay:color/platinum: t=0x1d d=0xffe5e4e2 (s=0x0008 r=0x00)
+        resource 0x7f060016 com.minhtt.xemchitay:color/metallicsilver: t=0x1d d=0xffbcc6cc (s=0x0008 r=0x00)
+        resource 0x7f060017 com.minhtt.xemchitay:color/bluegray: t=0x1d d=0xff98afc7 (s=0x0008 r=0x00)
+        resource 0x7f060018 com.minhtt.xemchitay:color/lightslategray: t=0x1d d=0xff6d7b8d (s=0x0008 r=0x00)
+        resource 0x7f060019 com.minhtt.xemchitay:color/slategray: t=0x1d d=0xff657383 (s=0x0008 r=0x00)
+        resource 0x7f06001a com.minhtt.xemchitay:color/jetgray: t=0x1d d=0xff616d7e (s=0x0008 r=0x00)
+        resource 0x7f06001b com.minhtt.xemchitay:color/mistblue: t=0x1d d=0xff646d7e (s=0x0008 r=0x00)
+        resource 0x7f06001c com.minhtt.xemchitay:color/marbleblue: t=0x1d d=0xff566d7e (s=0x0008 r=0x00)
+        resource 0x7f06001d com.minhtt.xemchitay:color/steelblue: t=0x1d d=0xff4863a0 (s=0x0008 r=0x00)
+        resource 0x7f06001e com.minhtt.xemchitay:color/bluejay: t=0x1d d=0xff2b547e (s=0x0008 r=0x00)
+        resource 0x7f06001f com.minhtt.xemchitay:color/darkslateblue: t=0x1d d=0xff2b3856 (s=0x0008 r=0x00)
+        resource 0x7f060020 com.minhtt.xemchitay:color/midnightblue: t=0x1d d=0xff151b54 (s=0x0008 r=0x00)
+        resource 0x7f060021 com.minhtt.xemchitay:color/navyblue: t=0x1d d=0xff000080 (s=0x0008 r=0x00)
+        resource 0x7f060022 com.minhtt.xemchitay:color/bluewhale: t=0x1d d=0xff342d7e (s=0x0008 r=0x00)
+        resource 0x7f060023 com.minhtt.xemchitay:color/lapisblue: t=0x1d d=0xff15317e (s=0x0008 r=0x00)
+        resource 0x7f060024 com.minhtt.xemchitay:color/earthblue: t=0x1d d=0xff0000a0 (s=0x0008 r=0x00)
+        resource 0x7f060025 com.minhtt.xemchitay:color/cobaltblue: t=0x1d d=0xff0020c2 (s=0x0008 r=0x00)
+        resource 0x7f060026 com.minhtt.xemchitay:color/blueberryblue: t=0x1d d=0xff0041c2 (s=0x0008 r=0x00)
+        resource 0x7f060027 com.minhtt.xemchitay:color/sapphireblue: t=0x1d d=0xff2554c7 (s=0x0008 r=0x00)
+        resource 0x7f060028 com.minhtt.xemchitay:color/blueeyes: t=0x1d d=0xff1569c7 (s=0x0008 r=0x00)
+        resource 0x7f060029 com.minhtt.xemchitay:color/royalblue: t=0x1d d=0xff2b60de (s=0x0008 r=0x00)
+        resource 0x7f06002a com.minhtt.xemchitay:color/blueorchid: t=0x1d d=0xff1f45fc (s=0x0008 r=0x00)
+        resource 0x7f06002b com.minhtt.xemchitay:color/bluelotus: t=0x1d d=0xff6960ec (s=0x0008 r=0x00)
+        resource 0x7f06002c com.minhtt.xemchitay:color/lightslateblue: t=0x1d d=0xff736aff (s=0x0008 r=0x00)
+        resource 0x7f06002d com.minhtt.xemchitay:color/slateblue: t=0x1d d=0xff357ec7 (s=0x0008 r=0x00)
+        resource 0x7f06002e com.minhtt.xemchitay:color/silkblue: t=0x1d d=0xff488ac7 (s=0x0008 r=0x00)
+        resource 0x7f06002f com.minhtt.xemchitay:color/blueivy: t=0x1d d=0xff3090c7 (s=0x0008 r=0x00)
+        resource 0x7f060030 com.minhtt.xemchitay:color/bluekoi: t=0x1d d=0xff659ec7 (s=0x0008 r=0x00)
+        resource 0x7f060031 com.minhtt.xemchitay:color/columbiablue: t=0x1d d=0xff87afc7 (s=0x0008 r=0x00)
+        resource 0x7f060032 com.minhtt.xemchitay:color/babyblue: t=0x1d d=0xff95b9c7 (s=0x0008 r=0x00)
+        resource 0x7f060033 com.minhtt.xemchitay:color/lightsteelblue: t=0x1d d=0xff728fce (s=0x0008 r=0x00)
+        resource 0x7f060034 com.minhtt.xemchitay:color/oceanblue: t=0x1d d=0xff2b65ec (s=0x0008 r=0x00)
+        resource 0x7f060035 com.minhtt.xemchitay:color/blueribbon: t=0x1d d=0xff306eff (s=0x0008 r=0x00)
+        resource 0x7f060036 com.minhtt.xemchitay:color/bluedress: t=0x1d d=0xff157dec (s=0x0008 r=0x00)
+        resource 0x7f060037 com.minhtt.xemchitay:color/dodgerblue: t=0x1d d=0xff1589ff (s=0x0008 r=0x00)
+        resource 0x7f060038 com.minhtt.xemchitay:color/cornflowerblue: t=0x1d d=0xff6495ed (s=0x0008 r=0x00)
+        resource 0x7f060039 com.minhtt.xemchitay:color/butterflyblue: t=0x1d d=0xff38acec (s=0x0008 r=0x00)
+        resource 0x7f06003a com.minhtt.xemchitay:color/iceberg: t=0x1d d=0xff56a5ec (s=0x0008 r=0x00)
+        resource 0x7f06003b com.minhtt.xemchitay:color/crystalblue: t=0x1d d=0xff5cb3ff (s=0x0008 r=0x00)
+        resource 0x7f06003c com.minhtt.xemchitay:color/deepskyblue: t=0x1d d=0xff3bb9ff (s=0x0008 r=0x00)
+        resource 0x7f06003d com.minhtt.xemchitay:color/denimblue: t=0x1d d=0xff79baec (s=0x0008 r=0x00)
+        resource 0x7f06003e com.minhtt.xemchitay:color/lightskyblue: t=0x1d d=0xff82cafa (s=0x0008 r=0x00)
+        resource 0x7f06003f com.minhtt.xemchitay:color/skyblue: t=0x1d d=0xff82caff (s=0x0008 r=0x00)
+        resource 0x7f060040 com.minhtt.xemchitay:color/jeansblue: t=0x1d d=0xffa0cfec (s=0x0008 r=0x00)
+        resource 0x7f060041 com.minhtt.xemchitay:color/blueangel: t=0x1d d=0xffb7ceec (s=0x0008 r=0x00)
+        resource 0x7f060042 com.minhtt.xemchitay:color/pastelblue: t=0x1d d=0xffb4cfec (s=0x0008 r=0x00)
+        resource 0x7f060043 com.minhtt.xemchitay:color/seablue: t=0x1d d=0xffc2dfff (s=0x0008 r=0x00)
+        resource 0x7f060044 com.minhtt.xemchitay:color/powderblue: t=0x1d d=0xffc6deff (s=0x0008 r=0x00)
+        resource 0x7f060045 com.minhtt.xemchitay:color/coralblue: t=0x1d d=0xffafdcec (s=0x0008 r=0x00)
+        resource 0x7f060046 com.minhtt.xemchitay:color/lightblue: t=0x1d d=0xffaddfff (s=0x0008 r=0x00)
+        resource 0x7f060047 com.minhtt.xemchitay:color/robineggblue: t=0x1d d=0xffbdedff (s=0x0008 r=0x00)
+        resource 0x7f060048 com.minhtt.xemchitay:color/palebluelily: t=0x1d d=0xffcfecec (s=0x0008 r=0x00)
+        resource 0x7f060049 com.minhtt.xemchitay:color/lightcyan: t=0x1d d=0xffe0ffff (s=0x0008 r=0x00)
+        resource 0x7f06004a com.minhtt.xemchitay:color/water: t=0x1d d=0xffebf4fa (s=0x0008 r=0x00)
+        resource 0x7f06004b com.minhtt.xemchitay:color/aliceblue: t=0x1d d=0xfff0f8ff (s=0x0008 r=0x00)
+        resource 0x7f06004c com.minhtt.xemchitay:color/azure: t=0x1d d=0xfff0ffff (s=0x0008 r=0x00)
+        resource 0x7f06004d com.minhtt.xemchitay:color/lightslate: t=0x1d d=0xffccffff (s=0x0008 r=0x00)
+        resource 0x7f06004e com.minhtt.xemchitay:color/lightaquamarine: t=0x1d d=0xff93ffe8 (s=0x0008 r=0x00)
+        resource 0x7f06004f com.minhtt.xemchitay:color/electricblue: t=0x1d d=0xff9afeff (s=0x0008 r=0x00)
+        resource 0x7f060050 com.minhtt.xemchitay:color/aquamarine: t=0x1d d=0xff7fffd4 (s=0x0008 r=0x00)
+        resource 0x7f060051 com.minhtt.xemchitay:color/cyanoraqua: t=0x1d d=0xff00ffff (s=0x0008 r=0x00)
+        resource 0x7f060052 com.minhtt.xemchitay:color/tronblue: t=0x1d d=0xff7dfdfe (s=0x0008 r=0x00)
+        resource 0x7f060053 com.minhtt.xemchitay:color/bluezircon: t=0x1d d=0xff57feff (s=0x0008 r=0x00)
+        resource 0x7f060054 com.minhtt.xemchitay:color/bluelagoon: t=0x1d d=0xff8eebec (s=0x0008 r=0x00)
+        resource 0x7f060055 com.minhtt.xemchitay:color/celeste: t=0x1d d=0xff50ebec (s=0x0008 r=0x00)
+        resource 0x7f060056 com.minhtt.xemchitay:color/bluediamond: t=0x1d d=0xff4ee2ec (s=0x0008 r=0x00)
+        resource 0x7f060057 com.minhtt.xemchitay:color/tiffanyblue: t=0x1d d=0xff81d8d0 (s=0x0008 r=0x00)
+        resource 0x7f060058 com.minhtt.xemchitay:color/cyanopaque: t=0x1d d=0xff92c7c7 (s=0x0008 r=0x00)
+        resource 0x7f060059 com.minhtt.xemchitay:color/bluehosta: t=0x1d d=0xff77bfc7 (s=0x0008 r=0x00)
+        resource 0x7f06005a com.minhtt.xemchitay:color/northernlightsblue: t=0x1d d=0xff78c7c7 (s=0x0008 r=0x00)
+        resource 0x7f06005b com.minhtt.xemchitay:color/mediumturquoise: t=0x1d d=0xff48cccd (s=0x0008 r=0x00)
+        resource 0x7f06005c com.minhtt.xemchitay:color/turquoise: t=0x1d d=0xff43c6db (s=0x0008 r=0x00)
+        resource 0x7f06005d com.minhtt.xemchitay:color/jellyfish: t=0x1d d=0xff46c7c7 (s=0x0008 r=0x00)
+        resource 0x7f06005e com.minhtt.xemchitay:color/mascawbluegreen: t=0x1d d=0xff43bfc7 (s=0x0008 r=0x00)
+        resource 0x7f06005f com.minhtt.xemchitay:color/lightseagreen: t=0x1d d=0xff3ea99f (s=0x0008 r=0x00)
+        resource 0x7f060060 com.minhtt.xemchitay:color/darkturquoise: t=0x1d d=0xff3b9c9c (s=0x0008 r=0x00)
+        resource 0x7f060061 com.minhtt.xemchitay:color/seaturtlegreen: t=0x1d d=0xff438d80 (s=0x0008 r=0x00)
+        resource 0x7f060062 com.minhtt.xemchitay:color/mediumaquamarine: t=0x1d d=0xff348781 (s=0x0008 r=0x00)
+        resource 0x7f060063 com.minhtt.xemchitay:color/greenishblue: t=0x1d d=0xff307d7e (s=0x0008 r=0x00)
+        resource 0x7f060064 com.minhtt.xemchitay:color/grayishturquoise: t=0x1d d=0xff5e7d7e (s=0x0008 r=0x00)
+        resource 0x7f060065 com.minhtt.xemchitay:color/beetlegreen: t=0x1d d=0xff4c787e (s=0x0008 r=0x00)
+        resource 0x7f060066 com.minhtt.xemchitay:color/teal: t=0x1d d=0xff008080 (s=0x0008 r=0x00)
+        resource 0x7f060067 com.minhtt.xemchitay:color/seagreen: t=0x1d d=0xff4e8975 (s=0x0008 r=0x00)
+        resource 0x7f060068 com.minhtt.xemchitay:color/camouflagegreen: t=0x1d d=0xff78866b (s=0x0008 r=0x00)
+        resource 0x7f060069 com.minhtt.xemchitay:color/hazelgreen: t=0x1d d=0xff617c58 (s=0x0008 r=0x00)
+        resource 0x7f06006a com.minhtt.xemchitay:color/venomgreen: t=0x1d d=0xff728c00 (s=0x0008 r=0x00)
+        resource 0x7f06006b com.minhtt.xemchitay:color/ferngreen: t=0x1d d=0xff667c26 (s=0x0008 r=0x00)
+        resource 0x7f06006c com.minhtt.xemchitay:color/darkforrestgreen: t=0x1d d=0xff254117 (s=0x0008 r=0x00)
+        resource 0x7f06006d com.minhtt.xemchitay:color/mediumseagreen: t=0x1d d=0xff306754 (s=0x0008 r=0x00)
+        resource 0x7f06006e com.minhtt.xemchitay:color/mediumforestgreen: t=0x1d d=0xff347235 (s=0x0008 r=0x00)
+        resource 0x7f06006f com.minhtt.xemchitay:color/seaweedgreen: t=0x1d d=0xff437c17 (s=0x0008 r=0x00)
+        resource 0x7f060070 com.minhtt.xemchitay:color/pinegreen: t=0x1d d=0xff387c44 (s=0x0008 r=0x00)
+        resource 0x7f060071 com.minhtt.xemchitay:color/junglegreen: t=0x1d d=0xff347c2c (s=0x0008 r=0x00)
+        resource 0x7f060072 com.minhtt.xemchitay:color/shamrockgreen: t=0x1d d=0xff347c17 (s=0x0008 r=0x00)
+        resource 0x7f060073 com.minhtt.xemchitay:color/mediumspringgreen: t=0x1d d=0xff348017 (s=0x0008 r=0x00)
+        resource 0x7f060074 com.minhtt.xemchitay:color/forestgreen: t=0x1d d=0xff4e9258 (s=0x0008 r=0x00)
+        resource 0x7f060075 com.minhtt.xemchitay:color/greenonion: t=0x1d d=0xff6aa121 (s=0x0008 r=0x00)
+        resource 0x7f060076 com.minhtt.xemchitay:color/springgreen: t=0x1d d=0xff4aa02c (s=0x0008 r=0x00)
+        resource 0x7f060077 com.minhtt.xemchitay:color/limegreen: t=0x1d d=0xff41a317 (s=0x0008 r=0x00)
+        resource 0x7f060078 com.minhtt.xemchitay:color/clovergreen: t=0x1d d=0xff3ea055 (s=0x0008 r=0x00)
+        resource 0x7f060079 com.minhtt.xemchitay:color/greensnake: t=0x1d d=0xff6cbb3c (s=0x0008 r=0x00)
+        resource 0x7f06007a com.minhtt.xemchitay:color/aliengreen: t=0x1d d=0xff6cc417 (s=0x0008 r=0x00)
+        resource 0x7f06007b com.minhtt.xemchitay:color/greenapple: t=0x1d d=0xff4cc417 (s=0x0008 r=0x00)
+        resource 0x7f06007c com.minhtt.xemchitay:color/yellowgreen: t=0x1d d=0xff52d017 (s=0x0008 r=0x00)
+        resource 0x7f06007d com.minhtt.xemchitay:color/kellygreen: t=0x1d d=0xff4cc552 (s=0x0008 r=0x00)
+        resource 0x7f06007e com.minhtt.xemchitay:color/zombiegreen: t=0x1d d=0xff54c571 (s=0x0008 r=0x00)
+        resource 0x7f06007f com.minhtt.xemchitay:color/froggreen: t=0x1d d=0xff99c68e (s=0x0008 r=0x00)
+        resource 0x7f060080 com.minhtt.xemchitay:color/greenpeas: t=0x1d d=0xff89c35c (s=0x0008 r=0x00)
+        resource 0x7f060081 com.minhtt.xemchitay:color/dollarbillgreen: t=0x1d d=0xff85bb65 (s=0x0008 r=0x00)
+        resource 0x7f060082 com.minhtt.xemchitay:color/darkseagreen: t=0x1d d=0xff8bb381 (s=0x0008 r=0x00)
+        resource 0x7f060083 com.minhtt.xemchitay:color/iguanagreen: t=0x1d d=0xff9cb071 (s=0x0008 r=0x00)
+        resource 0x7f060084 com.minhtt.xemchitay:color/avocadogreen: t=0x1d d=0xffb2c248 (s=0x0008 r=0x00)
+        resource 0x7f060085 com.minhtt.xemchitay:color/pistachiogreen: t=0x1d d=0xff9dc209 (s=0x0008 r=0x00)
+        resource 0x7f060086 com.minhtt.xemchitay:color/saladgreen: t=0x1d d=0xffa1c935 (s=0x0008 r=0x00)
+        resource 0x7f060087 com.minhtt.xemchitay:color/hummingbirdgreen: t=0x1d d=0xff7fe817 (s=0x0008 r=0x00)
+        resource 0x7f060088 com.minhtt.xemchitay:color/nebulagreen: t=0x1d d=0xff59e817 (s=0x0008 r=0x00)
+        resource 0x7f060089 com.minhtt.xemchitay:color/stoplightgogreen: t=0x1d d=0xff57e964 (s=0x0008 r=0x00)
+        resource 0x7f06008a com.minhtt.xemchitay:color/algaegreen: t=0x1d d=0xff64e986 (s=0x0008 r=0x00)
+        resource 0x7f06008b com.minhtt.xemchitay:color/jade: t=0x1d d=0xff5efb6e (s=0x0008 r=0x00)
+        resource 0x7f06008c com.minhtt.xemchitay:color/green: t=0x1d d=0xff00ff00 (s=0x0008 r=0x00)
+        resource 0x7f06008d com.minhtt.xemchitay:color/emeraldgreen: t=0x1d d=0xff5ffb17 (s=0x0008 r=0x00)
+        resource 0x7f06008e com.minhtt.xemchitay:color/lawngreen: t=0x1d d=0xff87f717 (s=0x0008 r=0x00)
+        resource 0x7f06008f com.minhtt.xemchitay:color/chartreuse: t=0x1d d=0xff8afb17 (s=0x0008 r=0x00)
+        resource 0x7f060090 com.minhtt.xemchitay:color/dragongreen: t=0x1d d=0xff6afb92 (s=0x0008 r=0x00)
+        resource 0x7f060091 com.minhtt.xemchitay:color/mintgreen: t=0x1d d=0xff98ff98 (s=0x0008 r=0x00)
+        resource 0x7f060092 com.minhtt.xemchitay:color/greenthumb: t=0x1d d=0xffb5eaaa (s=0x0008 r=0x00)
+        resource 0x7f060093 com.minhtt.xemchitay:color/lightjade: t=0x1d d=0xffc3fdb8 (s=0x0008 r=0x00)
+        resource 0x7f060094 com.minhtt.xemchitay:color/teagreen: t=0x1d d=0xffccfb5d (s=0x0008 r=0x00)
+        resource 0x7f060095 com.minhtt.xemchitay:color/greenyellow: t=0x1d d=0xffb1fb17 (s=0x0008 r=0x00)
+        resource 0x7f060096 com.minhtt.xemchitay:color/slimegreen: t=0x1d d=0xffbce954 (s=0x0008 r=0x00)
+        resource 0x7f060097 com.minhtt.xemchitay:color/goldenrod: t=0x1d d=0xffedda74 (s=0x0008 r=0x00)
+        resource 0x7f060098 com.minhtt.xemchitay:color/harvestgold: t=0x1d d=0xffede275 (s=0x0008 r=0x00)
+        resource 0x7f060099 com.minhtt.xemchitay:color/sunyellow: t=0x1d d=0xffffe87c (s=0x0008 r=0x00)
+        resource 0x7f06009a com.minhtt.xemchitay:color/yellow: t=0x1d d=0xffffff00 (s=0x0008 r=0x00)
+        resource 0x7f06009b com.minhtt.xemchitay:color/cornyellow: t=0x1d d=0xfffff380 (s=0x0008 r=0x00)
+        resource 0x7f06009c com.minhtt.xemchitay:color/parchment: t=0x1d d=0xffffffc2 (s=0x0008 r=0x00)
+        resource 0x7f06009d com.minhtt.xemchitay:color/cream: t=0x1d d=0xffffffcc (s=0x0008 r=0x00)
+        resource 0x7f06009e com.minhtt.xemchitay:color/lemonchiffon: t=0x1d d=0xfffff8c6 (s=0x0008 r=0x00)
+        resource 0x7f06009f com.minhtt.xemchitay:color/cornsilk: t=0x1d d=0xfffff8dc (s=0x0008 r=0x00)
+        resource 0x7f0600a0 com.minhtt.xemchitay:color/beige: t=0x1d d=0xfff5f5dc (s=0x0008 r=0x00)
+        resource 0x7f0600a1 com.minhtt.xemchitay:color/antiquewhite: t=0x1d d=0xfffaebd7 (s=0x0008 r=0x00)
+        resource 0x7f0600a2 com.minhtt.xemchitay:color/blanchedalmond: t=0x1d d=0xffffebcd (s=0x0008 r=0x00)
+        resource 0x7f0600a3 com.minhtt.xemchitay:color/vanilla: t=0x1d d=0xfff3e5ab (s=0x0008 r=0x00)
+        resource 0x7f0600a4 com.minhtt.xemchitay:color/tanbrown: t=0x1d d=0xffece5b6 (s=0x0008 r=0x00)
+        resource 0x7f0600a5 com.minhtt.xemchitay:color/peach: t=0x1d d=0xffffe5b4 (s=0x0008 r=0x00)
+        resource 0x7f0600a6 com.minhtt.xemchitay:color/mustard: t=0x1d d=0xffffdb58 (s=0x0008 r=0x00)
+        resource 0x7f0600a7 com.minhtt.xemchitay:color/rubberduckyyellow: t=0x1d d=0xffffd801 (s=0x0008 r=0x00)
+        resource 0x7f0600a8 com.minhtt.xemchitay:color/brightgold: t=0x1d d=0xfffdd017 (s=0x0008 r=0x00)
+        resource 0x7f0600a9 com.minhtt.xemchitay:color/golden: t=0x1d d=0xffeac117 (s=0x0008 r=0x00)
+        resource 0x7f0600aa com.minhtt.xemchitay:color/macaroniandcheese: t=0x1d d=0xfff2bb66 (s=0x0008 r=0x00)
+        resource 0x7f0600ab com.minhtt.xemchitay:color/saffron: t=0x1d d=0xfffbb917 (s=0x0008 r=0x00)
+        resource 0x7f0600ac com.minhtt.xemchitay:color/beer: t=0x1d d=0xfffbb117 (s=0x0008 r=0x00)
+        resource 0x7f0600ad com.minhtt.xemchitay:color/cantaloupe: t=0x1d d=0xffffa62f (s=0x0008 r=0x00)
+        resource 0x7f0600ae com.minhtt.xemchitay:color/beeyellow: t=0x1d d=0xffe9ab17 (s=0x0008 r=0x00)
+        resource 0x7f0600af com.minhtt.xemchitay:color/brownsugar: t=0x1d d=0xffe2a76f (s=0x0008 r=0x00)
+        resource 0x7f0600b0 com.minhtt.xemchitay:color/burlywood: t=0x1d d=0xffdeb887 (s=0x0008 r=0x00)
+        resource 0x7f0600b1 com.minhtt.xemchitay:color/deeppeach: t=0x1d d=0xffffcba4 (s=0x0008 r=0x00)
+        resource 0x7f0600b2 com.minhtt.xemchitay:color/gingerbrown: t=0x1d d=0xffc9be62 (s=0x0008 r=0x00)
+        resource 0x7f0600b3 com.minhtt.xemchitay:color/schoolbusyellow: t=0x1d d=0xffe8a317 (s=0x0008 r=0x00)
+        resource 0x7f0600b4 com.minhtt.xemchitay:color/sandybrown: t=0x1d d=0xffee9a4d (s=0x0008 r=0x00)
+        resource 0x7f0600b5 com.minhtt.xemchitay:color/fallleafbrown: t=0x1d d=0xffc8b560 (s=0x0008 r=0x00)
+        resource 0x7f0600b6 com.minhtt.xemchitay:color/gold: t=0x1d d=0xffd4a017 (s=0x0008 r=0x00)
+        resource 0x7f0600b7 com.minhtt.xemchitay:color/sand: t=0x1d d=0xffc2b280 (s=0x0008 r=0x00)
+        resource 0x7f0600b8 com.minhtt.xemchitay:color/cookiebrown: t=0x1d d=0xffc7a317 (s=0x0008 r=0x00)
+        resource 0x7f0600b9 com.minhtt.xemchitay:color/caramel: t=0x1d d=0xffc68e17 (s=0x0008 r=0x00)
+        resource 0x7f0600ba com.minhtt.xemchitay:color/brass: t=0x1d d=0xffb5a642 (s=0x0008 r=0x00)
+        resource 0x7f0600bb com.minhtt.xemchitay:color/khaki: t=0x1d d=0xffada96e (s=0x0008 r=0x00)
+        resource 0x7f0600bc com.minhtt.xemchitay:color/camelbrown: t=0x1d d=0xffc19a6b (s=0x0008 r=0x00)
+        resource 0x7f0600bd com.minhtt.xemchitay:color/bronze: t=0x1d d=0xffcd7f32 (s=0x0008 r=0x00)
+        resource 0x7f0600be com.minhtt.xemchitay:color/tigerorange: t=0x1d d=0xffc88141 (s=0x0008 r=0x00)
+        resource 0x7f0600bf com.minhtt.xemchitay:color/cinnamon: t=0x1d d=0xffc58917 (s=0x0008 r=0x00)
+        resource 0x7f0600c0 com.minhtt.xemchitay:color/darkgoldenrod: t=0x1d d=0xffaf7817 (s=0x0008 r=0x00)
+        resource 0x7f0600c1 com.minhtt.xemchitay:color/copper: t=0x1d d=0xffb87333 (s=0x0008 r=0x00)
+        resource 0x7f0600c2 com.minhtt.xemchitay:color/wood: t=0x1d d=0xff966f33 (s=0x0008 r=0x00)
+        resource 0x7f0600c3 com.minhtt.xemchitay:color/oakbrown: t=0x1d d=0xff806517 (s=0x0008 r=0x00)
+        resource 0x7f0600c4 com.minhtt.xemchitay:color/moccasin: t=0x1d d=0xff827839 (s=0x0008 r=0x00)
+        resource 0x7f0600c5 com.minhtt.xemchitay:color/armybrown: t=0x1d d=0xff827b60 (s=0x0008 r=0x00)
+        resource 0x7f0600c6 com.minhtt.xemchitay:color/sandstone: t=0x1d d=0xff786d5f (s=0x0008 r=0x00)
+        resource 0x7f0600c7 com.minhtt.xemchitay:color/mocha: t=0x1d d=0xff493d26 (s=0x0008 r=0x00)
+        resource 0x7f0600c8 com.minhtt.xemchitay:color/taupe: t=0x1d d=0xff483c32 (s=0x0008 r=0x00)
+        resource 0x7f0600c9 com.minhtt.xemchitay:color/coffee: t=0x1d d=0xff6f4e37 (s=0x0008 r=0x00)
+        resource 0x7f0600ca com.minhtt.xemchitay:color/brownbear: t=0x1d d=0xff835c3b (s=0x0008 r=0x00)
+        resource 0x7f0600cb com.minhtt.xemchitay:color/reddirt: t=0x1d d=0xff7f5217 (s=0x0008 r=0x00)
+        resource 0x7f0600cc com.minhtt.xemchitay:color/sepia: t=0x1d d=0xff7f462c (s=0x0008 r=0x00)
+        resource 0x7f0600cd com.minhtt.xemchitay:color/orangesalmon: t=0x1d d=0xffc47451 (s=0x0008 r=0x00)
+        resource 0x7f0600ce com.minhtt.xemchitay:color/rust: t=0x1d d=0xffc36241 (s=0x0008 r=0x00)
+        resource 0x7f0600cf com.minhtt.xemchitay:color/redfox: t=0x1d d=0xffc35817 (s=0x0008 r=0x00)
+        resource 0x7f0600d0 com.minhtt.xemchitay:color/chocolate: t=0x1d d=0xffc85a17 (s=0x0008 r=0x00)
+        resource 0x7f0600d1 com.minhtt.xemchitay:color/sedona: t=0x1d d=0xffcc6600 (s=0x0008 r=0x00)
+        resource 0x7f0600d2 com.minhtt.xemchitay:color/papayaorange: t=0x1d d=0xffe56717 (s=0x0008 r=0x00)
+        resource 0x7f0600d3 com.minhtt.xemchitay:color/halloweenorange: t=0x1d d=0xffe66c2c (s=0x0008 r=0x00)
+        resource 0x7f0600d4 com.minhtt.xemchitay:color/pumpkinorange: t=0x1d d=0xfff87217 (s=0x0008 r=0x00)
+        resource 0x7f0600d5 com.minhtt.xemchitay:color/constructionconeorange: t=0x1d d=0xfff87431 (s=0x0008 r=0x00)
+        resource 0x7f0600d6 com.minhtt.xemchitay:color/sunriseorange: t=0x1d d=0xffe67451 (s=0x0008 r=0x00)
+        resource 0x7f0600d7 com.minhtt.xemchitay:color/mangoorange: t=0x1d d=0xffff8040 (s=0x0008 r=0x00)
+        resource 0x7f0600d8 com.minhtt.xemchitay:color/darkorange: t=0x1d d=0xfff88017 (s=0x0008 r=0x00)
+        resource 0x7f0600d9 com.minhtt.xemchitay:color/coral: t=0x1d d=0xffff7f50 (s=0x0008 r=0x00)
+        resource 0x7f0600da com.minhtt.xemchitay:color/basketballorange: t=0x1d d=0xfff88158 (s=0x0008 r=0x00)
+        resource 0x7f0600db com.minhtt.xemchitay:color/lightsalmon: t=0x1d d=0xfff9966b (s=0x0008 r=0x00)
+        resource 0x7f0600dc com.minhtt.xemchitay:color/tangerine: t=0x1d d=0xffe78a61 (s=0x0008 r=0x00)
+        resource 0x7f0600dd com.minhtt.xemchitay:color/darksalmon: t=0x1d d=0xffe18b6b (s=0x0008 r=0x00)
+        resource 0x7f0600de com.minhtt.xemchitay:color/lightcoral: t=0x1d d=0xffe77471 (s=0x0008 r=0x00)
+        resource 0x7f0600df com.minhtt.xemchitay:color/beanred: t=0x1d d=0xfff75d59 (s=0x0008 r=0x00)
+        resource 0x7f0600e0 com.minhtt.xemchitay:color/valentinered: t=0x1d d=0xffe55451 (s=0x0008 r=0x00)
+        resource 0x7f0600e1 com.minhtt.xemchitay:color/shockingorange: t=0x1d d=0xffe55b3c (s=0x0008 r=0x00)
+        resource 0x7f0600e2 com.minhtt.xemchitay:color/red: t=0x1d d=0xffff0000 (s=0x0008 r=0x00)
+        resource 0x7f0600e3 com.minhtt.xemchitay:color/scarlet: t=0x1d d=0xffff2400 (s=0x0008 r=0x00)
+        resource 0x7f0600e4 com.minhtt.xemchitay:color/rubyred: t=0x1d d=0xfff62217 (s=0x0008 r=0x00)
+        resource 0x7f0600e5 com.minhtt.xemchitay:color/ferrarired: t=0x1d d=0xfff70d1a (s=0x0008 r=0x00)
+        resource 0x7f0600e6 com.minhtt.xemchitay:color/fireenginered: t=0x1d d=0xfff62817 (s=0x0008 r=0x00)
+        resource 0x7f0600e7 com.minhtt.xemchitay:color/lavared: t=0x1d d=0xffe42217 (s=0x0008 r=0x00)
+        resource 0x7f0600e8 com.minhtt.xemchitay:color/lovered: t=0x1d d=0xffe41b17 (s=0x0008 r=0x00)
+        resource 0x7f0600e9 com.minhtt.xemchitay:color/grapefruit: t=0x1d d=0xffdc381f (s=0x0008 r=0x00)
+        resource 0x7f0600ea com.minhtt.xemchitay:color/chestnutred: t=0x1d d=0xffc34a2c (s=0x0008 r=0x00)
+        resource 0x7f0600eb com.minhtt.xemchitay:color/cherryred: t=0x1d d=0xffc24641 (s=0x0008 r=0x00)
+        resource 0x7f0600ec com.minhtt.xemchitay:color/mahagany: t=0x1d d=0xffc04000 (s=0x0008 r=0x00)
+        resource 0x7f0600ed com.minhtt.xemchitay:color/chillipepper: t=0x1d d=0xffc11b17 (s=0x0008 r=0x00)
+        resource 0x7f0600ee com.minhtt.xemchitay:color/cranberry: t=0x1d d=0xff9f000f (s=0x0008 r=0x00)
+        resource 0x7f0600ef com.minhtt.xemchitay:color/redwine: t=0x1d d=0xff990012 (s=0x0008 r=0x00)
+        resource 0x7f0600f0 com.minhtt.xemchitay:color/burgundy: t=0x1d d=0xff8c001a (s=0x0008 r=0x00)
+        resource 0x7f0600f1 com.minhtt.xemchitay:color/bloodred: t=0x1d d=0xff7e3517 (s=0x0008 r=0x00)
+        resource 0x7f0600f2 com.minhtt.xemchitay:color/sienna: t=0x1d d=0xff8a4117 (s=0x0008 r=0x00)
+        resource 0x7f0600f3 com.minhtt.xemchitay:color/sangria: t=0x1d d=0xff7e3817 (s=0x0008 r=0x00)
+        resource 0x7f0600f4 com.minhtt.xemchitay:color/firebrick: t=0x1d d=0xff800517 (s=0x0008 r=0x00)
+        resource 0x7f0600f5 com.minhtt.xemchitay:color/maroon: t=0x1d d=0xff810541 (s=0x0008 r=0x00)
+        resource 0x7f0600f6 com.minhtt.xemchitay:color/plumpie: t=0x1d d=0xff7d0541 (s=0x0008 r=0x00)
+        resource 0x7f0600f7 com.minhtt.xemchitay:color/velvetmaroon: t=0x1d d=0xff7e354d (s=0x0008 r=0x00)
+        resource 0x7f0600f8 com.minhtt.xemchitay:color/plumvelvet: t=0x1d d=0xff7d0552 (s=0x0008 r=0x00)
+        resource 0x7f0600f9 com.minhtt.xemchitay:color/rosyfinch: t=0x1d d=0xff7f4e52 (s=0x0008 r=0x00)
+        resource 0x7f0600fa com.minhtt.xemchitay:color/puce: t=0x1d d=0xff7f5a58 (s=0x0008 r=0x00)
+        resource 0x7f0600fb com.minhtt.xemchitay:color/dullpurple: t=0x1d d=0xff7f525d (s=0x0008 r=0x00)
+        resource 0x7f0600fc com.minhtt.xemchitay:color/rosybrown: t=0x1d d=0xffb38481 (s=0x0008 r=0x00)
+        resource 0x7f0600fd com.minhtt.xemchitay:color/khakirose: t=0x1d d=0xffc5908e (s=0x0008 r=0x00)
+        resource 0x7f0600fe com.minhtt.xemchitay:color/pinkbow: t=0x1d d=0xffc48189 (s=0x0008 r=0x00)
+        resource 0x7f0600ff com.minhtt.xemchitay:color/lipstickpink: t=0x1d d=0xffc48793 (s=0x0008 r=0x00)
+        resource 0x7f060100 com.minhtt.xemchitay:color/rose: t=0x1d d=0xffe8adaa (s=0x0008 r=0x00)
+        resource 0x7f060101 com.minhtt.xemchitay:color/desertsand: t=0x1d d=0xffedc9af (s=0x0008 r=0x00)
+        resource 0x7f060102 com.minhtt.xemchitay:color/pigpink: t=0x1d d=0xfffdd7e4 (s=0x0008 r=0x00)
+        resource 0x7f060103 com.minhtt.xemchitay:color/cottoncandy: t=0x1d d=0xfffcdfff (s=0x0008 r=0x00)
+        resource 0x7f060104 com.minhtt.xemchitay:color/pinkbubblegum: t=0x1d d=0xffffdfdd (s=0x0008 r=0x00)
+        resource 0x7f060105 com.minhtt.xemchitay:color/mistyrose: t=0x1d d=0xfffbbbb9 (s=0x0008 r=0x00)
+        resource 0x7f060106 com.minhtt.xemchitay:color/pink: t=0x1d d=0xfffaafbe (s=0x0008 r=0x00)
+        resource 0x7f060107 com.minhtt.xemchitay:color/lightpink: t=0x1d d=0xfffaafba (s=0x0008 r=0x00)
+        resource 0x7f060108 com.minhtt.xemchitay:color/flamingopink: t=0x1d d=0xfff9a7b0 (s=0x0008 r=0x00)
+        resource 0x7f060109 com.minhtt.xemchitay:color/pinkrose: t=0x1d d=0xffe7a1b0 (s=0x0008 r=0x00)
+        resource 0x7f06010a com.minhtt.xemchitay:color/pinkdaisy: t=0x1d d=0xffe799a3 (s=0x0008 r=0x00)
+        resource 0x7f06010b com.minhtt.xemchitay:color/cadillacpink: t=0x1d d=0xffe38aae (s=0x0008 r=0x00)
+        resource 0x7f06010c com.minhtt.xemchitay:color/blushred: t=0x1d d=0xffe56e94 (s=0x0008 r=0x00)
+        resource 0x7f06010d com.minhtt.xemchitay:color/hotpink: t=0x1d d=0xfff660ab (s=0x0008 r=0x00)
+        resource 0x7f06010e com.minhtt.xemchitay:color/watermelonpink: t=0x1d d=0xfffc6c85 (s=0x0008 r=0x00)
+        resource 0x7f06010f com.minhtt.xemchitay:color/violetred: t=0x1d d=0xfff6358a (s=0x0008 r=0x00)
+        resource 0x7f060110 com.minhtt.xemchitay:color/deeppink: t=0x1d d=0xfff52887 (s=0x0008 r=0x00)
+        resource 0x7f060111 com.minhtt.xemchitay:color/pinkcupcake: t=0x1d d=0xffe45e9d (s=0x0008 r=0x00)
+        resource 0x7f060112 com.minhtt.xemchitay:color/pinklemonade: t=0x1d d=0xffe4287c (s=0x0008 r=0x00)
+        resource 0x7f060113 com.minhtt.xemchitay:color/neonpink: t=0x1d d=0xfff535aa (s=0x0008 r=0x00)
+        resource 0x7f060114 com.minhtt.xemchitay:color/magenta: t=0x1d d=0xffff00ff (s=0x0008 r=0x00)
+        resource 0x7f060115 com.minhtt.xemchitay:color/dimorphothecamagenta: t=0x1d d=0xffe3319d (s=0x0008 r=0x00)
+        resource 0x7f060116 com.minhtt.xemchitay:color/brightneonpink: t=0x1d d=0xfff433ff (s=0x0008 r=0x00)
+        resource 0x7f060117 com.minhtt.xemchitay:color/palevioletred: t=0x1d d=0xffd16587 (s=0x0008 r=0x00)
+        resource 0x7f060118 com.minhtt.xemchitay:color/tulippink: t=0x1d d=0xffc25a7c (s=0x0008 r=0x00)
+        resource 0x7f060119 com.minhtt.xemchitay:color/mediumvioletred: t=0x1d d=0xffca226b (s=0x0008 r=0x00)
+        resource 0x7f06011a com.minhtt.xemchitay:color/roguepink: t=0x1d d=0xffc12869 (s=0x0008 r=0x00)
+        resource 0x7f06011b com.minhtt.xemchitay:color/burntpink: t=0x1d d=0xffc12267 (s=0x0008 r=0x00)
+        resource 0x7f06011c com.minhtt.xemchitay:color/bashfulpink: t=0x1d d=0xffc25283 (s=0x0008 r=0x00)
+        resource 0x7f06011d com.minhtt.xemchitay:color/carnationpink: t=0x1d d=0xffc12283 (s=0x0008 r=0x00)
+        resource 0x7f06011e com.minhtt.xemchitay:color/plum: t=0x1d d=0xffb93b8f (s=0x0008 r=0x00)
+        resource 0x7f06011f com.minhtt.xemchitay:color/violapurple: t=0x1d d=0xff7e587e (s=0x0008 r=0x00)
+        resource 0x7f060120 com.minhtt.xemchitay:color/purpleiris: t=0x1d d=0xff571b7e (s=0x0008 r=0x00)
+        resource 0x7f060121 com.minhtt.xemchitay:color/plumpurple: t=0x1d d=0xff583759 (s=0x0008 r=0x00)
+        resource 0x7f060122 com.minhtt.xemchitay:color/indigo: t=0x1d d=0xff4b0082 (s=0x0008 r=0x00)
+        resource 0x7f060123 com.minhtt.xemchitay:color/purplemonster: t=0x1d d=0xff461b7e (s=0x0008 r=0x00)
+        resource 0x7f060124 com.minhtt.xemchitay:color/purplehaze: t=0x1d d=0xff4e387e (s=0x0008 r=0x00)
+        resource 0x7f060125 com.minhtt.xemchitay:color/eggplant: t=0x1d d=0xff614051 (s=0x0008 r=0x00)
+        resource 0x7f060126 com.minhtt.xemchitay:color/grape: t=0x1d d=0xff5e5a80 (s=0x0008 r=0x00)
+        resource 0x7f060127 com.minhtt.xemchitay:color/purplejam: t=0x1d d=0xff6a287e (s=0x0008 r=0x00)
+        resource 0x7f060128 com.minhtt.xemchitay:color/darkorchid: t=0x1d d=0xff7d1b7e (s=0x0008 r=0x00)
+        resource 0x7f060129 com.minhtt.xemchitay:color/purpleflower: t=0x1d d=0xffa74ac7 (s=0x0008 r=0x00)
+        resource 0x7f06012a com.minhtt.xemchitay:color/mediumorchid: t=0x1d d=0xffb048b5 (s=0x0008 r=0x00)
+        resource 0x7f06012b com.minhtt.xemchitay:color/purpleamethyst: t=0x1d d=0xff6c2dc7 (s=0x0008 r=0x00)
+        resource 0x7f06012c com.minhtt.xemchitay:color/darkviolet: t=0x1d d=0xff842dce (s=0x0008 r=0x00)
+        resource 0x7f06012d com.minhtt.xemchitay:color/violet: t=0x1d d=0xff8d38c9 (s=0x0008 r=0x00)
+        resource 0x7f06012e com.minhtt.xemchitay:color/purplesagebush: t=0x1d d=0xff7a5dc7 (s=0x0008 r=0x00)
+        resource 0x7f06012f com.minhtt.xemchitay:color/lovelypurple: t=0x1d d=0xff7f38ec (s=0x0008 r=0x00)
+        resource 0x7f060130 com.minhtt.xemchitay:color/purple: t=0x1d d=0xff8e35ef (s=0x0008 r=0x00)
+        resource 0x7f060131 com.minhtt.xemchitay:color/aztechpurple: t=0x1d d=0xff893bff (s=0x0008 r=0x00)
+        resource 0x7f060132 com.minhtt.xemchitay:color/mediumpurple: t=0x1d d=0xff8467d7 (s=0x0008 r=0x00)
+        resource 0x7f060133 com.minhtt.xemchitay:color/jasminepurple: t=0x1d d=0xffa23bec (s=0x0008 r=0x00)
+        resource 0x7f060134 com.minhtt.xemchitay:color/purpledaffodil: t=0x1d d=0xffb041ff (s=0x0008 r=0x00)
+        resource 0x7f060135 com.minhtt.xemchitay:color/tyrianpurple: t=0x1d d=0xffc45aec (s=0x0008 r=0x00)
+        resource 0x7f060136 com.minhtt.xemchitay:color/crocuspurple: t=0x1d d=0xff9172ec (s=0x0008 r=0x00)
+        resource 0x7f060137 com.minhtt.xemchitay:color/purplemimosa: t=0x1d d=0xff9e7bff (s=0x0008 r=0x00)
+        resource 0x7f060138 com.minhtt.xemchitay:color/heliotropepurple: t=0x1d d=0xffd462ff (s=0x0008 r=0x00)
+        resource 0x7f060139 com.minhtt.xemchitay:color/crimson: t=0x1d d=0xffe238ec (s=0x0008 r=0x00)
+        resource 0x7f06013a com.minhtt.xemchitay:color/purpledragon: t=0x1d d=0xffc38ec7 (s=0x0008 r=0x00)
+        resource 0x7f06013b com.minhtt.xemchitay:color/lilac: t=0x1d d=0xffc8a2c8 (s=0x0008 r=0x00)
+        resource 0x7f06013c com.minhtt.xemchitay:color/blushpink: t=0x1d d=0xffe6a9ec (s=0x0008 r=0x00)
+        resource 0x7f06013d com.minhtt.xemchitay:color/mauve: t=0x1d d=0xffe0b0ff (s=0x0008 r=0x00)
+        resource 0x7f06013e com.minhtt.xemchitay:color/wiseriapurple: t=0x1d d=0xffc6aec7 (s=0x0008 r=0x00)
+        resource 0x7f06013f com.minhtt.xemchitay:color/blossompink: t=0x1d d=0xfff9b7ff (s=0x0008 r=0x00)
+        resource 0x7f060140 com.minhtt.xemchitay:color/thistle: t=0x1d d=0xffd2b9d3 (s=0x0008 r=0x00)
+        resource 0x7f060141 com.minhtt.xemchitay:color/periwinkle: t=0x1d d=0xffe9cfec (s=0x0008 r=0x00)
+        resource 0x7f060142 com.minhtt.xemchitay:color/lavenderpinocchio: t=0x1d d=0xffebdde2 (s=0x0008 r=0x00)
+        resource 0x7f060143 com.minhtt.xemchitay:color/lavender: t=0x1d d=0xffe3e4fa (s=0x0008 r=0x00)
+        resource 0x7f060144 com.minhtt.xemchitay:color/pearl: t=0x1d d=0xfffdeef4 (s=0x0008 r=0x00)
+        resource 0x7f060145 com.minhtt.xemchitay:color/seashell: t=0x1d d=0xfffff5ee (s=0x0008 r=0x00)
+        resource 0x7f060146 com.minhtt.xemchitay:color/milkwhite: t=0x1d d=0xfffefcff (s=0x0008 r=0x00)
+        resource 0x7f060147 com.minhtt.xemchitay:color/white: t=0x1d d=0xffffffff (s=0x0008 r=0x00)
+    type 6 configCount=2 entryCount=2
+      spec resource 0x7f070000 com.minhtt.xemchitay:dimen/activity_horizontal_margin: flags=0x00002480
+      spec resource 0x7f070001 com.minhtt.xemchitay:dimen/activity_vertical_margin: flags=0x00000000
+      config (default):
+        resource 0x7f070000 com.minhtt.xemchitay:dimen/activity_horizontal_margin: t=0x05 d=0x00000801 (s=0x0008 r=0x00)
+        resource 0x7f070001 com.minhtt.xemchitay:dimen/activity_vertical_margin: t=0x05 d=0x00000801 (s=0x0008 r=0x00)
+      config sw720dp-land-v13:
+        resource 0x7f070000 com.minhtt.xemchitay:dimen/activity_horizontal_margin: t=0x05 d=0x00004001 (s=0x0008 r=0x00)
+    type 7 configCount=3 entryCount=2
+      spec resource 0x7f080000 com.minhtt.xemchitay:style/AppBaseTheme: flags=0x00000400
+      spec resource 0x7f080001 com.minhtt.xemchitay:style/AppTheme: flags=0x00000000
+      config (default):
+        resource 0x7f080000 com.minhtt.xemchitay:style/AppBaseTheme: <bag>
+        resource 0x7f080001 com.minhtt.xemchitay:style/AppTheme: <bag>
+      config v11:
+        resource 0x7f080000 com.minhtt.xemchitay:style/AppBaseTheme: <bag>
+      config v14:
+        resource 0x7f080000 com.minhtt.xemchitay:style/AppBaseTheme: <bag>
+    type 8 configCount=1 entryCount=10
+      spec resource 0x7f090000 com.minhtt.xemchitay:id/adViewListChapter: flags=0x00000000
+      spec resource 0x7f090001 com.minhtt.xemchitay:id/lstChapter: flags=0x00000000
+      spec resource 0x7f090002 com.minhtt.xemchitay:id/cmdListBack: flags=0x00000000
+      spec resource 0x7f090003 com.minhtt.xemchitay:id/entry_title: flags=0x00000000
+      spec resource 0x7f090004 com.minhtt.xemchitay:id/entry_description: flags=0x00000000
+      spec resource 0x7f090005 com.minhtt.xemchitay:id/splashscreen: flags=0x00000000
+      spec resource 0x7f090006 com.minhtt.xemchitay:id/adViewXemTruyen: flags=0x00000000
+      spec resource 0x7f090007 com.minhtt.xemchitay:id/viewer: flags=0x00000000
+      spec resource 0x7f090008 com.minhtt.xemchitay:id/lblPageNumber: flags=0x00000000
+      spec resource 0x7f090009 com.minhtt.xemchitay:id/cmdXemTruyenBack: flags=0x00000000
+      config (default):
+        resource 0x7f090000 com.minhtt.xemchitay:id/adViewListChapter: t=0x12 d=0x00000000 (s=0x0008 r=0x00)
+        resource 0x7f090001 com.minhtt.xemchitay:id/lstChapter: t=0x12 d=0x00000000 (s=0x0008 r=0x00)
+        resource 0x7f090002 com.minhtt.xemchitay:id/cmdListBack: t=0x12 d=0x00000000 (s=0x0008 r=0x00)
+        resource 0x7f090003 com.minhtt.xemchitay:id/entry_title: t=0x12 d=0x00000000 (s=0x0008 r=0x00)
+        resource 0x7f090004 com.minhtt.xemchitay:id/entry_description: t=0x12 d=0x00000000 (s=0x0008 r=0x00)
+        resource 0x7f090005 com.minhtt.xemchitay:id/splashscreen: t=0x12 d=0x00000000 (s=0x0008 r=0x00)
+        resource 0x7f090006 com.minhtt.xemchitay:id/adViewXemTruyen: t=0x12 d=0x00000000 (s=0x0008 r=0x00)
+        resource 0x7f090007 com.minhtt.xemchitay:id/viewer: t=0x12 d=0x00000000 (s=0x0008 r=0x00)
+        resource 0x7f090008 com.minhtt.xemchitay:id/lblPageNumber: t=0x12 d=0x00000000 (s=0x0008 r=0x00)
+        resource 0x7f090009 com.minhtt.xemchitay:id/cmdXemTruyenBack: t=0x12 d=0x00000000 (s=0x0008 r=0x00)
+
+Android manifest:
+N: android=http://schemas.android.com/apk/res/android
+  E: manifest (line=2)
+    A: android:versionCode(0x0101021b)=(type 0x10)0x2
+    A: android:versionName(0x0101021c)="1.0.0.2" (Raw: "1.0.0.2")
+    A: package="com.minhtt.xemchitay" (Raw: "com.minhtt.xemchitay")
+    E: uses-sdk (line=8)
+      A: android:minSdkVersion(0x0101020c)=(type 0x10)0x3
+      A: android:targetSdkVersion(0x01010270)=(type 0x10)0x12
+    E: uses-permission (line=12)
+      A: android:name(0x01010003)="android.permission.INTERNET" (Raw: "android.permission.INTERNET")
+    E: uses-permission (line=13)
+      A: android:name(0x01010003)="android.permission.ACCESS_NETWORK_STATE" (Raw: "android.permission.ACCESS_NETWORK_STATE")
+    E: application (line=15)
+      A: android:theme(0x01010000)=@0x7f080001
+      A: android:label(0x01010001)=@0x7f040000
+      A: android:icon(0x01010002)=@0x7f020005
+      A: android:allowBackup(0x01010280)=(type 0x12)0xffffffff
+      E: activity (line=20)
+        A: android:label(0x01010001)=@0x7f040000
+        A: android:name(0x01010003)="com.minhtt.xemchitay.XemChiTay" (Raw: "com.minhtt.xemchitay.XemChiTay")
+        E: intent-filter (line=23)
+          E: action (line=24)
+            A: android:name(0x01010003)="android.intent.action.MAIN" (Raw: "android.intent.action.MAIN")
+          E: category (line=26)
+            A: android:name(0x01010003)="android.intent.category.LAUNCHER" (Raw: "android.intent.category.LAUNCHER")
+      E: activity (line=29)
+        A: android:name(0x01010003)="com.minhtt.xemchitay.ListChapter" (Raw: "com.minhtt.xemchitay.ListChapter")
+      E: activity (line=32)
+        A: android:name(0x01010003)="com.minhtt.xemchitay.XemTruyen" (Raw: "com.minhtt.xemchitay.XemTruyen")
+      E: activity (line=35)
+        A: android:name(0x01010003)="com.google.ads.AdActivity" (Raw: "com.google.ads.AdActivity")
+        A: android:configChanges(0x0101001f)=(type 0x11)0xfb0

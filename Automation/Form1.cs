@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using VirtualBox;
 using Utils;
 using System.IO;
+using System.Diagnostics;
 
 namespace Automation
 {
@@ -166,6 +167,55 @@ namespace Automation
             Activity.IActivity confirmUsingPlayStore = Activity.Activity.CreateActivity(Constants.ActivityName.CONFIRM_USING_PLAYSTORE, machineSession.Console.Mouse, machineSession.Console.Display);
             confirmUsingPlayStore.Start();
         }
+
+        private void btnInstalledApps_Click(object sender, EventArgs e)
+        {
+            Process p = new Process();
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.RedirectStandardOutput = true;
+            p.StartInfo.CreateNoWindow = true;
+            //p.StartInfo.FileName = @"D:\TranHNB\CFF\FreeMyApp\Tool\adt-bundle-windows-x86-20140321\adt-bundle-windows-x86-20140321\sdk\platform-tools\adb.exe connect 192.168.1.13:5555";
+            p.StartInfo.FileName = @"D:\TranHNB\CFF\FreeMyApp\Tool\adt-bundle-windows-x86-20140321\adt-bundle-windows-x86-20140321\sdk\platform-tools\adb.exe";
+            //p.StartInfo.Arguments = "connect 192.168.1.13:5555";
+            p.StartInfo.Arguments = "shell \"pm list packages -f\"";
+            
+            p.Start();
+            // Do not wait for the child process to exit before
+            // reading to the end of its redirected stream.
+            // p.WaitForExit();
+            // Read the output stream first and then wait.
+            string output = p.StandardOutput.ReadToEnd();
+            p.WaitForExit();
+            MessageBox.Show(this, output, "List installed apps", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// Open an installed app in 30s
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnLaunchApp_Click(object sender, EventArgs e)
+        {
+             Process p = new Process();
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.RedirectStandardOutput = true;
+            p.StartInfo.CreateNoWindow = true;
+            p.StartInfo.FileName = @"D:\TranHNB\CFF\FreeMyApp\Tool\adt-bundle-windows-x86-20140321\adt-bundle-windows-x86-20140321\sdk\build-tools\android-4.4.2\aapt.exe";
+            p.StartInfo.Arguments = @"l -a C:\xemchitay.apk";
+            
+            p.Start();
+            // Do not wait for the child process to exit before
+            // reading to the end of its redirected stream.
+            // p.WaitForExit();
+            // Read the output stream first and then wait.
+            string output = p.StandardOutput.ReadToEnd();
+            p.WaitForExit();
+            MessageBox.Show(this, output, "List installed apps", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+
+        }
+
+
 
         
     }
