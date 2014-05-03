@@ -68,6 +68,13 @@ namespace Activity
         }
 
         /// <summary>
+        /// Empty constructor. It's used for Activity doesn't handle mouse click.
+        /// </summary>
+        public Activity() 
+        { 
+
+        }
+        /// <summary>
         /// Activity Instance Constructor
         /// </summary>
         /// <param name="mousePositionX"></param>
@@ -174,7 +181,7 @@ namespace Activity
         }
 
         /// <summary>
-        /// Send Mouse click event to virtual machine to start an activity
+        /// Start activity by send Mouse click event to virtual machine to start an activity or do something else.
         /// </summary>
         public virtual void Start()
         {

@@ -196,7 +196,7 @@ namespace Automation
         /// <param name="e"></param>
         private void btnLaunchApp_Click(object sender, EventArgs e)
         {
-             Process p = new Process();
+            Process p = new Process();
             p.StartInfo.UseShellExecute = false;
             p.StartInfo.RedirectStandardOutput = true;
             p.StartInfo.CreateNoWindow = true;
@@ -213,6 +213,29 @@ namespace Automation
             MessageBox.Show(this, output, "List installed apps", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
 
+        }
+
+        /// <summary>
+        /// Connect to Guest machine
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            Utils.AndroidDebugBridge adb = new AndroidDebugBridge();
+            System.Net.IPAddress ip = System.Net.IPAddress.Parse("192.168.1.13");
+            int port = 5555;
+            if (adb.Connect(ip, port))
+            {
+                MessageBox.Show(this, "Connected to: " + ip.ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+           
+        }
+
+        private void btnNewestInstallApp_Click(object sender, EventArgs e)
+        {
+            Utils.AndroidDebugBridge adb = new AndroidDebugBridge();
+            adb.FindNewestInstalledApp();
         }
 
 

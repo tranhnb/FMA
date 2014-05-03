@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AndroidDebugBridge.cs" />
     <Compile Include="CaptureScreen.cs" />
     <Compile Include="ImageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

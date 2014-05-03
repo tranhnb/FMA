@@ -41,6 +41,8 @@
             this.btnConfirmUsingPlayStore = new System.Windows.Forms.Button();
             this.btnInstalledApps = new System.Windows.Forms.Button();
             this.btnLaunchApp = new System.Windows.Forms.Button();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.btnNewestInstallApp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,7 +156,7 @@
             // 
             // btnInstalledApps
             // 
-            this.btnInstalledApps.Location = new System.Drawing.Point(12, 343);
+            this.btnInstalledApps.Location = new System.Drawing.Point(12, 377);
             this.btnInstalledApps.Name = "btnInstalledApps";
             this.btnInstalledApps.Size = new System.Drawing.Size(194, 23);
             this.btnInstalledApps.TabIndex = 1;
@@ -164,7 +166,7 @@
             // 
             // btnLaunchApp
             // 
-            this.btnLaunchApp.Location = new System.Drawing.Point(12, 372);
+            this.btnLaunchApp.Location = new System.Drawing.Point(12, 435);
             this.btnLaunchApp.Name = "btnLaunchApp";
             this.btnLaunchApp.Size = new System.Drawing.Size(194, 23);
             this.btnLaunchApp.TabIndex = 1;
@@ -172,11 +174,31 @@
             this.btnLaunchApp.UseVisualStyleBackColor = true;
             this.btnLaunchApp.Click += new System.EventHandler(this.btnLaunchApp_Click);
             // 
+            // btnConnect
+            // 
+            this.btnConnect.Location = new System.Drawing.Point(12, 348);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(194, 23);
+            this.btnConnect.TabIndex = 1;
+            this.btnConnect.Text = "Connect to Guest";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
+            // btnNewestInstallApp
+            // 
+            this.btnNewestInstallApp.Location = new System.Drawing.Point(12, 406);
+            this.btnNewestInstallApp.Name = "btnNewestInstallApp";
+            this.btnNewestInstallApp.Size = new System.Drawing.Size(194, 23);
+            this.btnNewestInstallApp.TabIndex = 1;
+            this.btnNewestInstallApp.Text = "Get Newest installed application";
+            this.btnNewestInstallApp.UseVisualStyleBackColor = true;
+            this.btnNewestInstallApp.Click += new System.EventHandler(this.btnNewestInstallApp_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 425);
+            this.ClientSize = new System.Drawing.Size(586, 551);
             this.Controls.Add(this.btnConfirmUsingPlayStore);
             this.Controls.Add(this.btnConfirmDownload);
             this.Controls.Add(this.btnDetermineApplication);
@@ -186,6 +208,8 @@
             this.Controls.Add(this.btnModi);
             this.Controls.Add(this.btnAcceptInstallation);
             this.Controls.Add(this.btnLaunchApp);
+            this.Controls.Add(this.btnConnect);
+            this.Controls.Add(this.btnNewestInstallApp);
             this.Controls.Add(this.btnInstalledApps);
             this.Controls.Add(this.btnTakeScreenShot);
             this.Controls.Add(this.btnInstallApp);
@@ -212,6 +236,8 @@
         private System.Windows.Forms.Button btnConfirmUsingPlayStore;
         private System.Windows.Forms.Button btnInstalledApps;
         private System.Windows.Forms.Button btnLaunchApp;
+        private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.Button btnNewestInstallApp;
     }
 }
 
