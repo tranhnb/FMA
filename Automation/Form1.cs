@@ -23,6 +23,7 @@ namespace Automation
         VirtualBoxClient vBoxClient;
         IMachine machine;
         Session machineSession;
+        Process process;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -225,7 +226,9 @@ namespace Automation
             Utils.AndroidDebugBridge adb = new AndroidDebugBridge();
             System.Net.IPAddress ip = System.Net.IPAddress.Parse("192.168.1.13");
             int port = 5555;
-            if (adb.Connect(ip, port))
+
+            process = adb.Connect(ip, port);
+            if (process != null)
             {
                 MessageBox.Show(this, "Connected to: " + ip.ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -235,7 +238,15 @@ namespace Automation
         private void btnNewestInstallApp_Click(object sender, EventArgs e)
         {
             Utils.AndroidDebugBridge adb = new AndroidDebugBridge();
-            adb.FindNewestInstalledApp();
+            if (process == null)
+            {
+                MessageBox.Show(this, "Please connect to guest machine: ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else 
+            {
+                adb.FindNewestInstalledApp(process);
+            }
+            
         }
 
 
