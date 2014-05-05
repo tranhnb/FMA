@@ -5,6 +5,7 @@ using System.Text;
 using System.Net;
 using System.Diagnostics;
 using System.IO;
+using System.Xml;
 
 namespace Utils
 {
@@ -18,7 +19,8 @@ namespace Utils
         private const string LAST_MODIFIED_APK_COMMAND = @"ls -l /data/app/ | sort -k5.1n,5.4n -k5.6n,5.7n -k5.9n,5.10n | head -n 1 | tr -s [:space:] ' ' | cut -d\  -f 7";
         private const string PULL_APP_COMMAND = "pull {0} {1}";
         private const string TEMP_FOLDER = "Temp";
-
+        private const string ANDROID_MANIFEST = "AndroidManifest.xml";
+        private const string LAUNCH_APPLICATION_COMMAND = "am start -n";
         #endregion
 
         #region Methods
@@ -60,13 +62,26 @@ namespace Utils
         /// <summary>
         /// Open application by packageName and activityName
         /// </summary>
-        /// <param name="packageName"></param>
-        /// <param name="activityName"></param>
+        /// <param name="application_launch_name">In format: package/activityname. We use this to launch application in Guest Machine</param>
         /// <returns>True if open successfully otherwise False</returns>
-        public bool OpenApplication(Process process, string packageName, string activityName)
-        { 
-            //TODO
-            return true;
+        public bool OpenApplication(Process process, string application_launch_name)
+        {
+            process.StartInfo.Arguments = string.Format("{0} \"{1} {2}\"", SHELL_COMMAND, LAUNCH_APPLICATION_COMMAND, application_launch_name);
+            string result = ExecuteShellCommand(process);
+            
+            //Success case
+            //Starting: Intent { cmp=com.minhtt.monngonvietnam/.MonNgonVietNam }
+            //Warning: Activity not started, its current task has been brought to the front
+
+            //Error case
+            //Starting: Intent { cmp=com.minhtt.monngonvietnam/.MonNgonVietNam1 }
+            //Error type 3
+            //Error: Activity class {com.minhtt.monngonvietnam/com.minhtt.monngonvietnam.MonNgonVietNam1} does not exist.
+
+            //TODO: Log activity
+
+            return result.Contains("Error");
+            
         }
 
         /// <summary>
@@ -91,7 +106,10 @@ namespace Utils
             if (File.Exists(localPath))
             {
                 //Dump apk file to read manifest xml.
-                activityName = dumpAPKFile(process, localPath);
+                string manifest_data = dumpAPKFile(process, localPath);
+                activityName = GetLaunchableActivityName(manifest_data);
+                File.Delete(localPath);
+
             }
 
             return activityName;
@@ -101,7 +119,7 @@ namespace Utils
         /// Dump manifest file from apk file
         /// </summary>
         /// <param name="filePath"></param>
-        /// <returns></returns>
+        /// <returns>Manifest file path</returns>
         private string dumpAPKFile(Process process, string filePath)
         {
             string destinationFolder = Path.Combine(Directory.GetCurrentDirectory(), TEMP_FOLDER, Guid.NewGuid().ToString());
@@ -109,9 +127,46 @@ namespace Utils
             process.StartInfo.Arguments = string.Format(@"-jar Libs\apktool.jar d {0} {1}", filePath, destinationFolder);
             
             string result = ExecuteShellCommand(process);
-            return string.Empty;
+            string manifest_file = Path.Combine(destinationFolder, ANDROID_MANIFEST);
+
+            string xmlData = string.Empty;
+            if(File.Exists(manifest_file))
+                xmlData = File.ReadAllText(manifest_file);
+
+            Directory.Delete(destinationFolder, true);
+            return xmlData;
         }
 
+        /// <summary>
+        /// Parse Manifest file to retrieve package name and activity name
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
+        private string GetLaunchableActivityName(string xmlString) {
+            XmlDocument xml = new XmlDocument();
+            xml.LoadXml(xmlString);
+            XmlNode rootNode = xml.SelectSingleNode("manifest");
+
+            string packageName = string.Empty;
+            string activityName = string.Empty;
+
+            if (rootNode != null)
+            {
+                XmlAttribute packageAttribute = rootNode.Attributes["package"] as XmlAttribute;
+
+                packageName = packageAttribute != null ? packageAttribute.Value : string.Empty;
+                XmlNodeList nodeList = rootNode.SelectNodes("application/activity");
+
+                if (nodeList.Count >= 1) {
+                    XmlNode node = nodeList[0];
+                    XmlAttribute attribute = node.Attributes["android:name"] as XmlAttribute;
+                    activityName =  attribute != null ? attribute.Value : string.Empty;
+                }
+
+                return !string.IsNullOrEmpty(packageName) && !string.IsNullOrEmpty(activityName) ? string.Format("{0}/{1}", packageName, activityName) : string.Empty;
+            }
+            return string.Empty;
+        }
         /// <summary>
         /// Create process for shell command
         /// </summary>

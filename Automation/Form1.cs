@@ -24,6 +24,7 @@ namespace Automation
         IMachine machine;
         Session machineSession;
         Process process;
+        Utils.AndroidDebugBridge adb = new AndroidDebugBridge();
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -223,7 +224,6 @@ namespace Automation
         /// <param name="e"></param>
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            Utils.AndroidDebugBridge adb = new AndroidDebugBridge();
             System.Net.IPAddress ip = System.Net.IPAddress.Parse("192.168.1.13");
             int port = 5555;
 
@@ -237,16 +237,32 @@ namespace Automation
 
         private void btnNewestInstallApp_Click(object sender, EventArgs e)
         {
-            Utils.AndroidDebugBridge adb = new AndroidDebugBridge();
             if (process == null)
             {
                 MessageBox.Show(this, "Please connect to guest machine: ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else 
             {
-                adb.FindNewestInstalledApp(process);
+                string app_name = adb.FindNewestInstalledApp(process);
+                txtPackage_ActivityName.Text = app_name;
             }
             
+        }
+
+        private void btnOpenApplication_Click(object sender, EventArgs e)
+        {
+            string fullName = txtPackage_ActivityName.Text;
+            if (string.IsNullOrEmpty(fullName))
+            {
+                MessageBox.Show(this, "Please execute Get Newest Install Application to retrieve ActivityName First: ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else if (process == null)
+            {
+                MessageBox.Show(this, "Please connect to guest machine: ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else 
+            {
+                adb.OpenApplication(process, fullName);
+            }
         }
 
 
