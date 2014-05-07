@@ -17,6 +17,8 @@ namespace Utils
         private const string SHELL_COMMAND = "shell";
         private const string GUEST_INSTALLED_APP_FOLDER = "/data/app/";
         private const string LAST_MODIFIED_APK_COMMAND = @"ls -l /data/app/ | sort -k5.1n,5.4n -k5.6n,5.7n -k5.9n,5.10n | head -n 1 | tr -s [:space:] ' ' | cut -d\  -f 7";
+        private const string FIND_RUNNING_APPLICATION_BY_NAME_COMMAND = "shell \"ps | grep {0} | tr -s [:space:] ' ' | cut -d\\  -f 9\"";
+        private const string STOP_APPLICATION = "";
         private const string PULL_APP_COMMAND = "pull {0} {1}";
         private const string TEMP_FOLDER = "Temp";
         private const string ANDROID_MANIFEST = "AndroidManifest.xml";
@@ -85,6 +87,30 @@ namespace Utils
         }
 
         /// <summary>
+        /// Check an application is running
+        /// </summary>
+        /// <param name="packageName">package name</param>
+        /// <returns>True if the application is running otherwise False</returns>
+        public bool IsApplicationRunning(Process process, string packageName)
+        {
+            process.StartInfo.Arguments = string.Format(FIND_RUNNING_APPLICATION_BY_NAME_COMMAND, packageName);
+            string result = ExecuteShellCommand(process);
+
+            return !string.IsNullOrEmpty(result) && result.Trim().ToLower().Equals(packageName.ToLower());
+        }
+
+        /// <summary>
+        /// Stop running application
+        /// </summary>
+        /// <param name="process"></param>
+        /// <param name="packageName"></param>
+        /// <returns>True if the application is stopped otherwise False</returns>
+        public bool StopApplication(Process process, string packageName)
+        { 
+            //TODO
+            return true;
+        }
+        /// <summary>
         /// Get Full launchable Activity Name of an apk file.
         /// </summary>
         /// <param name="guest_apk_path"></param>
@@ -109,7 +135,6 @@ namespace Utils
                 string manifest_data = dumpAPKFile(process, localPath);
                 activityName = GetLaunchableActivityName(manifest_data);
                 File.Delete(localPath);
-
             }
 
             return activityName;
@@ -167,6 +192,7 @@ namespace Utils
             }
             return string.Empty;
         }
+
         /// <summary>
         /// Create process for shell command
         /// </summary>

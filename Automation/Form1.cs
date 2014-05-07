@@ -265,6 +265,24 @@ namespace Automation
             }
         }
 
+        private void btnCheckApplicationRunning_Click(object sender, EventArgs e)
+        {
+            string packageName = txtPackageName.Text;
+            if (string.IsNullOrEmpty(packageName))
+            {
+                MessageBox.Show(this, "Please input package name to check", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else if (process == null)
+            {
+                MessageBox.Show(this, "Please connect to guest machine: ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else 
+            {
+                bool isRunning = adb.IsApplicationRunning(process, packageName);
+                MessageBox.Show(this, isRunning.ToString());
+            }
+
+        }
+
 
 
         

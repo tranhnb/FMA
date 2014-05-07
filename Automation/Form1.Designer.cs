@@ -44,6 +44,8 @@
             this.btnNewestInstallApp = new System.Windows.Forms.Button();
             this.txtPackage_ActivityName = new System.Windows.Forms.TextBox();
             this.btnOpenApplication = new System.Windows.Forms.Button();
+            this.btnCheckApplicationRunning = new System.Windows.Forms.Button();
+            this.txtPackageName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -203,11 +205,30 @@
             this.btnOpenApplication.UseVisualStyleBackColor = true;
             this.btnOpenApplication.Click += new System.EventHandler(this.btnOpenApplication_Click);
             // 
+            // btnCheckApplicationRunning
+            // 
+            this.btnCheckApplicationRunning.Location = new System.Drawing.Point(12, 464);
+            this.btnCheckApplicationRunning.Name = "btnCheckApplicationRunning";
+            this.btnCheckApplicationRunning.Size = new System.Drawing.Size(194, 23);
+            this.btnCheckApplicationRunning.TabIndex = 1;
+            this.btnCheckApplicationRunning.Text = "Check an app is running";
+            this.btnCheckApplicationRunning.UseVisualStyleBackColor = true;
+            this.btnCheckApplicationRunning.Click += new System.EventHandler(this.btnCheckApplicationRunning_Click);
+            // 
+            // txtPackageName
+            // 
+            this.txtPackageName.Location = new System.Drawing.Point(212, 467);
+            this.txtPackageName.Name = "txtPackageName";
+            this.txtPackageName.Size = new System.Drawing.Size(429, 20);
+            this.txtPackageName.TabIndex = 7;
+            this.txtPackageName.Text = "com.minhtt.monngonvietnam";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 550);
+            this.Controls.Add(this.txtPackageName);
             this.Controls.Add(this.txtPackage_ActivityName);
             this.Controls.Add(this.btnConfirmUsingPlayStore);
             this.Controls.Add(this.btnConfirmDownload);
@@ -218,6 +239,7 @@
             this.Controls.Add(this.btnModi);
             this.Controls.Add(this.btnAcceptInstallation);
             this.Controls.Add(this.btnConnect);
+            this.Controls.Add(this.btnCheckApplicationRunning);
             this.Controls.Add(this.btnOpenApplication);
             this.Controls.Add(this.btnNewestInstallApp);
             this.Controls.Add(this.btnInstalledApps);
@@ -250,6 +272,8 @@
         private System.Windows.Forms.Button btnNewestInstallApp;
         private System.Windows.Forms.TextBox txtPackage_ActivityName;
         private System.Windows.Forms.Button btnOpenApplication;
+        private System.Windows.Forms.Button btnCheckApplicationRunning;
+        private System.Windows.Forms.TextBox txtPackageName;
     }
 }
 
