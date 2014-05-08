@@ -46,6 +46,8 @@
             this.btnOpenApplication = new System.Windows.Forms.Button();
             this.btnCheckApplicationRunning = new System.Windows.Forms.Button();
             this.txtPackageName = new System.Windows.Forms.TextBox();
+            this.btnCloseApp = new System.Windows.Forms.Button();
+            this.btnOpenFMA = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -207,7 +209,7 @@
             // 
             // btnCheckApplicationRunning
             // 
-            this.btnCheckApplicationRunning.Location = new System.Drawing.Point(12, 464);
+            this.btnCheckApplicationRunning.Location = new System.Drawing.Point(12, 492);
             this.btnCheckApplicationRunning.Name = "btnCheckApplicationRunning";
             this.btnCheckApplicationRunning.Size = new System.Drawing.Size(194, 23);
             this.btnCheckApplicationRunning.TabIndex = 1;
@@ -222,6 +224,26 @@
             this.txtPackageName.Size = new System.Drawing.Size(429, 20);
             this.txtPackageName.TabIndex = 7;
             this.txtPackageName.Text = "com.minhtt.monngonvietnam";
+            // 
+            // btnCloseApp
+            // 
+            this.btnCloseApp.Location = new System.Drawing.Point(12, 521);
+            this.btnCloseApp.Name = "btnCloseApp";
+            this.btnCloseApp.Size = new System.Drawing.Size(194, 23);
+            this.btnCloseApp.TabIndex = 1;
+            this.btnCloseApp.Text = "Close running application";
+            this.btnCloseApp.UseVisualStyleBackColor = true;
+            this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
+            // 
+            // btnOpenFMA
+            // 
+            this.btnOpenFMA.Location = new System.Drawing.Point(12, 463);
+            this.btnOpenFMA.Name = "btnOpenFMA";
+            this.btnOpenFMA.Size = new System.Drawing.Size(194, 23);
+            this.btnOpenFMA.TabIndex = 1;
+            this.btnOpenFMA.Text = "Open FreeMyApp";
+            this.btnOpenFMA.UseVisualStyleBackColor = true;
+            this.btnOpenFMA.Click += new System.EventHandler(this.btnOpenFMA_Click);
             // 
             // Form1
             // 
@@ -239,7 +261,9 @@
             this.Controls.Add(this.btnModi);
             this.Controls.Add(this.btnAcceptInstallation);
             this.Controls.Add(this.btnConnect);
+            this.Controls.Add(this.btnCloseApp);
             this.Controls.Add(this.btnCheckApplicationRunning);
+            this.Controls.Add(this.btnOpenFMA);
             this.Controls.Add(this.btnOpenApplication);
             this.Controls.Add(this.btnNewestInstallApp);
             this.Controls.Add(this.btnInstalledApps);
@@ -274,6 +298,8 @@
         private System.Windows.Forms.Button btnOpenApplication;
         private System.Windows.Forms.Button btnCheckApplicationRunning;
         private System.Windows.Forms.TextBox txtPackageName;
+        private System.Windows.Forms.Button btnCloseApp;
+        private System.Windows.Forms.Button btnOpenFMA;
     }
 }
 

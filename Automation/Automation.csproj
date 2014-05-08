@@ -96,6 +96,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Images\Template\Verify_FaceBook_Step1.png" />
+    <Content Include="Images\Template\Verify_FaceBook_Step2.png" />
+    <Content Include="Images\Template\Verify_FaceBook_Step3.png" />
+    <Content Include="Images\Template\Verify_FaceBook_Step4.png" />
     <Content Include="Libs\apktool.jar">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

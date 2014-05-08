@@ -10,6 +10,7 @@ using VirtualBox;
 using Utils;
 using System.IO;
 using System.Diagnostics;
+using System.Net;
 
 namespace Automation
 {
@@ -23,8 +24,9 @@ namespace Automation
         VirtualBoxClient vBoxClient;
         IMachine machine;
         Session machineSession;
-        Process process;
-        Utils.AndroidDebugBridge adb = new AndroidDebugBridge();
+
+        
+        Utils.AndroidDebugBridge adb = new AndroidDebugBridge(System.Net.IPAddress.Parse("192.168.1.13"), 5555);
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -40,12 +42,6 @@ namespace Automation
                 machineSession = vBoxClient.Session;
                 machine.LockMachine(machineSession, LockType.LockType_Shared);
             }
-
-            //IEventListener listener = machineSession.Console.Mouse.EventSource.CreateListener();
-
-
-            //machineSession.Console.Mouse.PutMouseEvent(0, 0, 0, 0, 0x001);
-            //machineSession.Console.Mouse.PutMouseEvent(0, 0, 0, 0, 0x000);
         }
 
 
@@ -206,10 +202,6 @@ namespace Automation
             p.StartInfo.Arguments = @"l -a C:\xemchitay.apk";
             
             p.Start();
-            // Do not wait for the child process to exit before
-            // reading to the end of its redirected stream.
-            // p.WaitForExit();
-            // Read the output stream first and then wait.
             string output = p.StandardOutput.ReadToEnd();
             p.WaitForExit();
             MessageBox.Show(this, output, "List installed apps", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -227,25 +219,18 @@ namespace Automation
             System.Net.IPAddress ip = System.Net.IPAddress.Parse("192.168.1.13");
             int port = 5555;
 
-            process = adb.Connect(ip, port);
-            if (process != null)
+            bool isConnected = adb.Connect();
+            if (isConnected)
             {
-                MessageBox.Show(this, "Connected to: " + ip.ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, isConnected.ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
            
         }
 
         private void btnNewestInstallApp_Click(object sender, EventArgs e)
         {
-            if (process == null)
-            {
-                MessageBox.Show(this, "Please connect to guest machine: ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else 
-            {
-                string app_name = adb.FindNewestInstalledApp(process);
-                txtPackage_ActivityName.Text = app_name;
-            }
+            string app_name = adb.FindNewestInstalledApp();
+            txtPackage_ActivityName.Text = app_name;
             
         }
 
@@ -255,13 +240,10 @@ namespace Automation
             if (string.IsNullOrEmpty(fullName))
             {
                 MessageBox.Show(this, "Please execute Get Newest Install Application to retrieve ActivityName First: ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } else if (process == null)
-            {
-                MessageBox.Show(this, "Please connect to guest machine: ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else 
             {
-                adb.OpenApplication(process, fullName);
+                adb.OpenApplication(fullName);
             }
         }
 
@@ -271,16 +253,33 @@ namespace Automation
             if (string.IsNullOrEmpty(packageName))
             {
                 MessageBox.Show(this, "Please input package name to check", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } else if (process == null)
-            {
-                MessageBox.Show(this, "Please connect to guest machine: ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else 
             {
-                bool isRunning = adb.IsApplicationRunning(process, packageName);
+                bool isRunning = adb.IsApplicationRunning(packageName);
                 MessageBox.Show(this, isRunning.ToString());
             }
 
+        }
+
+        private void btnCloseApp_Click(object sender, EventArgs e)
+        {
+            string packageName = txtPackageName.Text;
+            if (string.IsNullOrEmpty(packageName))
+            {
+                MessageBox.Show(this, "Please input package name to check", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                bool isStopped = adb.StopApplication(packageName);
+                MessageBox.Show(this, isStopped.ToString());
+            }
+        }
+
+        private void btnOpenFMA_Click(object sender, EventArgs e)
+        {
+            bool isOpen = adb.OpenFreeMyApp();
+            MessageBox.Show(this, isOpen.ToString());
         }
 
 

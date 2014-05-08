@@ -14,46 +14,61 @@ namespace Utils
         #region Variable and Properties
 
         private const string CONNECTED = "already connected";
-        private const string SHELL_COMMAND = "shell";
         private const string GUEST_INSTALLED_APP_FOLDER = "/data/app/";
-        private const string LAST_MODIFIED_APK_COMMAND = @"ls -l /data/app/ | sort -k5.1n,5.4n -k5.6n,5.7n -k5.9n,5.10n | head -n 1 | tr -s [:space:] ' ' | cut -d\  -f 7";
+        private const string LAST_MODIFIED_APK_COMMAND = "shell \"ls -l /data/app/ | sort -k5.1n,5.4n -k5.6n,5.7n -k5.9n,5.10n | head -n 1 | tr -s [:space:] ' ' | cut -d\\  -f 7 \" ";
         private const string FIND_RUNNING_APPLICATION_BY_NAME_COMMAND = "shell \"ps | grep {0} | tr -s [:space:] ' ' | cut -d\\  -f 9\"";
-        private const string STOP_APPLICATION = "";
+        private const string STOP_APPLICATION = "shell pm clear {0}";
         private const string PULL_APP_COMMAND = "pull {0} {1}";
         private const string TEMP_FOLDER = "Temp";
         private const string ANDROID_MANIFEST = "AndroidManifest.xml";
-        private const string LAUNCH_APPLICATION_COMMAND = "am start -n";
+        private const string LAUNCH_APPLICATION_COMMAND = "shell \"am start -n {0} \"";
+        private const string FREEMYAPP_ACTIVITY_NAME = "com.fiksu.fma.android/com.fiksu.fma.android.MainActivity";
+
+        private Process process = null;
+        private string device_ipAddress = string.Empty;
+        private int port = 5555;
+        
         #endregion
 
+        #region Constructor
+
+        public AndroidDebugBridge(IPAddress ipAddress, int port)
+        {
+            this.device_ipAddress = ipAddress.ToString();
+            this.port = port;
+        }
+
+        #endregion Construtor
+
         #region Methods
+
         /// <summary>
         /// Connect to an Guest AndroidX86
         /// </summary>
         /// <param name="ipAddress"></param>
         /// <param name="port"></param>
         /// <returns>Process: If connected otherwise Null</returns>
-        public Process Connect(IPAddress ipAddress, int port)
+        public bool Connect()
         {
-            Process p = CreateShellProcess();
-            p.StartInfo.Arguments = string.Format("connect {0}:{1}", ipAddress.ToString(), port);
-            string result = ExecuteShellCommand(p);
-            return result.Contains(CONNECTED) ? p : null;
+            process = CreateShellProcess();
+            process.StartInfo.Arguments = string.Format("connect {0}:{1}", device_ipAddress, port);
+            string result = ExecuteShellCommand(process);
+            return result.Contains(CONNECTED);
         }
 
         /// <summary>
         /// Get newest install application
         /// </summary>
         /// <returns></returns>
-        public string FindNewestInstalledApp(Process process)
+        public string FindNewestInstalledApp()
         {
-            process = CreateShellProcess();
-            process.StartInfo.Arguments = string.Format("{0} \"{1}\"", SHELL_COMMAND, LAST_MODIFIED_APK_COMMAND);
+            process.StartInfo.Arguments = BuildArgument(LAST_MODIFIED_APK_COMMAND);
             string result = ExecuteShellCommand(process);
 
             if (!string.IsNullOrEmpty(result) && result.Contains("apk"))
             {
                 result = result.Trim();
-                return GetLaunchableActivityName(process, result, string.Format("{0}{1}", GUEST_INSTALLED_APP_FOLDER, result));
+                return GetLaunchableActivityName(result, string.Format("{0}{1}", GUEST_INSTALLED_APP_FOLDER, result));
             }
             else { 
 
@@ -62,13 +77,22 @@ namespace Utils
         }
 
         /// <summary>
+        /// Open FreeMyApp application
+        /// </summary>
+        /// <returns></returns>
+        public bool OpenFreeMyApp()
+        {
+            return OpenApplication(FREEMYAPP_ACTIVITY_NAME);
+        }
+
+        /// <summary>
         /// Open application by packageName and activityName
         /// </summary>
         /// <param name="application_launch_name">In format: package/activityname. We use this to launch application in Guest Machine</param>
         /// <returns>True if open successfully otherwise False</returns>
-        public bool OpenApplication(Process process, string application_launch_name)
+        public bool OpenApplication(string application_launch_name)
         {
-            process.StartInfo.Arguments = string.Format("{0} \"{1} {2}\"", SHELL_COMMAND, LAUNCH_APPLICATION_COMMAND, application_launch_name);
+            process.StartInfo.Arguments = BuildArgument(string.Format(LAUNCH_APPLICATION_COMMAND, application_launch_name));
             string result = ExecuteShellCommand(process);
             
             //Success case
@@ -80,9 +104,7 @@ namespace Utils
             //Error type 3
             //Error: Activity class {com.minhtt.monngonvietnam/com.minhtt.monngonvietnam.MonNgonVietNam1} does not exist.
 
-            //TODO: Log activity
-
-            return result.Contains("Error");
+            return !result.Contains("Error");
             
         }
 
@@ -91,9 +113,9 @@ namespace Utils
         /// </summary>
         /// <param name="packageName">package name</param>
         /// <returns>True if the application is running otherwise False</returns>
-        public bool IsApplicationRunning(Process process, string packageName)
+        public bool IsApplicationRunning(string packageName)
         {
-            process.StartInfo.Arguments = string.Format(FIND_RUNNING_APPLICATION_BY_NAME_COMMAND, packageName);
+            process.StartInfo.Arguments = BuildArgument(string.Format(FIND_RUNNING_APPLICATION_BY_NAME_COMMAND, packageName));
             string result = ExecuteShellCommand(process);
 
             return !string.IsNullOrEmpty(result) && result.Trim().ToLower().Equals(packageName.ToLower());
@@ -105,17 +127,20 @@ namespace Utils
         /// <param name="process"></param>
         /// <param name="packageName"></param>
         /// <returns>True if the application is stopped otherwise False</returns>
-        public bool StopApplication(Process process, string packageName)
-        { 
-            //TODO
-            return true;
+        public bool StopApplication(string packageName)
+        {
+            process.StartInfo.Arguments = BuildArgument(string.Format(STOP_APPLICATION, packageName));
+            string result = ExecuteShellCommand(process);
+
+            return !string.IsNullOrEmpty(result) && result.Trim().Equals("Success");
         }
+
         /// <summary>
         /// Get Full launchable Activity Name of an apk file.
         /// </summary>
         /// <param name="guest_apk_path"></param>
         /// <returns></returns>
-        private string GetLaunchableActivityName(Process process, string applicationName, string guest_apk_path)
+        private string GetLaunchableActivityName(string applicationName, string guest_apk_path)
         {
             //Pull the apk file to HOST machine
             string localPath = Path.Combine(
@@ -124,7 +149,7 @@ namespace Utils
                                 string.Format("{0}_{1}.apk", applicationName.Substring(0, applicationName.IndexOf(".apk")),
                                 Guid.NewGuid().ToString()));
 
-            process.StartInfo.Arguments = string.Format(PULL_APP_COMMAND, guest_apk_path, localPath);
+            process.StartInfo.Arguments = BuildArgument(string.Format(PULL_APP_COMMAND, guest_apk_path, localPath));
 
             string result = ExecuteShellCommand(process);
             string activityName = string.Empty;
@@ -132,7 +157,7 @@ namespace Utils
             if (File.Exists(localPath))
             {
                 //Dump apk file to read manifest xml.
-                string manifest_data = dumpAPKFile(process, localPath);
+                string manifest_data = dumpAPKFile(localPath);
                 activityName = GetLaunchableActivityName(manifest_data);
                 File.Delete(localPath);
             }
@@ -145,7 +170,7 @@ namespace Utils
         /// </summary>
         /// <param name="filePath"></param>
         /// <returns>Manifest file path</returns>
-        private string dumpAPKFile(Process process, string filePath)
+        private string dumpAPKFile(string filePath)
         {
             string destinationFolder = Path.Combine(Directory.GetCurrentDirectory(), TEMP_FOLDER, Guid.NewGuid().ToString());
             process.StartInfo.FileName = "java.exe";
@@ -207,6 +232,16 @@ namespace Utils
             p.StartInfo.RedirectStandardError = true;
             p.StartInfo.LoadUserProfile = true;
             return p;
+        }
+
+        /// <summary>
+        /// Build tranformed argument to a standard argument
+        /// </summary>
+        /// <param name="tranformedArgument"></param>
+        /// <returns></returns>
+        private string BuildArgument(string tranformedArgument)
+        {
+            return string.Format("-s {0}:{1} {2}", device_ipAddress, port, tranformedArgument);
         }
 
         /// <summary>
