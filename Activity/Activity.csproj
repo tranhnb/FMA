@@ -81,6 +81,7 @@
     <Compile Include="ConfirmUsingPlayStoreActivity.cs" />
     <Compile Include="DetermineApplicationActivity.cs" />
     <Compile Include="FindNewInstalledAppActivity.cs" />
+    <Compile Include="FlowBuilder.cs" />
     <Compile Include="IActivity.cs" />
     <Compile Include="InstallApplicationAvtivity.cs" />
     <Compile Include="LaunchFreeMyAppActivity.cs" />

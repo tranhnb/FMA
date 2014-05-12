@@ -48,6 +48,8 @@
             this.txtPackageName = new System.Windows.Forms.TextBox();
             this.btnCloseApp = new System.Windows.Forms.Button();
             this.btnOpenFMA = new System.Windows.Forms.Button();
+            this.btnThread = new System.Windows.Forms.Button();
+            this.btnStopThread = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -245,11 +247,31 @@
             this.btnOpenFMA.UseVisualStyleBackColor = true;
             this.btnOpenFMA.Click += new System.EventHandler(this.btnOpenFMA_Click);
             // 
+            // btnThread
+            // 
+            this.btnThread.Location = new System.Drawing.Point(12, 562);
+            this.btnThread.Name = "btnThread";
+            this.btnThread.Size = new System.Drawing.Size(194, 23);
+            this.btnThread.TabIndex = 1;
+            this.btnThread.Text = "Start mining thread";
+            this.btnThread.UseVisualStyleBackColor = true;
+            this.btnThread.Click += new System.EventHandler(this.btnThread_Click);
+            // 
+            // btnStopThread
+            // 
+            this.btnStopThread.Location = new System.Drawing.Point(12, 591);
+            this.btnStopThread.Name = "btnStopThread";
+            this.btnStopThread.Size = new System.Drawing.Size(194, 23);
+            this.btnStopThread.TabIndex = 1;
+            this.btnStopThread.Text = "Stop mining Thread";
+            this.btnStopThread.UseVisualStyleBackColor = true;
+            this.btnStopThread.Click += new System.EventHandler(this.btnStopThread_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 550);
+            this.ClientSize = new System.Drawing.Size(661, 638);
             this.Controls.Add(this.txtPackageName);
             this.Controls.Add(this.txtPackage_ActivityName);
             this.Controls.Add(this.btnConfirmUsingPlayStore);
@@ -261,6 +283,8 @@
             this.Controls.Add(this.btnModi);
             this.Controls.Add(this.btnAcceptInstallation);
             this.Controls.Add(this.btnConnect);
+            this.Controls.Add(this.btnStopThread);
+            this.Controls.Add(this.btnThread);
             this.Controls.Add(this.btnCloseApp);
             this.Controls.Add(this.btnCheckApplicationRunning);
             this.Controls.Add(this.btnOpenFMA);
@@ -300,6 +324,8 @@
         private System.Windows.Forms.TextBox txtPackageName;
         private System.Windows.Forms.Button btnCloseApp;
         private System.Windows.Forms.Button btnOpenFMA;
+        private System.Windows.Forms.Button btnThread;
+        private System.Windows.Forms.Button btnStopThread;
     }
 }
 

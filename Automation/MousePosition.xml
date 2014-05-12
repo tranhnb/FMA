@@ -5,40 +5,47 @@
     <Y>0</Y>
     <FunctionName>Launch_FreeMyApps</FunctionName>
   </MousePosition>
-  <MousePosition>
-    <X>740</X>
-    <Y>150</Y>
-    <FunctionName>Install_Application</FunctionName>
-  </MousePosition>
-  <MousePosition>
-    <X>510</X>
-    <Y>375</Y>
-    <FunctionName>Accept_Installation</FunctionName>
-  </MousePosition>
-  <MousePosition>
-    <X>0</X>
-    <Y>0</Y>
-    <FunctionName>Open_Application</FunctionName>
-  </MousePosition>
-  <MousePosition>
-    <X>410</X>
-    <Y>240</Y>
-    <FunctionName>Refresh_FreeMyApp</FunctionName>
-  </MousePosition>
+  
   <MousePosition>
     <X>750</X>
     <Y>210</Y>
     <FunctionName>Determine_Application</FunctionName>
   </MousePosition>
+  
+  <MousePosition>
+    <X>410</X>
+    <Y>240</Y>
+    <FunctionName>Refresh_FreeMyApp</FunctionName>
+  </MousePosition>
+  
   <MousePosition>
     <X>400</X>
     <Y>290</Y>
     <FunctionName>Confirm_Download</FunctionName>
-  </MousePosition>
+  </MousePosition
+  
   <MousePosition>
     <X>520</X>
     <Y>285</Y>
     <FunctionName>Confirm_Using_PlayStore</FunctionName>
   </MousePosition>
   
+  <MousePosition>
+    <X>740</X>
+    <Y>150</Y>
+    <FunctionName>Install_Application</FunctionName>
+  </MousePosition>
+  
+  <MousePosition>
+    <X>510</X>
+    <Y>375</Y>
+    <FunctionName>Accept_Installation</FunctionName>
+  </MousePosition>
+  
+  <MousePosition>
+    <X>0</X>
+    <Y>0</Y>
+    <FunctionName>Open_Application</FunctionName>
+  </MousePosition>
+
 </ArrayOfMousePosition>

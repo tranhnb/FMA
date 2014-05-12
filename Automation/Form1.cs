@@ -24,7 +24,7 @@ namespace Automation
         VirtualBoxClient vBoxClient;
         IMachine machine;
         Session machineSession;
-
+        Mining.GiftCardMiner miner;
         
         Utils.AndroidDebugBridge adb = new AndroidDebugBridge(System.Net.IPAddress.Parse("192.168.1.13"), 5555);
 
@@ -280,6 +280,17 @@ namespace Automation
         {
             bool isOpen = adb.OpenFreeMyApp();
             MessageBox.Show(this, isOpen.ToString());
+        }
+
+        private void btnThread_Click(object sender, EventArgs e)
+        {
+            miner = new Mining.GiftCardMiner(string.Empty, null, 5555);
+        }
+
+        private void btnStopThread_Click(object sender, EventArgs e)
+        {
+            if (miner != null)
+                miner.StopDig();
         }
 
 
