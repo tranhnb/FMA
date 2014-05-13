@@ -48,8 +48,9 @@
             this.txtPackageName = new System.Windows.Forms.TextBox();
             this.btnCloseApp = new System.Windows.Forms.Button();
             this.btnOpenFMA = new System.Windows.Forms.Button();
-            this.btnThread = new System.Windows.Forms.Button();
+            this.btnInitMiner = new System.Windows.Forms.Button();
             this.btnStopThread = new System.Windows.Forms.Button();
+            this.btnStartMiner = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -247,15 +248,15 @@
             this.btnOpenFMA.UseVisualStyleBackColor = true;
             this.btnOpenFMA.Click += new System.EventHandler(this.btnOpenFMA_Click);
             // 
-            // btnThread
+            // btnInitMiner
             // 
-            this.btnThread.Location = new System.Drawing.Point(12, 562);
-            this.btnThread.Name = "btnThread";
-            this.btnThread.Size = new System.Drawing.Size(194, 23);
-            this.btnThread.TabIndex = 1;
-            this.btnThread.Text = "Start mining thread";
-            this.btnThread.UseVisualStyleBackColor = true;
-            this.btnThread.Click += new System.EventHandler(this.btnThread_Click);
+            this.btnInitMiner.Location = new System.Drawing.Point(12, 562);
+            this.btnInitMiner.Name = "btnInitMiner";
+            this.btnInitMiner.Size = new System.Drawing.Size(194, 23);
+            this.btnInitMiner.TabIndex = 1;
+            this.btnInitMiner.Text = "Init a miner";
+            this.btnInitMiner.UseVisualStyleBackColor = true;
+            this.btnInitMiner.Click += new System.EventHandler(this.btnThread_Click);
             // 
             // btnStopThread
             // 
@@ -266,6 +267,16 @@
             this.btnStopThread.Text = "Stop mining Thread";
             this.btnStopThread.UseVisualStyleBackColor = true;
             this.btnStopThread.Click += new System.EventHandler(this.btnStopThread_Click);
+            // 
+            // btnStartMiner
+            // 
+            this.btnStartMiner.Location = new System.Drawing.Point(212, 562);
+            this.btnStartMiner.Name = "btnStartMiner";
+            this.btnStartMiner.Size = new System.Drawing.Size(194, 23);
+            this.btnStartMiner.TabIndex = 1;
+            this.btnStartMiner.Text = "Miner start dig";
+            this.btnStartMiner.UseVisualStyleBackColor = true;
+            this.btnStartMiner.Click += new System.EventHandler(this.btnStartMiner_Click);
             // 
             // Form1
             // 
@@ -284,7 +295,8 @@
             this.Controls.Add(this.btnAcceptInstallation);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.btnStopThread);
-            this.Controls.Add(this.btnThread);
+            this.Controls.Add(this.btnStartMiner);
+            this.Controls.Add(this.btnInitMiner);
             this.Controls.Add(this.btnCloseApp);
             this.Controls.Add(this.btnCheckApplicationRunning);
             this.Controls.Add(this.btnOpenFMA);
@@ -324,8 +336,9 @@
         private System.Windows.Forms.TextBox txtPackageName;
         private System.Windows.Forms.Button btnCloseApp;
         private System.Windows.Forms.Button btnOpenFMA;
-        private System.Windows.Forms.Button btnThread;
+        private System.Windows.Forms.Button btnInitMiner;
         private System.Windows.Forms.Button btnStopThread;
+        private System.Windows.Forms.Button btnStartMiner;
     }
 }
 

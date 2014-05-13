@@ -19,12 +19,8 @@ namespace Mining
         private VirtualBoxClient vBoxClient;
         private IMachine machine;
         private Session machineSession;
-        private IMouse guestMouse;
-        private IDisplay guestDisplay;
-
-        private string virtualMachineName = string.Empty;
-        private IPAddress guestIPAddress;
-        private int port;
+        
+        private GuestInformation guestInfo;
         
         private bool isRequestStop = false;
         private Thread digThread;
@@ -36,13 +32,9 @@ namespace Mining
         #region Constructor
 
         public GiftCardMiner(string virtualMachineName, IPAddress guestIPAddress, int port)
-        {
-            this.virtualMachineName = virtualMachineName;
-            this.guestIPAddress = guestIPAddress;
-            this.port = port;
-            
+        {        
             //Connect to Guest Virtual Machine
-            ConnectGuest();
+            ConnectGuest(virtualMachineName, guestIPAddress.ToString(), port);
             InitFlow();
 
             digThread = new Thread(Dig);
@@ -73,19 +65,25 @@ namespace Mining
         /// <summary>
         /// Connect to Guest machine
         /// </summary>
-        private void ConnectGuest()
+        private void ConnectGuest(string virtualMachineName, string guestIPAddress, int port)
         {
             vBoxClient = new VirtualBoxClient();
-            machine = vBoxClient.VirtualBox.FindMachine(this.virtualMachineName);
+            machine = vBoxClient.VirtualBox.FindMachine(virtualMachineName);
             if (machine != null)
             {
                 machineSession = vBoxClient.Session;
                 machine.LockMachine(machineSession, LockType.LockType_Shared);
-                this.guestMouse = machineSession.Console.Mouse;
-                this.guestDisplay = machineSession.Console.Display;
+                this.guestInfo = new GuestInformation()
+                {
+                    Name = virtualMachineName,
+                    Mouse = machineSession.Console.Mouse,
+                    Display = machineSession.Console.Display,
+                    IPAddress = guestIPAddress,
+                    port = port
+                };
             }
             else {
-                throw new Exception("Can't connect to guest: " + this.virtualMachineName);
+                throw new Exception("Can't connect to guest: " + virtualMachineName);
             }
             
         }
@@ -95,7 +93,7 @@ namespace Mining
         /// </summary>
         private void InitFlow()
         {
-            activityList = Activity.FlowBuilder.CreateFlow(this.guestMouse, this.guestDisplay);
+            activityList = Activity.FlowBuilder.CreateFlow(guestInfo);
         }
         /// <summary>
         /// Start mining flow.
@@ -105,7 +103,11 @@ namespace Mining
             while (!isRequestStop)
             {
                 Console.WriteLine("Start Dig");
-                //TODO: Iterate through activityList to execute each activity.
+
+                foreach (IActivity activity in this.activityList)
+                {
+                    activity.Start();
+                }
 
                 Thread.Sleep(1000);
             }

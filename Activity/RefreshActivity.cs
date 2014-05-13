@@ -14,9 +14,9 @@ namespace Activity
     /// </summary>
     class RefreshActivity : Activity
     {
-        
-        public RefreshActivity(int mousePositionX, int mousePositionY, VirtualBox.IMouse Mouse, VirtualBox.IDisplay Display)
-            : base(mousePositionX, mousePositionY, Mouse, Display)
+
+        public RefreshActivity(GuestInformation guestInfo, int mousePositionX, int mousePositionY)
+            : base(guestInfo, mousePositionX, mousePositionY)
         {
         }
 

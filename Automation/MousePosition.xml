@@ -3,7 +3,7 @@
   <MousePosition>
     <X>10</X>
     <Y>0</Y>
-    <FunctionName>Launch_FreeMyApps</FunctionName>
+    <FunctionName>Launch_FreeMyApp</FunctionName>
   </MousePosition>
   
   <MousePosition>
@@ -17,12 +17,12 @@
     <Y>240</Y>
     <FunctionName>Refresh_FreeMyApp</FunctionName>
   </MousePosition>
-  
+
   <MousePosition>
     <X>400</X>
     <Y>290</Y>
     <FunctionName>Confirm_Download</FunctionName>
-  </MousePosition
+  </MousePosition>
   
   <MousePosition>
     <X>520</X>

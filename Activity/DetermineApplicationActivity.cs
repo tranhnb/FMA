@@ -13,8 +13,8 @@ namespace Activity
     /// </summary>
     class DetermineApplicationActivity: Activity
     {
-        public DetermineApplicationActivity(int mousePositionX, int mousePositionY, VirtualBox.IMouse Mouse, VirtualBox.IDisplay Display)
-            : base(mousePositionX, mousePositionY, Mouse, Display)
+        public DetermineApplicationActivity(GuestInformation guestInfo, int mousePositionX, int mousePositionY)
+            : base(guestInfo, mousePositionX, mousePositionY)
         {
 
         }

@@ -21,12 +21,12 @@ namespace Activity
         };
 
             
-        public static List<IActivity> CreateFlow(VirtualBox.IMouse guestMouse, VirtualBox.IDisplay guestDisplay)
+        public static List<IActivity> CreateFlow(GuestInformation guestInformation)
         {
             List<IActivity> flow = new List<IActivity>();
             for (int i = 0; i < activityNameInOrder.Length; i++)
             {
-                flow.Add(Activity.CreateActivity(activityNameInOrder[i], guestMouse, guestDisplay));
+                flow.Add(Activity.CreateActivity(activityNameInOrder[i], guestInformation));
             }
             
             return flow;

@@ -10,10 +10,16 @@ namespace Activity
     /// </summary>
     class LaunchFreeMyAppActivity: Activity
     {
-        public LaunchFreeMyAppActivity(int mousePositionX, int mousePositionY, VirtualBox.IMouse Mouse, VirtualBox.IDisplay Display)
-            : base(mousePositionX, mousePositionY, Mouse, Display)
+        public LaunchFreeMyAppActivity(GuestInformation guestInfo, int mousePositionX, int mousePositionY)
+            : base(guestInfo, mousePositionX, mousePositionY)
         {
 
         }
+
+        protected override void DoProc()
+        {
+            //Launch freemyapp application   
+        }
+
     }
 }

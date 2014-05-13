@@ -14,8 +14,8 @@ namespace Activity
     /// </summary>
     class ConfirmDownloadActivity : Activity
     {
-        public ConfirmDownloadActivity(int mousePositionX, int mousePositionY, VirtualBox.IMouse Mouse, VirtualBox.IDisplay Display)
-            : base(mousePositionX, mousePositionY, Mouse, Display)
+        public ConfirmDownloadActivity(GuestInformation guestInfo, int mousePositionX, int mousePositionY)
+            : base(guestInfo, mousePositionX, mousePositionY)
         {
 
         }

@@ -9,8 +9,8 @@ namespace Activity
 {
     class AcceptInstallationActivity: Activity
     {
-        public AcceptInstallationActivity(int mousePositionX, int mousePositionY, VirtualBox.IMouse Mouse, VirtualBox.IDisplay Display)
-            : base(mousePositionX, mousePositionY, Mouse, Display)
+        public AcceptInstallationActivity(GuestInformation guestInfo, int mousePositionX, int mousePositionY)
+            : base(guestInfo, mousePositionX, mousePositionY)
         {
             
         }

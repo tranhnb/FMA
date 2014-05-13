@@ -11,10 +11,6 @@ namespace Activity
     {
         #region Variables and Properties
 
-        /// <summary>
-        /// Virtual Box IMouse Interface
-        /// </summary>
-        IMouse Mouse { get; set; }
 
         /// <summary>
         /// ActivityName defined in MouseCoordinates project: MousePosition.xml

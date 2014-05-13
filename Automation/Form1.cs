@@ -11,6 +11,7 @@ using Utils;
 using System.IO;
 using System.Diagnostics;
 using System.Net;
+using Activity;
 
 namespace Automation
 {
@@ -25,8 +26,9 @@ namespace Automation
         IMachine machine;
         Session machineSession;
         Mining.GiftCardMiner miner;
-        
+        string guestIP = "192.168.1.13";
         Utils.AndroidDebugBridge adb = new AndroidDebugBridge(System.Net.IPAddress.Parse("192.168.1.13"), 5555);
+        GuestInformation guest = new GuestInformation();
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -42,6 +44,11 @@ namespace Automation
                 machineSession = vBoxClient.Session;
                 machine.LockMachine(machineSession, LockType.LockType_Shared);
             }
+
+            guest.port = 5555;
+            guest.IPAddress = guestIP;
+            guest.Mouse = machineSession.Console.Mouse;
+            guest.Display = machineSession.Console.Display;
         }
 
 
@@ -52,7 +59,7 @@ namespace Automation
         /// <param name="e"></param>
         private void btnInstallApp_Click(object sender, EventArgs e)
         {
-            Activity.IActivity installActivity = Activity.Activity.CreateActivity(Constants.ActivityName.INSTALL_APPLICATION, machineSession.Console.Mouse, machineSession.Console.Display);
+            Activity.IActivity installActivity = Activity.Activity.CreateActivity(Constants.ActivityName.INSTALL_APPLICATION, guest);
             installActivity.Start();
         }
 
@@ -63,7 +70,7 @@ namespace Automation
         /// <param name="e"></param>
         private void btnAcceptInstallation_Click(object sender, EventArgs e)
         {
-            Activity.IActivity acceptInstallation = Activity.Activity.CreateActivity(Constants.ActivityName.ACCEPT_INSTALLATION, machineSession.Console.Mouse, machineSession.Console.Display);
+            Activity.IActivity acceptInstallation = Activity.Activity.CreateActivity(Constants.ActivityName.ACCEPT_INSTALLATION, guest);
             acceptInstallation.Start();
         }
 
@@ -128,41 +135,34 @@ namespace Automation
 
             pictureBox1.Image = imgShow;
 
-            //imgShow.Dispose();
             gBmp.Dispose();
             redBrush.Dispose();
 
             return;
-
-            //another solution
-
-            //ImageChecker checker = new ImageChecker(big, small);
-            //Point p = checker.bigContainsSmall(102, 27, 0, 100, 0, 100);
-            //MessageBox.Show("X: " + p.X.ToString() + "---Y: " + p.Y.ToString());
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            Activity.IActivity refreshFMA = Activity.Activity.CreateActivity(Constants.ActivityName.REFRESH_FREE_MY_APP, machineSession.Console.Mouse, machineSession.Console.Display);
+            Activity.IActivity refreshFMA = Activity.Activity.CreateActivity(Constants.ActivityName.REFRESH_FREE_MY_APP, guest);
             refreshFMA.Start();
         }
 
 
         private void btnDetermineApplication_Click(object sender, EventArgs e)
         {
-            Activity.IActivity determineApplication = Activity.Activity.CreateActivity(Constants.ActivityName.DETERMINE_APPLICATION, machineSession.Console.Mouse, machineSession.Console.Display);
+            Activity.IActivity determineApplication = Activity.Activity.CreateActivity(Constants.ActivityName.DETERMINE_APPLICATION, guest);
             determineApplication.Start();
         }
 
         private void btnConfirmDownload_Click(object sender, EventArgs e)
         {
-            Activity.IActivity confirmDownloadApp = Activity.Activity.CreateActivity(Constants.ActivityName.CONFIRM_DOWNLOAD, machineSession.Console.Mouse, machineSession.Console.Display);
+            Activity.IActivity confirmDownloadApp = Activity.Activity.CreateActivity(Constants.ActivityName.CONFIRM_DOWNLOAD, guest);
             confirmDownloadApp.Start();
         }
 
         private void btnConfirmUsingPlayStore_Click(object sender, EventArgs e)
         {
-            Activity.IActivity confirmUsingPlayStore = Activity.Activity.CreateActivity(Constants.ActivityName.CONFIRM_USING_PLAYSTORE, machineSession.Console.Mouse, machineSession.Console.Display);
+            Activity.IActivity confirmUsingPlayStore = Activity.Activity.CreateActivity(Constants.ActivityName.CONFIRM_USING_PLAYSTORE, guest);
             confirmUsingPlayStore.Start();
         }
 
@@ -284,13 +284,21 @@ namespace Automation
 
         private void btnThread_Click(object sender, EventArgs e)
         {
-            miner = new Mining.GiftCardMiner(string.Empty, null, 5555);
+            string guestMachineName = "test";
+            IPAddress ipAddress = IPAddress.Parse("192.168.1.13");
+            miner = new Mining.GiftCardMiner(guestMachineName, ipAddress, 5555);
         }
 
         private void btnStopThread_Click(object sender, EventArgs e)
         {
             if (miner != null)
                 miner.StopDig();
+        }
+
+        private void btnStartMiner_Click(object sender, EventArgs e)
+        {
+            if (miner != null)
+                miner.StartDig();
         }
 
 
