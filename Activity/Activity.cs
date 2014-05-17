@@ -6,6 +6,7 @@ using VirtualBox;
 using MouseCoordinates;
 using System.Drawing;
 using Utils;
+using System.Net;
 
 
 namespace Activity
@@ -38,6 +39,11 @@ namespace Activity
             get;
             set;
         }
+
+        /// <summary>
+        /// Communicate with android virtual machine
+        /// </summary>
+        protected AndroidDebugBridge androidDebugBridge = null;
 
         /// <summary>
         /// Virtual machine information
@@ -78,6 +84,7 @@ namespace Activity
             this.GuestInformation = guestInfo;
             this.MousePositionX = mousePositionX;
             this.MousePositionY = mousePositionY;
+            this.androidDebugBridge = new AndroidDebugBridge(IPAddress.Parse(guestInfo.IPAddress), guestInfo.port);
         }
 
         #endregion

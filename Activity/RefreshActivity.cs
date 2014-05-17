@@ -22,7 +22,7 @@ namespace Activity
 
         protected override bool IsMatchCriteria()
         {
-            Image img = this.CaptureScreen(380, 230, 85, 25);
+            Image img = this.CaptureScreen(349, 143, 104, 33);
             //Image img = this.CaptureScreen();
             Guid guid = Guid.NewGuid();
 

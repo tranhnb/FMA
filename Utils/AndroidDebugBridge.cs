@@ -9,6 +9,7 @@ using System.Xml;
 
 namespace Utils
 {
+    
     public class AndroidDebugBridge
     {
         #region Variable and Properties
@@ -36,6 +37,10 @@ namespace Utils
         {
             this.device_ipAddress = ipAddress.ToString();
             this.port = port;
+            if (!this.Connect())
+            {
+                throw new ADBConnectionException();
+            }
         }
 
         #endregion Construtor

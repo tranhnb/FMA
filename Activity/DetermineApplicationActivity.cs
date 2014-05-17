@@ -21,7 +21,7 @@ namespace Activity
 
         protected override bool IsMatchCriteria()
         {
-            Image img = this.CaptureScreen(380, 230, 85, 25);
+            Image img = this.CaptureScreen(349, 143, 104, 33);
             Guid guid = Guid.NewGuid();
 
             string filePath = string.Format(@"{0}\Temp\{1}.png", Directory.GetCurrentDirectory(), guid.ToString());

@@ -96,10 +96,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Images\Template\Verify_FaceBook_Step1.png" />
-    <Content Include="Images\Template\Verify_FaceBook_Step2.png" />
-    <Content Include="Images\Template\Verify_FaceBook_Step3.png" />
-    <Content Include="Images\Template\Verify_FaceBook_Step4.png" />
+    <Content Include="Images\Template\ConfirmUsingGoolePlay.png" />
+    <Content Include="Images\Template\Confirm_Download_App.png" />
+    <Content Include="Images\Template\FreeMyApp_Step1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Template\FreeMyApp_Step2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Template\FreeMyApp_Step3.png" />
+    <Content Include="Images\Template\Refresh.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Template\Verify_FaceBook_Step1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Template\Verify_FaceBook_Step2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Template\Verify_FaceBook_Step3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Template\Verify_FaceBook_Step4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Libs\apktool.jar">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -119,20 +139,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="buildVirtualBoxAPI.txt" />
-    <Content Include="Images\Template\ConfirmUsingGoolePlay.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Template\Confirm_Download_App.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Template\FreeMyApp_Step1.png" />
-    <Content Include="Images\Template\FreeMyApp_Step2.png" />
-    <Content Include="Images\Template\FreeMyApp_Step3.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Template\Refresh.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Images\Test\FreeMyApp_Complete_App.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

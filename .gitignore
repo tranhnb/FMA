@@ -15,3 +15,5 @@ Constants/bin/
 Constants/obj/
 Mining/bin/
 Mining/obj/
+UnitTest/bin/
+UnitTest/obj

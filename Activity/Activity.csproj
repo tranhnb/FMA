@@ -77,6 +77,7 @@
   <ItemGroup>
     <Compile Include="AcceptInstallationActivity.cs" />
     <Compile Include="Activity.cs" />
+    <Compile Include="ActivityException.cs" />
     <Compile Include="ConfirmDownloadActivity.cs" />
     <Compile Include="ConfirmUsingPlayStoreActivity.cs" />
     <Compile Include="DetermineApplicationActivity.cs" />

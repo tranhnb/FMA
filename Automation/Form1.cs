@@ -26,8 +26,8 @@ namespace Automation
         IMachine machine;
         Session machineSession;
         Mining.GiftCardMiner miner;
-        string guestIP = "192.168.1.13";
-        Utils.AndroidDebugBridge adb = new AndroidDebugBridge(System.Net.IPAddress.Parse("192.168.1.13"), 5555);
+        string guestIP = "192.168.1.5";
+        Utils.AndroidDebugBridge adb = new AndroidDebugBridge(System.Net.IPAddress.Parse("192.168.1.5"), 5555);
         GuestInformation guest = new GuestInformation();
 
         private void button1_Click(object sender, EventArgs e)
@@ -216,7 +216,7 @@ namespace Automation
         /// <param name="e"></param>
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            System.Net.IPAddress ip = System.Net.IPAddress.Parse("192.168.1.13");
+            System.Net.IPAddress ip = System.Net.IPAddress.Parse("192.168.1.5");
             int port = 5555;
 
             bool isConnected = adb.Connect();
@@ -285,7 +285,7 @@ namespace Automation
         private void btnThread_Click(object sender, EventArgs e)
         {
             string guestMachineName = "test";
-            IPAddress ipAddress = IPAddress.Parse("192.168.1.13");
+            IPAddress ipAddress = IPAddress.Parse("192.168.1.5");
             miner = new Mining.GiftCardMiner(guestMachineName, ipAddress, 5555);
         }
 

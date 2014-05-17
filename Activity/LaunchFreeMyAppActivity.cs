@@ -18,7 +18,14 @@ namespace Activity
 
         protected override void DoProc()
         {
-            //Launch freemyapp application   
+            //Launch freemyapp application
+            if (this.androidDebugBridge.OpenFreeMyApp())
+            {
+
+            }
+            else {
+                throw new LaunchApplicationException();
+            }
         }
 
     }
