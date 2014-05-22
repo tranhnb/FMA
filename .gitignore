@@ -17,3 +17,5 @@ Mining/bin/
 Mining/obj/
 UnitTest/bin/
 UnitTest/obj
+Automation/TestResults/
+Automation/UnitTest/

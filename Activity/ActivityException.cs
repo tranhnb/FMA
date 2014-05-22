@@ -15,5 +15,10 @@ namespace Activity
         
     }
 
-    
+    /// <summary>
+    /// FMA has no application to download
+    /// </summary>
+    public class NoApplicationException : ActivityException
+    { 
+    }
 }

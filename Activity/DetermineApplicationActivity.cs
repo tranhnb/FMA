@@ -28,16 +28,23 @@ namespace Activity
             img.Save(filePath);
             byte[] hash1 = ImageUtils.Sha256HashFile(filePath);
 
-            string templateFilePath = string.Format(@"{0}\Images\Template\{1}", Directory.GetCurrentDirectory(), "Refresh.png");
+            string templateFilePath = string.Format(@"{0}\Images\Template\{1}", Directory.GetCurrentDirectory(), "Refresh_1.png");
             byte[] hash2 = ImageUtils.Sha256HashFile(templateFilePath);
 
+            string templateFilePath2 = string.Format(@"{0}\Images\Template\{1}", Directory.GetCurrentDirectory(), "Refresh_2.png");
+            byte[] hash3 = ImageUtils.Sha256HashFile(templateFilePath2);
+
             //Compare this image with Refresh Image template
-            bool isMatch = hash1.SequenceEqual(hash2);
+            bool isMatch1 = hash1.SequenceEqual(hash2);
+            bool isMatch2 = hash1.SequenceEqual(hash3);
             File.Delete(filePath);
             img = null;
 
             //If we are on FMA and the refresh button doesn't display so FMA has applications to be installed
-            return !isMatch;
+            if (isMatch1 || isMatch2)
+                throw new NoApplicationException();
+            else
+                return true;
 
         }
     }

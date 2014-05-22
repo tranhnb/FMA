@@ -15,17 +15,25 @@ namespace Mining
     public class GiftCardMiner
     {
         #region Variable and Properties
-        
+
+        //------------------------ VirtualBox information------------------------//
         private VirtualBoxClient vBoxClient;
         private IMachine machine;
         private Session machineSession;
-        
         private GuestInformation guestInfo;
-        
+        //---------------------- End VirtualBox information----------------------//
+
         private bool isRequestStop = false;
         private Thread digThread;
 
+        //List of activity for GiftCardMiner
         private List<IActivity> activityList;
+
+        //Last Activity Has been done
+        private IActivity lastActivity;
+
+        //Miner stops his job for a while ^_^
+        private int tea_break_time = 1 * 60 * 1000; //Miliseconds
 
         #endregion Variable and Properties
 
@@ -36,10 +44,6 @@ namespace Mining
             //Connect to Guest Virtual Machine
             ConnectGuest(virtualMachineName, guestIPAddress.ToString(), port);
             InitFlow();
-
-            digThread = new Thread(Dig);
-            digThread.Priority = ThreadPriority.BelowNormal;
-            
         }
 
         #endregion Constructor
@@ -51,6 +55,8 @@ namespace Mining
         /// </summary>
         public void StartDig()
         {
+            digThread = new Thread(Dig);
+            digThread.Priority = ThreadPriority.BelowNormal;
             digThread.Start();
         }
 
@@ -60,6 +66,14 @@ namespace Mining
         public void StopDig()
         {
             isRequestStop = true;
+        }
+
+        /// <summary>
+        /// Suspend thread for a while
+        /// </summary>
+        public void StartTeaBreak()
+        {
+            Thread.Sleep(tea_break_time);
         }
 
         /// <summary>
@@ -104,12 +118,28 @@ namespace Mining
             {
                 Console.WriteLine("Start Dig");
 
-                foreach (IActivity activity in this.activityList)
+                try
                 {
-                    activity.Start();
-                }
 
-                Thread.Sleep(1000);
+                    foreach (IActivity activity in this.activityList)
+                    {
+                        activity.Start();
+                    }
+                }
+                //No application to download
+                catch (NoApplicationException ex)
+                {
+                    StartTeaBreak();
+                    //TODO: Log warning
+                    //Keep hard working Mine mine mine mine FOREVER ^_^
+                    Dig();
+                }
+                catch (Exception ex)
+                {
+                    StopDig();
+                    //TODO: Log error
+                }
+                
             }
         }
 

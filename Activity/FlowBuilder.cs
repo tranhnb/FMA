@@ -12,12 +12,12 @@ namespace Activity
     {
         private static string[] activityNameInOrder = new string[7]{
             Constants.ActivityName.LAUNCH_FREE_MY_APPS,
-            Constants.ActivityName.DETERMINE_APPLICATION,
             Constants.ActivityName.REFRESH_FREE_MY_APP,
+            Constants.ActivityName.DETERMINE_APPLICATION,
             Constants.ActivityName.CONFIRM_DOWNLOAD,
             Constants.ActivityName.CONFIRM_USING_PLAYSTORE,
             Constants.ActivityName.INSTALL_APPLICATION,
-            Constants.ActivityName.ACCEPT_INSTALLATION,
+            Constants.ActivityName.ACCEPT_INSTALLATION,    
         };
 
             

@@ -12,6 +12,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Net;
 using Activity;
+using Mining;
 
 namespace Automation
 {
@@ -26,8 +27,8 @@ namespace Automation
         IMachine machine;
         Session machineSession;
         Mining.GiftCardMiner miner;
-        string guestIP = "192.168.1.5";
-        Utils.AndroidDebugBridge adb = new AndroidDebugBridge(System.Net.IPAddress.Parse("192.168.1.5"), 5555);
+        string guestIP = "192.168.1.7";
+        Utils.AndroidDebugBridge adb = new AndroidDebugBridge(System.Net.IPAddress.Parse("192.168.1.7"), 5555);
         GuestInformation guest = new GuestInformation();
 
         private void button1_Click(object sender, EventArgs e)
@@ -216,7 +217,7 @@ namespace Automation
         /// <param name="e"></param>
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            System.Net.IPAddress ip = System.Net.IPAddress.Parse("192.168.1.5");
+            System.Net.IPAddress ip = System.Net.IPAddress.Parse("192.168.1.7");
             int port = 5555;
 
             bool isConnected = adb.Connect();
@@ -285,7 +286,7 @@ namespace Automation
         private void btnThread_Click(object sender, EventArgs e)
         {
             string guestMachineName = "test";
-            IPAddress ipAddress = IPAddress.Parse("192.168.1.5");
+            IPAddress ipAddress = IPAddress.Parse(guestIP);
             miner = new Mining.GiftCardMiner(guestMachineName, ipAddress, 5555);
         }
 
@@ -301,9 +302,43 @@ namespace Automation
                 miner.StartDig();
         }
 
+        #region Tab 2
+
+        private void btnCheckCaptureScreen_Click(object sender, EventArgs e)
+        {
+            CaptureScreen screen = new CaptureScreen();
+            byte[] rootHash = null;
+
+            for (int i = 0; i < 10; i++)
+            {
+                byte[] byteArray = screen.TakeScreenShot(this.guest.Display, 349, 143, 104, 33);
+                Image img = ImageFromByteArray(byteArray);
+                string filePath = string.Format(@"{0}\Temp\{1}.png", Directory.GetCurrentDirectory(), i.ToString());
+                img.Save(filePath);
+                if (rootHash == null)
+                    rootHash = ImageUtils.Sha256HashFile(filePath);
+                
+                byte[] currentHash = ImageUtils.Sha256HashFile(filePath);
+                if (!rootHash.SequenceEqual(currentHash)) 
+                {
+                    MessageBox.Show("Capture screen is error");
+                    return;
+                }
+            }
+        }
 
 
-        
+        private Image ImageFromByteArray(byte[] byteArray)
+        {
+            using (System.IO.MemoryStream ms = new System.IO.MemoryStream(byteArray))
+            {
+                Image returnImage = Image.FromStream(ms);
+                return returnImage;
+            }
+        }
+
+        #endregion Tab 2
+
     }
 }
 
