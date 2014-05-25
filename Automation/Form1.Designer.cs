@@ -73,6 +73,11 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnCheckCaptureScreen = new System.Windows.Forms.Button();
+            this.btnCompareImages = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.txtImage1 = new System.Windows.Forms.TextBox();
+            this.btnSelectImage1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -547,6 +552,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnSelectImage1);
+            this.tabPage2.Controls.Add(this.txtImage1);
+            this.tabPage2.Controls.Add(this.btnCompareImages);
             this.tabPage2.Controls.Add(this.btnCheckCaptureScreen);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -566,6 +574,42 @@
             this.btnCheckCaptureScreen.UseVisualStyleBackColor = true;
             this.btnCheckCaptureScreen.Click += new System.EventHandler(this.btnCheckCaptureScreen_Click);
             // 
+            // btnCompareImages
+            // 
+            this.btnCompareImages.Location = new System.Drawing.Point(8, 82);
+            this.btnCompareImages.Name = "btnCompareImages";
+            this.btnCompareImages.Size = new System.Drawing.Size(183, 23);
+            this.btnCompareImages.TabIndex = 0;
+            this.btnCompareImages.Text = "Compare Images";
+            this.btnCompareImages.UseVisualStyleBackColor = true;
+            this.btnCompareImages.Click += new System.EventHandler(this.btnCompareImages_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Multiselect = true;
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog2";
+            // 
+            // txtImage1
+            // 
+            this.txtImage1.Location = new System.Drawing.Point(8, 35);
+            this.txtImage1.Name = "txtImage1";
+            this.txtImage1.Size = new System.Drawing.Size(311, 20);
+            this.txtImage1.TabIndex = 1;
+            // 
+            // btnSelectImage1
+            // 
+            this.btnSelectImage1.Location = new System.Drawing.Point(325, 33);
+            this.btnSelectImage1.Name = "btnSelectImage1";
+            this.btnSelectImage1.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectImage1.TabIndex = 2;
+            this.btnSelectImage1.Text = "Imgae 1";
+            this.btnSelectImage1.UseVisualStyleBackColor = true;
+            this.btnSelectImage1.Click += new System.EventHandler(this.btnSelectImage1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -579,6 +623,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -630,6 +675,11 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnCheckCaptureScreen;
+        private System.Windows.Forms.Button btnSelectImage1;
+        private System.Windows.Forms.TextBox txtImage1;
+        private System.Windows.Forms.Button btnCompareImages;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
     }
 }
 

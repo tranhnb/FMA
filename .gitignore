@@ -9,13 +9,11 @@ Activity/bin/
 Activity/obj/
 Utils/bin/
 Utils/obj/
-UnitTest/bin/
-UnitTest/obj/
 Constants/bin/
 Constants/obj/
 Mining/bin/
 Mining/obj/
-UnitTest/bin/
-UnitTest/obj
 Automation/TestResults/
-Automation/UnitTest/
+Automation/UnitTest/TestData/
+Automation/UnitTest/bin/
+Automation\UnitTest\obj\Debug\

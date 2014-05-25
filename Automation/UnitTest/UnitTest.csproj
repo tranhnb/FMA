@@ -33,10 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Interop.MODI">
+      <HintPath>..\Libs\Interop.MODI.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="VirtualBox">
+      <HintPath>..\Libs\VirtualBox.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -45,7 +59,38 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImageUtilsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Shadow Include="Test References\Activity.accessor" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Activity\Activity.csproj">
+      <Project>{BCF24C4B-7DB3-4B0B-B384-E8F4BD753ADD}</Project>
+      <Name>Activity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Constants\Constants.csproj">
+      <Project>{582B8675-9AE7-48C8-9109-1031EDA2EAC8}</Project>
+      <Name>Constants</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MouseCoordinates\MouseCoordinates.csproj">
+      <Project>{4D612802-2121-4D63-84F1-D1810206967D}</Project>
+      <Name>MouseCoordinates</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Utils\Utils.csproj">
+      <Project>{C6CC6DED-F1C1-4040-B089-97BDF9EA9217}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="TestData\Child.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\Parent.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

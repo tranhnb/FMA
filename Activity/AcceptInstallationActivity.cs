@@ -25,7 +25,7 @@ namespace Activity
             Color c = Color.FromArgb(176, 200, 56);
 
             Bitmap bitmap = new Bitmap(img);
-            Point? point = ImageUtils.FindAllPixelLocation(bitmap, c, startPoint, endPoint);
+            Point? point = this.imageUtils.FindAllPixelLocation(bitmap, c, startPoint, endPoint);
             if (point.HasValue) {
                 this.MousePositionX = point.Value.X + 5;
                 this.MousePositionY = point.Value.Y + 5;

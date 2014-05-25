@@ -27,10 +27,10 @@ namespace Activity
 
             string filePath = string.Format(@"{0}\Temp\{1}.png", Directory.GetCurrentDirectory(), guid.ToString());
             img.Save(filePath);
-            byte[] hash1 = ImageUtils.Sha256HashFile(filePath);
+            byte[] hash1 = this.imageUtils.Sha256HashFile(filePath);
 
             string templateFilePath = string.Format(@"{0}\Images\Template\{1}", Directory.GetCurrentDirectory(), "ConfirmUsingGoolePlay.png");
-            byte[] hash2 = ImageUtils.Sha256HashFile(templateFilePath);
+            byte[] hash2 = this.imageUtils.Sha256HashFile(templateFilePath);
 
             //Compare this image with Refresh Image template
             bool isMatch = hash1.SequenceEqual(hash2);

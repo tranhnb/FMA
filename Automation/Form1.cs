@@ -30,6 +30,7 @@ namespace Automation
         string guestIP = "192.168.1.7";
         Utils.AndroidDebugBridge adb = new AndroidDebugBridge(System.Net.IPAddress.Parse("192.168.1.7"), 5555);
         GuestInformation guest = new GuestInformation();
+        ImageUtils imageUtils = new ImageUtils();
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -118,7 +119,7 @@ namespace Automation
 
             Point startPoint = new Point(0, 0);
             Point endPoint = new Point(big.Width, big.Height);
-            Point? point = ImageUtils.FindAllPixelLocation(big, c, startPoint, endPoint);
+            Point? point = this.imageUtils.FindAllPixelLocation(big, c, startPoint, endPoint);
 
             if (!point.HasValue)
             {
@@ -308,6 +309,7 @@ namespace Automation
         {
             CaptureScreen screen = new CaptureScreen();
             byte[] rootHash = null;
+            bool isIdentical = true;
 
             for (int i = 0; i < 10; i++)
             {
@@ -316,15 +318,21 @@ namespace Automation
                 string filePath = string.Format(@"{0}\Temp\{1}.png", Directory.GetCurrentDirectory(), i.ToString());
                 img.Save(filePath);
                 if (rootHash == null)
-                    rootHash = ImageUtils.Sha256HashFile(filePath);
-                
-                byte[] currentHash = ImageUtils.Sha256HashFile(filePath);
-                if (!rootHash.SequenceEqual(currentHash)) 
+                    rootHash = this.imageUtils.Sha256HashFile(filePath);
+
+                byte[] currentHash = this.imageUtils.Sha256HashFile(filePath);
+                if (!rootHash.SequenceEqual(currentHash))
                 {
-                    MessageBox.Show("Capture screen is error");
+                    isIdentical = false;
+                    
                     return;
                 }
             }
+
+            if(!isIdentical)
+                MessageBox.Show("Capture screen is error");
+            else
+                MessageBox.Show("All pics are identical");
         }
 
 
@@ -337,8 +345,54 @@ namespace Automation
             }
         }
 
+        private void btnSelectImage1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();
+            DialogResult result =  openFileDialog1.ShowDialog(this);
+            if(result.Equals(DialogResult.OK))
+            {
+                txtImage1.Text = openFileDialog1.FileName;
+            }
+        }
+
+   
+
+        private void btnCompareImages_Click(object sender, EventArgs e)
+        {
+            bool isIdentical = true;
+            for (int i = 0, len = openFileDialog1.FileNames.Length; i < len; i++)
+            {
+                byte[] image1Hash = this.imageUtils.Sha256HashFile(openFileDialog1.FileNames[i]);
+                byte[] image2Hash = null;
+                if (i + 1 < len)
+                {
+                    image2Hash = this.imageUtils.Sha256HashFile(openFileDialog1.FileNames[i + 1]);
+                }
+                if (image2Hash != null && !image1Hash.SequenceEqual(image2Hash))
+                {
+                    isIdentical = false;
+                    break;
+                }
+            }
+            if (!isIdentical)
+            {
+                MessageBox.Show("Images are not identical");
+            }
+            else {
+                MessageBox.Show("Images are identical");
+            }
+        }
+        
+
         #endregion Tab 2
+
+        
+
+        
+
+        
 
     }
 }
+
 

@@ -105,10 +105,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Template\FreeMyApp_Step3.png" />
-    <Content Include="Images\Template\Refresh_1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Template\Refresh_2.png">
+    <Content Include="Images\Template\Refresh.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Template\Verify_FaceBook_Step1.png">

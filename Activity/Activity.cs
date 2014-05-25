@@ -44,7 +44,7 @@ namespace Activity
         /// Communicate with android virtual machine
         /// </summary>
         protected AndroidDebugBridge androidDebugBridge = null;
-
+        protected ImageUtils imageUtils = null;
         /// <summary>
         /// Virtual machine information
         /// </summary>
@@ -85,6 +85,7 @@ namespace Activity
             this.MousePositionX = mousePositionX;
             this.MousePositionY = mousePositionY;
             this.androidDebugBridge = new AndroidDebugBridge(IPAddress.Parse(guestInfo.IPAddress), guestInfo.port);
+            this.imageUtils = new ImageUtils();
         }
 
         #endregion
