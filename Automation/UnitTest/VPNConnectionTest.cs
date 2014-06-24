@@ -1,19 +1,17 @@
 ﻿using Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.IO;
-using System.Reflection;
 
 namespace UnitTest
 {
     
     
     /// <summary>
-    ///This is a test class for ImageUtilsTest and is intended
-    ///to contain all ImageUtilsTest Unit Tests
+    ///This is a test class for VPNConnectionTest and is intended
+    ///to contain all VPNConnectionTest Unit Tests
     ///</summary>
     [TestClass()]
-    public class ImageUtilsTest
+    public class VPNConnectionTest
     {
 
 
@@ -67,29 +65,34 @@ namespace UnitTest
 
 
         /// <summary>
-        ///A test for IsSubImage
+        ///A test for Connect
         ///</summary>
         [TestMethod()]
-        public void IsSubImageTest()
+        public void ConnectTest()
         {
-
-            string path = Path.Combine(TestDataPath, "UnitTest", "TestData");
-            
-            ImageUtils target = new ImageUtils(); // TODO: Initialize to an appropriate value
-            string parentImagePath = path + @"\Parent.png";
-            string childImagePath = path + @"\Child.png";
-            bool expected = true; // TODO: Initialize to an appropriate value
-            bool actual = true;
-            actual = target.IsSubImage(parentImagePath, childImagePath);
-            Assert.AreEqual(expected, actual);
+            VPNConnection target = new VPNConnection();
+            bool expected = true;
+            bool actual;
+            target.Connected += new EventHandler(target_Connected);
+            target.Connect();
         }
 
-        public string TestDataPath
+        void target_Connected(object sender, EventArgs e)
         {
-            get
-            {
-                return Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-            }
+            Assert.AreEqual(true, true);
+        }
+
+        /// <summary>
+        ///A test for Connect
+        ///</summary>
+        [TestMethod()]
+        public void Sharing()
+        {
+            VPNConnection vpn = new VPNConnection();
+            bool expected = true;
+            bool actual;
+            actual = vpn.Share();
+            Assert.AreEqual(expected, actual);
         }
     }
 }

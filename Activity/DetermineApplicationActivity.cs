@@ -10,7 +10,9 @@ namespace Activity
 {
     /// <summary>
     /// Determine FMA/... has any application to install
+    /// Check this screen at {Project Automation}/Images/Template/FreeMyApp_Step1.png
     /// </summary>
+    ///
     class DetermineApplicationActivity: Activity
     {
         public DetermineApplicationActivity(GuestInformation guestInfo, int mousePositionX, int mousePositionY)

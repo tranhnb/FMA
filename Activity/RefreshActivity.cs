@@ -31,11 +31,11 @@ namespace Activity
             string templateFilePath = string.Format(@"{0}\Images\Template\{1}", Directory.GetCurrentDirectory(), "Refresh.png");
             
             //Compare this image with Refresh Image template
-            bool isMatch1 = this.imageUtils.IsSubImage(filePath, templateFilePath);
+            bool isMatch = this.imageUtils.IsSubImage(filePath, templateFilePath);
             File.Delete(filePath);
             img = null;
 
-            return isMatch1;
+            return isMatch;
             
         }
 
