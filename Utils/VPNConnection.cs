@@ -22,26 +22,59 @@ namespace Utils
         }
     }
 
+    public class VPNConnectionEventArgs : EventArgs
+    {
+        private int _processId;
+        /// <summary>
+        /// VPN Connection Process ID
+        /// </summary>
+        public int processId
+        {
+            get
+            {
+                return _processId;
+            }
+        }
+
+        public VPNConnectionEventArgs(int processId = 0)
+            : base()
+        { 
+            this._processId = processId;
+        }
+    }
+
     /// <summary>
     /// Handle VPN connection
     /// </summary>
     public class VPNConnection
     {
+        #region Variable and Properties
+        
+        public event EventHandler OnConnected;
+        public event EventHandler OnError;
+        public event EventHandler OnClosed;
+
+        private const string OPENVPN_DIRECTORY = @"C:\Program Files\OpenVPN\config\";
         private Process process;
         private Byte[] buffer = new Byte[1024];
-        public event EventHandler Connected;
 
+        #endregion Variable and Properties
+
+        #region Constructor
+        
         public VPNConnection()
         {
             process = CreateShellProcess();
         }
 
+        #endregion Constructor
+
         /// <summary>
-        /// Connect to VPN. Handle the Connected Event to determine the connection is established.
+        /// Connect to VPN. Handle the OnConnected Event to determine the connection is established.
         /// </summary>
         public void Connect()
         {
-            process.StartInfo.WorkingDirectory = @"C:\Program Files\OpenVPN\config\";
+            process.StartInfo.WorkingDirectory = OPENVPN_DIRECTORY;
             process.StartInfo.Arguments = "--config \"inCloak.com Belarus, Minsk.ovpn\"";
             process.Start();
             try
@@ -54,17 +87,24 @@ namespace Utils
             {
                 process.StandardOutput.BaseStream.Close();
             }
+
+            process.WaitForExit();
         }
 
         /// <summary>
-        /// Share VPN connection to VirtualBox Host-Only Network
+        /// Close VPN connection
         /// </summary>
-        /// <returns></returns>
-        public bool Share()
+        public bool Close(int processId)
         {
-            RasEntry[] _RasEntrys = RasEntry.GetEntrys();
-            
-            NetworkInterface[] networkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
+            Process process = Process.GetProcessById(processId);
+            try
+            {
+                process.Kill();
+            }
+            catch (Exception ex) {
+                //TODO Log error
+                return false;
+            }
             return true;
         }
 
@@ -81,7 +121,22 @@ namespace Utils
             p.StartInfo.CreateNoWindow = true;
             p.StartInfo.RedirectStandardError = true;
             p.StartInfo.LoadUserProfile = true;
+            p.ErrorDataReceived += new DataReceivedEventHandler(p_ErrorDataReceived);
+            p.Exited += new EventHandler(p_Exited);
             return p;
+        }
+
+        void p_Exited(object sender, EventArgs e)
+        {
+            if (OnClosed != null)
+                OnClosed(null, null);
+        }
+
+        void p_ErrorDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            if (OnError != null)
+                OnError(null, null);
+
         }
 
         /// <summary>
@@ -106,9 +161,19 @@ namespace Utils
             string text = Encoding.UTF8.GetString(info.ByteArray, 0, amountRead);
             if (IsConnected(text))
             {
-                if (Connected != null)
-                    Connected(null, null);
+                if (OnConnected != null)
+                {   
+                    OnConnected(null, new VPNConnectionEventArgs(this.process.Id));
+                }
             }
+            else if (IsError(text))
+            {
+                if (OnError != null)
+                {
+                    OnError(null, new VPNConnectionEventArgs());
+                }
+            }
+
             try
             {
                 info.MyStream.BeginRead(info.ByteArray, 0,
@@ -141,5 +206,16 @@ namespace Utils
             return !string.IsNullOrEmpty(data) && data.Contains("Initialization Sequence Completed");
         }
 
+        /// <summary>
+        /// Check the StartInfo response data to determine we can't connect to a VPN
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        private bool IsError(string data)
+        { 
+            return !string.IsNullOrEmpty(data) && data.Contains("Exiting due to fatal error");
+        }
+
     }
 }
+

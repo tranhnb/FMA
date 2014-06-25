@@ -51,7 +51,6 @@
     <Compile Include="AndroidDebugBridge.cs" />
     <Compile Include="CaptureScreen.cs" />
     <Compile Include="ImageHandler.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UtilException.cs" />
     <Compile Include="VPNConnection.cs" />

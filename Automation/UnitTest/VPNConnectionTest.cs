@@ -1,6 +1,7 @@
 ﻿using Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Threading;
 
 namespace UnitTest
 {
@@ -64,35 +65,36 @@ namespace UnitTest
         #endregion
 
 
+        private VPNConnection target = new VPNConnection();
         /// <summary>
         ///A test for Connect
         ///</summary>
         [TestMethod()]
         public void ConnectTest()
         {
-            VPNConnection target = new VPNConnection();
-            bool expected = true;
-            bool actual;
-            target.Connected += new EventHandler(target_Connected);
+            target.OnConnected += new EventHandler(target_Connected);
+            target.OnError += new EventHandler(target_OnError);
+            target.OnClosed += new EventHandler(target_OnClosed);
             target.Connect();
+        }
+
+        void target_OnClosed(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        void target_OnError(object sender, EventArgs e)
+        {
+            Assert.AreEqual(false, true);
         }
 
         void target_Connected(object sender, EventArgs e)
         {
-            Assert.AreEqual(true, true);
+            VPNConnectionEventArgs eventArgs = e as VPNConnectionEventArgs;
+            bool isClose = target.Close(eventArgs.processId);
+            Assert.AreEqual(isClose, true);
         }
 
-        /// <summary>
-        ///A test for Connect
-        ///</summary>
-        [TestMethod()]
-        public void Sharing()
-        {
-            VPNConnection vpn = new VPNConnection();
-            bool expected = true;
-            bool actual;
-            actual = vpn.Share();
-            Assert.AreEqual(expected, actual);
-        }
+        
     }
 }
