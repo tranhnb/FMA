@@ -53,6 +53,7 @@
     <Compile Include="ImageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UtilException.cs" />
+    <Compile Include="VPNConfInfo.cs" />
     <Compile Include="VPNConnection.cs" />
   </ItemGroup>
   <ItemGroup>

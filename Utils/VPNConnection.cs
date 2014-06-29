@@ -57,6 +57,7 @@ namespace Utils
         private const string OPENVPN_DIRECTORY = @"C:\Program Files\OpenVPN\config\";
         private Process process;
         private Byte[] buffer = new Byte[1024];
+        private VPNConfInfoList vpnConfInfoList = new VPNConfInfoList(OPENVPN_DIRECTORY);
 
         #endregion Variable and Properties
 
@@ -69,13 +70,17 @@ namespace Utils
 
         #endregion Constructor
 
+        #region Public Methods
         /// <summary>
         /// Connect to VPN. Handle the OnConnected Event to determine the connection is established.
         /// </summary>
+        /// <param name="openVPNFile">OpenVPN configuration file</param>
         public void Connect()
         {
+            //Get the next OpenVPN Configuration Files
+            string openVPNFile = vpnConfInfoList.LoadNext();
             process.StartInfo.WorkingDirectory = OPENVPN_DIRECTORY;
-            process.StartInfo.Arguments = "--config \"inCloak.com Belarus, Minsk.ovpn\"";
+            process.StartInfo.Arguments = string.Format("--config \"{0}\"", openVPNFile);
             process.Start();
             try
             {
@@ -108,6 +113,9 @@ namespace Utils
             return true;
         }
 
+        #endregion Public Methods
+
+        #region Private Methods
         /// <summary>
         /// Create process for shell command
         /// </summary>
@@ -126,19 +134,6 @@ namespace Utils
             return p;
         }
 
-        void p_Exited(object sender, EventArgs e)
-        {
-            if (OnClosed != null)
-                OnClosed(null, null);
-        }
-
-        void p_ErrorDataReceived(object sender, DataReceivedEventArgs e)
-        {
-            if (OnError != null)
-                OnError(null, null);
-
-        }
-
         /// <summary>
         /// Read OpenVPN Stream
         /// </summary>
@@ -149,8 +144,8 @@ namespace Utils
 
             int amountRead = 0;
             try
-            { 
-                amountRead = info.MyStream.EndRead(ar); 
+            {
+                amountRead = info.MyStream.EndRead(ar);
             }
             catch (IOException)
             {
@@ -162,7 +157,7 @@ namespace Utils
             if (IsConnected(text))
             {
                 if (OnConnected != null)
-                {   
+                {
                     OnConnected(null, new VPNConnectionEventArgs(this.process.Id));
                 }
             }
@@ -197,7 +192,6 @@ namespace Utils
         ///     Tue Jun 24 22:13:25 2014 us=78125 C:\WINDOWS\system32\route.exe ADD 128.0.0.0 MASK 128.0.0.0 10.101.192.1
         ///     Tue Jun 24 22:13:25 2014 us=78125 env_block: add PATH=C:\Windows\System32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
         ///     Tue Jun 24 22:13:25 2014 us=93750 Initialization Sequence Completed
-
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
@@ -212,9 +206,28 @@ namespace Utils
         /// <param name="data"></param>
         /// <returns></returns>
         private bool IsError(string data)
-        { 
+        {
             return !string.IsNullOrEmpty(data) && data.Contains("Exiting due to fatal error");
         }
+
+        #endregion Private Methods
+
+        #region Event
+
+        void p_Exited(object sender, EventArgs e)
+        {
+            if (OnClosed != null)
+                OnClosed(null, null);
+        }
+
+        void p_ErrorDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            if (OnError != null)
+                OnError(null, null);
+
+        }
+
+        #endregion Event
 
     }
 }
