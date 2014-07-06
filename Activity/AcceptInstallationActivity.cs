@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using Utils;
+using Activity.Publishers;
 
 namespace Activity
 {
-    class AcceptInstallationActivity: Activity
+    class AcceptInstallationActivity : Activity
     {
         public AcceptInstallationActivity(GuestInformation guestInfo, int mousePositionX, int mousePositionY)
             : base(guestInfo, mousePositionX, mousePositionY)

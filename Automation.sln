@@ -1,19 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automation", "Automation.csproj", "{05AFC565-07D1-4A08-B938-C26C5CBAB08E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automation", "Automation\Automation.csproj", "{05AFC565-07D1-4A08-B938-C26C5CBAB08E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseCoordinates", "..\MouseCoordinates\MouseCoordinates.csproj", "{4D612802-2121-4D63-84F1-D1810206967D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseCoordinates", "MouseCoordinates\MouseCoordinates.csproj", "{4D612802-2121-4D63-84F1-D1810206967D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Activity", "..\Activity\Activity.csproj", "{BCF24C4B-7DB3-4B0B-B384-E8F4BD753ADD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Activity", "Activity\Activity.csproj", "{BCF24C4B-7DB3-4B0B-B384-E8F4BD753ADD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "..\Utils\Utils.csproj", "{C6CC6DED-F1C1-4040-B089-97BDF9EA9217}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj", "{C6CC6DED-F1C1-4040-B089-97BDF9EA9217}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{06588533-0247-4B57-99EF-9E3B3EEF7A54}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "Automation\UnitTest\UnitTest.csproj", "{06588533-0247-4B57-99EF-9E3B3EEF7A54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constants", "..\Constants\Constants.csproj", "{582B8675-9AE7-48C8-9109-1031EDA2EAC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constants", "Constants\Constants.csproj", "{582B8675-9AE7-48C8-9109-1031EDA2EAC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mining", "..\Mining\Mining.csproj", "{247EBC0F-1618-467A-B7D8-DFD02245B770}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mining", "Mining\Mining.csproj", "{247EBC0F-1618-467A-B7D8-DFD02245B770}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution

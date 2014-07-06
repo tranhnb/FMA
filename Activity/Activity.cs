@@ -7,11 +7,12 @@ using MouseCoordinates;
 using System.Drawing;
 using Utils;
 using System.Net;
+using Activity.Publishers;
 
 
 namespace Activity
 {
-    public abstract class Activity : IActivity
+    public abstract class Activity : IActivity, IObserver<ActivityPublisher>
     {
         #region Variable and Property
 
@@ -283,6 +284,26 @@ namespace Activity
         
 
         #endregion Methods
+
+        #region Subcribe Method
+
+        public virtual void OnCompleted()
+        {
+            Console.WriteLine("Unsubscribed");
+        }
+
+        public virtual void OnError(Exception error)
+        {
+            Console.WriteLine("Error");
+        }
+
+        public virtual void OnNext(ActivityPublisher activity)
+        {
+            Console.WriteLine("OnNext " + activity.ToString());
+            this.Start();
+        }
+
+        #endregion Subcribe Method
     }
 }
 
