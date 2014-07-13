@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Activity.Activities;
 
 namespace Activity
 {
@@ -16,15 +17,15 @@ namespace Activity
 
         }
 
-        protected override void DoProc()
+        protected override ActivityResult DoProc()
         {
             //Launch freemyapp application
             if (this.androidDebugBridge.OpenFreeMyApp())
             {
-
+                return new ActivityResult(true, string.Empty);
             }
             else {
-                throw new LaunchApplicationException();
+                return new ActivityResult(false, string.Format("{0} is failed", this.GetType().Name));
             }
         }
 

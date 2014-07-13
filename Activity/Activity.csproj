@@ -76,29 +76,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcceptInstallationActivity.cs" />
-    <Compile Include="Activity.cs" />
-    <Compile Include="ActivityException.cs" />
-    <Compile Include="ConfirmDownloadActivity.cs" />
-    <Compile Include="ConfirmUsingPlayStoreActivity.cs" />
-    <Compile Include="DetermineApplicationActivity.cs" />
-    <Compile Include="FindNewInstalledAppActivity.cs" />
+    <Compile Include="Activities\AcceptInstallationActivity.cs" />
+    <Compile Include="Activities\Activity.cs" />
+    <Compile Include="Activities\ActivityException.cs" />
+    <Compile Include="Activities\ActivityResult.cs" />
+    <Compile Include="Activities\ActivityType.cs" />
+    <Compile Include="Activities\ConfirmDownloadActivity.cs" />
+    <Compile Include="Activities\ConfirmUsingPlayStoreActivity.cs" />
+    <Compile Include="Activities\DetermineApplicationActivity.cs" />
+    <Compile Include="Activities\FindNewInstalledAppActivity.cs" />
     <Compile Include="FlowBuilder.cs" />
     <Compile Include="GuestInformation.cs" />
-    <Compile Include="IActivity.cs" />
-    <Compile Include="InstallApplicationAvtivity.cs" />
-    <Compile Include="LaunchFreeMyAppActivity.cs" />
-    <Compile Include="Management\TaskMaster.cs" />
+    <Compile Include="Activities\IActivity.cs" />
+    <Compile Include="Activities\InstallApplicationAvtivity.cs" />
+    <Compile Include="Activities\LaunchFreeMyAppActivity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Publishers\ActivityPublisher.cs" />
-    <Compile Include="Publishers\Publisher.cs" />
-    <Compile Include="RefreshActivity.cs" />
+    <Compile Include="Activities\RefreshActivity.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Constants\Constants.csproj">
-      <Project>{582B8675-9AE7-48C8-9109-1031EDA2EAC8}</Project>
-      <Name>Constants</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MouseCoordinates\MouseCoordinates.csproj">
       <Project>{4D612802-2121-4D63-84F1-D1810206967D}</Project>
       <Name>MouseCoordinates</Name>
@@ -126,6 +121,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

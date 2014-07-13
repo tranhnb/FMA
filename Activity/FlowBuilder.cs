@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Activity.Activities;
 
 namespace Activity
 {
@@ -10,27 +11,24 @@ namespace Activity
     /// </summary>
     public class FlowBuilder
     {
-        private static string[] activityNameInOrder = new string[7]{
-            Constants.ActivityName.LAUNCH_FREE_MY_APPS,
-            Constants.ActivityName.REFRESH_FREE_MY_APP,
-            Constants.ActivityName.DETERMINE_APPLICATION,
-            Constants.ActivityName.CONFIRM_DOWNLOAD,
-            Constants.ActivityName.CONFIRM_USING_PLAYSTORE,
-            Constants.ActivityName.INSTALL_APPLICATION,
-            Constants.ActivityName.ACCEPT_INSTALLATION,    
-        };
+        /// <summary>
+        /// Create an Activity by Name
+        /// </summary>
+        /// <param name="guestInformation"></param>
+        /// <returns></returns>
+        public static IActivity CreateActivity(ActivityType activityName, GuestInformation guestInformation)
+        {
+            return Activity.CreateActivity(activityName, guestInformation);
 
-            
+        }
         public static List<IActivity> CreateFlow(GuestInformation guestInformation)
         {
             List<IActivity> flow = new List<IActivity>();
-            for (int i = 0; i < activityNameInOrder.Length; i++)
+            foreach (ActivityType activityName in Enum.GetValues(typeof(ActivityType)))
             {
-                flow.Add(Activity.CreateActivity(activityNameInOrder[i], guestInformation));
+                flow.Add(Activity.CreateActivity(activityName, guestInformation));
             }
-            
             return flow;
-
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using MouseCoordinates;
 using VirtualBox;
+using Activity.Activities;
 
 namespace Activity
 {
@@ -15,7 +16,7 @@ namespace Activity
         /// <summary>
         /// ActivityName defined in MouseCoordinates project: MousePosition.xml
         /// </summary>
-        string ActivityName { get; }
+        ActivityType ActivityType { get; }
 
         /// <summary>
         /// Mouse Postion X: defined in MouseCoordinates project: MousePosition.xml
@@ -37,7 +38,7 @@ namespace Activity
         /// <summary>
         /// Send Mouse click event to virtual machine to start an activity
         /// </summary>
-        void Start();
+        ActivityResult Start();
 
         /// <summary>
         /// Check this activity is finish or on error then send the notification to the ActivityManager

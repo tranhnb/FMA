@@ -4,11 +4,9 @@ D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\obj\Debug\ResolveAss
 D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\obj\Debug\UnitTest.dll
 D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\obj\Debug\UnitTest.pdb
 D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\bin\Debug\Activity.dll
-D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\bin\Debug\Constants.dll
 D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\bin\Debug\MouseCoordinates.dll
 D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\bin\Debug\Utils.dll
 D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\bin\Debug\Activity.pdb
-D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\bin\Debug\Constants.pdb
 D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\bin\Debug\MouseCoordinates.pdb
 D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\bin\Debug\Utils.pdb
 D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\bin\Debug\Activity_Accessor.dll

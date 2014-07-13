@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Diagnostics;
+using Activity.Activities;
 
 namespace Activity
 {
@@ -10,7 +11,7 @@ namespace Activity
     {
         public FindNewInstalledAppActivity() { }
 
-        public override void Start()
+        public override ActivityResult Start()
         {
             //Process p = new Process();
             //p.StartInfo.UseShellExecute = false;
@@ -28,6 +29,7 @@ namespace Activity
             //// Read the output stream first and then wait.
             //string output = p.StandardOutput.ReadToEnd();
             //p.WaitForExit();
+            return null;
             
         }
     }

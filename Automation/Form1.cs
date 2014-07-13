@@ -13,6 +13,7 @@ using System.Diagnostics;
 using System.Net;
 using Activity;
 using Mining;
+using Activity.Activities;
 
 namespace Automation
 {
@@ -61,7 +62,7 @@ namespace Automation
         /// <param name="e"></param>
         private void btnInstallApp_Click(object sender, EventArgs e)
         {
-            Activity.IActivity installActivity = Activity.Activity.CreateActivity(Constants.ActivityName.INSTALL_APPLICATION, guest);
+            Activity.IActivity installActivity = Activity.Activity.CreateActivity(ActivityType.INSTALL_APPLICATION, guest);
             installActivity.Start();
         }
 
@@ -72,7 +73,7 @@ namespace Automation
         /// <param name="e"></param>
         private void btnAcceptInstallation_Click(object sender, EventArgs e)
         {
-            Activity.IActivity acceptInstallation = Activity.Activity.CreateActivity(Constants.ActivityName.ACCEPT_INSTALLATION, guest);
+            Activity.IActivity acceptInstallation = Activity.Activity.CreateActivity(ActivityType.ACCEPT_INSTALLATION, guest);
             acceptInstallation.Start();
         }
 
@@ -145,26 +146,26 @@ namespace Automation
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            Activity.IActivity refreshFMA = Activity.Activity.CreateActivity(Constants.ActivityName.REFRESH_FREE_MY_APP, guest);
+            Activity.IActivity refreshFMA = Activity.Activity.CreateActivity(ActivityType.REFRESH_FREE_MY_APP, guest);
             refreshFMA.Start();
         }
 
 
         private void btnDetermineApplication_Click(object sender, EventArgs e)
         {
-            Activity.IActivity determineApplication = Activity.Activity.CreateActivity(Constants.ActivityName.DETERMINE_APPLICATION, guest);
+            Activity.IActivity determineApplication = Activity.Activity.CreateActivity(ActivityType.DETERMINE_APPLICATION, guest);
             determineApplication.Start();
         }
 
         private void btnConfirmDownload_Click(object sender, EventArgs e)
         {
-            Activity.IActivity confirmDownloadApp = Activity.Activity.CreateActivity(Constants.ActivityName.CONFIRM_DOWNLOAD, guest);
+            Activity.IActivity confirmDownloadApp = Activity.Activity.CreateActivity(ActivityType.CONFIRM_DOWNLOAD, guest);
             confirmDownloadApp.Start();
         }
 
         private void btnConfirmUsingPlayStore_Click(object sender, EventArgs e)
         {
-            Activity.IActivity confirmUsingPlayStore = Activity.Activity.CreateActivity(Constants.ActivityName.CONFIRM_USING_PLAYSTORE, guest);
+            Activity.IActivity confirmUsingPlayStore = Activity.Activity.CreateActivity(ActivityType.CONFIRM_USING_PLAYSTORE, guest);
             confirmUsingPlayStore.Start();
         }
 

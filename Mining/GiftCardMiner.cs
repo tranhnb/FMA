@@ -117,10 +117,8 @@ namespace Mining
             while (!isRequestStop)
             {
                 Console.WriteLine("Start Dig");
-
                 try
                 {
-
                     foreach (IActivity activity in this.activityList)
                     {
                         activity.Start();

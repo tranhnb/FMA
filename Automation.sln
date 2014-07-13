@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "Automation\UnitTest\UnitTest.csproj", "{06588533-0247-4B57-99EF-9E3B3EEF7A54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constants", "Constants\Constants.csproj", "{582B8675-9AE7-48C8-9109-1031EDA2EAC8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mining", "Mining\Mining.csproj", "{247EBC0F-1618-467A-B7D8-DFD02245B770}"
 EndProject
 Global
@@ -84,17 +82,6 @@ Global
 		{06588533-0247-4B57-99EF-9E3B3EEF7A54}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{06588533-0247-4B57-99EF-9E3B3EEF7A54}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{06588533-0247-4B57-99EF-9E3B3EEF7A54}.Release|x86.ActiveCfg = Release|Any CPU
-		{582B8675-9AE7-48C8-9109-1031EDA2EAC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{582B8675-9AE7-48C8-9109-1031EDA2EAC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{582B8675-9AE7-48C8-9109-1031EDA2EAC8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{582B8675-9AE7-48C8-9109-1031EDA2EAC8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{582B8675-9AE7-48C8-9109-1031EDA2EAC8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{582B8675-9AE7-48C8-9109-1031EDA2EAC8}.Debug|x86.Build.0 = Debug|Any CPU
-		{582B8675-9AE7-48C8-9109-1031EDA2EAC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{582B8675-9AE7-48C8-9109-1031EDA2EAC8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{582B8675-9AE7-48C8-9109-1031EDA2EAC8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{582B8675-9AE7-48C8-9109-1031EDA2EAC8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{582B8675-9AE7-48C8-9109-1031EDA2EAC8}.Release|x86.ActiveCfg = Release|Any CPU
 		{247EBC0F-1618-467A-B7D8-DFD02245B770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{247EBC0F-1618-467A-B7D8-DFD02245B770}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{247EBC0F-1618-467A-B7D8-DFD02245B770}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU

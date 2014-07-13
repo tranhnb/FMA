@@ -177,10 +177,6 @@
       <Project>{BCF24C4B-7DB3-4B0B-B384-E8F4BD753ADD}</Project>
       <Name>Activity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Constants\Constants.csproj">
-      <Project>{582B8675-9AE7-48C8-9109-1031EDA2EAC8}</Project>
-      <Name>Constants</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Mining\Mining.csproj">
       <Project>{247EBC0F-1618-467A-B7D8-DFD02245B770}</Project>
       <Name>Mining</Name>

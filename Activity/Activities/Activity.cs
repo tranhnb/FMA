@@ -7,25 +7,25 @@ using MouseCoordinates;
 using System.Drawing;
 using Utils;
 using System.Net;
-using Activity.Publishers;
+using Activity.Activities;
 
 
 namespace Activity
 {
-    public abstract class Activity : IActivity, IObserver<ActivityPublisher>
+    public abstract class Activity : IActivity
     {
         #region Variable and Property
 
         private const int LEFT_MOUSE_CLICK = 0x001;
         private const int LEFT_MOUSE_RELEASE = 0x000;
 
-        
-        protected string _ActivityName;
 
-        public string ActivityName
+        protected ActivityType _ActivityType;
+
+        public ActivityType ActivityType
         {
             get {
-                return _ActivityName;
+                return _ActivityType;
             }
         }
 
@@ -104,7 +104,7 @@ namespace Activity
         /// <param name="mousePosX">Define a runtime Mouse Position X. Applied when work with control(button) has dynamic position. This is optional parameter</param>
         /// <param name="mousePosY">Like mousePosX. This is optional parameter</param>
         /// <returns></returns>
-        public static IActivity CreateActivity(string activityName, GuestInformation guestInfo, int mousePosX = -1, int mousePosY = -1)
+        public static IActivity CreateActivity(ActivityType activityName, GuestInformation guestInfo, int mousePosX = -1, int mousePosY = -1)
         {
             //Assign FunctionName, Mouse.X and Mouse.Y
             MousePosition mousePosition = mousePositionList[activityName] as MousePosition;
@@ -117,46 +117,46 @@ namespace Activity
 
                 switch (activityName)
                 {
-                    case Constants.ActivityName.LAUNCH_FREE_MY_APPS:
+                    case ActivityType.LAUNCH_FREE_MY_APPS:
                         return new LaunchFreeMyAppActivity(guestInfo, x, y)
                         { 
-                            _ActivityName = Constants.ActivityName.LAUNCH_FREE_MY_APPS,
+                            _ActivityType = ActivityType.LAUNCH_FREE_MY_APPS,
                         };
 
-                    case Constants.ActivityName.INSTALL_APPLICATION:
+                    case ActivityType.INSTALL_APPLICATION:
                         return new InstallApplicationAvtivity(guestInfo, x, y)
                         {
-                            _ActivityName = Constants.ActivityName.INSTALL_APPLICATION
+                            _ActivityType = ActivityType.INSTALL_APPLICATION
                         };
 
-                    case Constants.ActivityName.ACCEPT_INSTALLATION:
+                    case ActivityType.ACCEPT_INSTALLATION:
                         return new AcceptInstallationActivity(guestInfo, x, y)
                         {
-                            _ActivityName = Constants.ActivityName.ACCEPT_INSTALLATION
+                            _ActivityType = ActivityType.ACCEPT_INSTALLATION
                         };
 
-                    case Constants.ActivityName.REFRESH_FREE_MY_APP:
+                    case ActivityType.REFRESH_FREE_MY_APP:
                         return new RefreshActivity(guestInfo, x, y)
                         {
-                            _ActivityName = Constants.ActivityName.REFRESH_FREE_MY_APP
+                            _ActivityType = ActivityType.REFRESH_FREE_MY_APP
                         };
 
-                    case Constants.ActivityName.DETERMINE_APPLICATION:
+                    case ActivityType.DETERMINE_APPLICATION:
                         return new DetermineApplicationActivity(guestInfo, x, y)
                         {
-                            _ActivityName = Constants.ActivityName.DETERMINE_APPLICATION
+                            _ActivityType = ActivityType.DETERMINE_APPLICATION
                         };
 
-                    case Constants.ActivityName.CONFIRM_DOWNLOAD:
+                    case ActivityType.CONFIRM_DOWNLOAD:
                         return new ConfirmDownloadActivity(guestInfo, x, y)
                         {
-                            _ActivityName = Constants.ActivityName.CONFIRM_DOWNLOAD
+                            _ActivityType = ActivityType.CONFIRM_DOWNLOAD
                         };
 
-                    case Constants.ActivityName.CONFIRM_USING_PLAYSTORE:
+                    case ActivityType.CONFIRM_USING_PLAYSTORE:
                         return new ConfirmUsingPlayStoreActivity(guestInfo, x, y)
                         {
-                            _ActivityName = Constants.ActivityName.CONFIRM_USING_PLAYSTORE
+                            _ActivityType = ActivityType.CONFIRM_USING_PLAYSTORE
                         };
                         
                     default:
@@ -191,29 +191,36 @@ namespace Activity
         /// <summary>
         /// Start activity by send Mouse click event to virtual machine to start an activity or do something else.
         /// </summary>
-        public virtual void Start()
+        public virtual ActivityResult Start()
         {
-            Init();
-            if (IsMatchCriteria())
+            try
             {
-                DoProc();
-            }
-            else
-            {
-                //TODO: Throw new exception to notification
-            }
+                Init();
+                if (IsMatchCriteria())
+                {
+                    return DoProc();
+                }
+                else
+                {
+                    return new ActivityResult(false, string.Format("{0} doesn't match criteria", this.GetType().Name));
+                }
 
-
+            }
+            catch (Exception ex) { 
+                //TODO: Log exception
+                return new ActivityResult(false, ex.Message);
+            }
 
         }
 
         /// <summary>
         /// Start the activity. The inherited class can override this method if in-need.
         /// </summary>
-        protected virtual void DoProc()
+        protected virtual ActivityResult DoProc()
         {
             this.GuestInformation.Mouse.PutMouseEventAbsolute(this.MousePositionX, this.MousePositionY, 0, 0, LEFT_MOUSE_CLICK);
             this.GuestInformation.Mouse.PutMouseEventAbsolute(this.MousePositionX, this.MousePositionY, 0, 0, LEFT_MOUSE_RELEASE);
+            return new ActivityResult(true, string.Empty);
         }
 
         /// <summary>
@@ -285,25 +292,6 @@ namespace Activity
 
         #endregion Methods
 
-        #region Subcribe Method
-
-        public virtual void OnCompleted()
-        {
-            Console.WriteLine("Unsubscribed");
-        }
-
-        public virtual void OnError(Exception error)
-        {
-            Console.WriteLine("Error");
-        }
-
-        public virtual void OnNext(ActivityPublisher activity)
-        {
-            Console.WriteLine("OnNext " + activity.ToString());
-            this.Start();
-        }
-
-        #endregion Subcribe Method
     }
 }
 
