@@ -6,6 +6,7 @@ using System.Net;
 using System.Threading;
 using VirtualBox;
 using Activity;
+using NLog;
 
 namespace Mining
 {
@@ -34,6 +35,9 @@ namespace Mining
 
         //Miner stops his job for a while ^_^
         private int tea_break_time = 1 * 60 * 1000; //Miliseconds
+
+        //Logger
+        private static Logger logger = LogManager.GetCurrentClassLogger();
 
         #endregion Variable and Properties
 
@@ -116,7 +120,7 @@ namespace Mining
         {
             while (!isRequestStop)
             {
-                Console.WriteLine("Start Dig");
+                logger.Info("Start Dig");
                 try
                 {
                     foreach (IActivity activity in this.activityList)
@@ -128,14 +132,13 @@ namespace Mining
                 catch (NoApplicationException ex)
                 {
                     StartTeaBreak();
-                    //TODO: Log warning
                     //Keep hard working Mine mine mine mine FOREVER ^_^
                     Dig();
                 }
                 catch (Exception ex)
                 {
                     StopDig();
-                    //TODO: Log error
+                    logger.Error(ex.Message);
                 }
                 
             }
