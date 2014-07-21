@@ -7,6 +7,7 @@ using System.Threading;
 using VirtualBox;
 using Activity;
 using NLog;
+using Utils;
 
 namespace Mining
 {
@@ -39,6 +40,13 @@ namespace Mining
         //Logger
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
+
+        //VPN connection
+        private VPNConnection vpnConnection = new VPNConnection();
+        //How many times did the miner refresh FMA.
+        private int fma_refresh_times = 0;
+        private const int MAX_FMA_REFRESH_TIMES = 10;
+
         #endregion Variable and Properties
 
         #region Constructor
@@ -48,6 +56,9 @@ namespace Mining
             //Connect to Guest Virtual Machine
             ConnectGuest(virtualMachineName, guestIPAddress.ToString(), port);
             InitFlow();
+            //VPN connection event handler
+            vpnConnection.OnConnected += new EventHandler(vpnConnection_OnConnected);
+            vpnConnection.OnError += new EventHandler(vpnConnection_OnError);
         }
 
         #endregion Constructor
@@ -113,6 +124,21 @@ namespace Mining
         {
             activityList = Activity.FlowBuilder.CreateFlow(guestInfo);
         }
+
+
+        /// <summary>
+        /// Setup a tunnel by make a VPN connection
+        /// </summary>
+        private void OpenTunnel()
+        {
+            //If we still can't determine new application in a specific times 
+            //then connect to another VPN
+            if (fma_refresh_times == 0 || this.IsExceedMaxTimes())
+            {
+                vpnConnection.Connect();
+            }
+        }
+
         /// <summary>
         /// Start mining flow.
         /// </summary>
@@ -131,6 +157,8 @@ namespace Mining
                 //No application to download
                 catch (NoApplicationException ex)
                 {
+                    logger.Warn("NoApplicationException");
+                    fma_refresh_times++;
                     StartTeaBreak();
                     //Keep hard working Mine mine mine mine FOREVER ^_^
                     Dig();
@@ -144,7 +172,29 @@ namespace Mining
             }
         }
 
+        /// <summary>
+        /// Check wether fma_refresh_times reach the MAX_FMA_REFRESH_TIMES
+        /// </summary>
+        /// <returns></returns>
+        private bool IsExceedMaxTimes()
+        {
+            return fma_refresh_times >= MAX_FMA_REFRESH_TIMES;
+        }
         #endregion Method
+
+
+        #region EventHandler
+        void vpnConnection_OnError(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        void vpnConnection_OnConnected(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }
 

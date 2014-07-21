@@ -107,7 +107,7 @@ namespace Activity
         public static IActivity CreateActivity(ActivityType activityName, GuestInformation guestInfo, int mousePosX = -1, int mousePosY = -1)
         {
             //Assign FunctionName, Mouse.X and Mouse.Y
-            MousePosition mousePosition = mousePositionList[activityName] as MousePosition;
+            MousePosition mousePosition = mousePositionList[activityName.ToString()] as MousePosition;
             
             
             if (mousePosition != null)

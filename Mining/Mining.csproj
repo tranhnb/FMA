@@ -55,6 +55,10 @@
       <Project>{BCF24C4B-7DB3-4B0B-B384-E8F4BD753ADD}</Project>
       <Name>Activity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{C6CC6DED-F1C1-4040-B089-97BDF9EA9217}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

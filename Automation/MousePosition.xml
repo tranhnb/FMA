@@ -3,49 +3,44 @@
   <MousePosition>
     <X>10</X>
     <Y>0</Y>
-    <FunctionName>Launch_FreeMyApp</FunctionName>
+    <FunctionName>LAUNCH_FREE_MY_APPS</FunctionName>
   </MousePosition>
   
   <MousePosition>
     <X>750</X>
     <Y>210</Y>
-    <FunctionName>Determine_Application</FunctionName>
+    <FunctionName>DETERMINE_APPLICATION</FunctionName>
   </MousePosition>
   
   <MousePosition>
     <X>410</X>
     <Y>160</Y>
-    <FunctionName>Refresh_FreeMyApp</FunctionName>
+    <FunctionName>REFRESH_FREE_MY_APP</FunctionName>
   </MousePosition>
 
   <MousePosition>
     <X>400</X>
     <Y>290</Y>
-    <FunctionName>Confirm_Download</FunctionName>
+    <FunctionName>CONFIRM_DOWNLOAD</FunctionName>
   </MousePosition>
   
   <MousePosition>
     <X>520</X>
     <Y>285</Y>
-    <FunctionName>Confirm_Using_PlayStore</FunctionName>
+    <FunctionName>CONFIRM_USING_PLAYSTORE</FunctionName>
   </MousePosition>
   
   <MousePosition>
     <X>740</X>
     <Y>150</Y>
-    <FunctionName>Install_Application</FunctionName>
+    <FunctionName>INSTALL_APPLICATION</FunctionName>
   </MousePosition>
   
   <MousePosition>
     <X>510</X>
     <Y>375</Y>
-    <FunctionName>Accept_Installation</FunctionName>
+    <FunctionName>ACCEPT_INSTALLATION</FunctionName>
   </MousePosition>
-  
-  <MousePosition>
-    <X>0</X>
-    <Y>0</Y>
-    <FunctionName>Open_Application</FunctionName>
-  </MousePosition>
+
 
 </ArrayOfMousePosition>
