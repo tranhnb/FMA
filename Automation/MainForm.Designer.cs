@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtGuestIP = new System.Windows.Forms.TextBox();
             this.btnStop = new System.Windows.Forms.Button();
+            this.btnTakeScreenShot = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(292, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(472, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -71,7 +72,7 @@
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.quitToolStripMenuItem.Text = "Quit";
             // 
             // label1
@@ -116,13 +117,24 @@
             this.btnStop.TabIndex = 0;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.btnStartDig_Click);
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // btnTakeScreenShot
+            // 
+            this.btnTakeScreenShot.Location = new System.Drawing.Point(247, 80);
+            this.btnTakeScreenShot.Name = "btnTakeScreenShot";
+            this.btnTakeScreenShot.Size = new System.Drawing.Size(138, 23);
+            this.btnTakeScreenShot.TabIndex = 4;
+            this.btnTakeScreenShot.Text = "Take ScreenShot";
+            this.btnTakeScreenShot.UseVisualStyleBackColor = true;
+            this.btnTakeScreenShot.Click += new System.EventHandler(this.btnTakeScreenShot_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 266);
+            this.ClientSize = new System.Drawing.Size(472, 266);
+            this.Controls.Add(this.btnTakeScreenShot);
             this.Controls.Add(this.txtGuestIP);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtGuestName);
@@ -151,5 +163,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtGuestIP;
         private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button btnTakeScreenShot;
     }
 }

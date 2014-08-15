@@ -23,7 +23,7 @@ namespace Activity
 
         protected override bool IsMatchCriteria()
         {
-            Image img = this.CaptureScreen(349, 143, 104, 33);
+            Image img = this.CaptureScreen(347, 215, 104, 33);
             Guid guid = Guid.NewGuid();
 
             string filePath = string.Format(@"{0}\Temp\{1}.png", Directory.GetCurrentDirectory(), guid.ToString());
@@ -32,15 +32,21 @@ namespace Activity
             string templateFilePath = string.Format(@"{0}\Images\Template\{1}", Directory.GetCurrentDirectory(), "Refresh.png");
             
             //Compare this image with Refresh Image template
-            bool isMatch1 = this.imageUtils.IsSubImage(filePath, templateFilePath);
-            File.Delete(filePath);
+            bool isMatch = this.imageUtils.IsSubImage(filePath, templateFilePath);
+            //File.Delete(filePath);
             img = null;
-
-            //If we are on FMA and the refresh button doesn't display so FMA has applications to be installed
-            if (isMatch1)
+            this.logger.Warn(filePath);
+            //If we are on FMA and the refresh button displayed on so there is no application
+            if (isMatch)
+            {
+                this.logger.Warn(string.Format("{0}: There is no application", this.ActivityType.ToString()));
                 throw new NoApplicationException();
+            }
             else
+            {
+                this.logger.Warn(string.Format("{0}: There is application", this.ActivityType.ToString()));
                 return true;
+            }
 
         }
     }

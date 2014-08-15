@@ -26,6 +26,8 @@ namespace Mining
         //---------------------- End VirtualBox information----------------------//
 
         private bool isRequestStop = false;
+        //Check wether a miner process finised on a tunnel
+        private bool isFinishedOnATunnel = false;
         private Thread digThread;
 
         //List of activity for GiftCardMiner
@@ -47,6 +49,15 @@ namespace Mining
         private int fma_refresh_times = 0;
         private const int MAX_FMA_REFRESH_TIMES = 10;
 
+        //Use to start a fake 
+        private bool isFakeVPN = Boolean.Parse(System.Configuration.ConfigurationManager.AppSettings["FakeVPN"]);
+
+        public IDisplay DisplayController
+        {
+            get {
+                return this.machineSession.Console.Display;
+            }
+        }
         #endregion Variable and Properties
 
         #region Constructor
@@ -64,32 +75,6 @@ namespace Mining
         #endregion Constructor
 
         #region Method
-
-        /// <summary>
-        /// Start determine, download and open application thread
-        /// </summary>
-        public void StartDig()
-        {
-            digThread = new Thread(Dig);
-            digThread.Priority = ThreadPriority.BelowNormal;
-            digThread.Start();
-        }
-
-        /// <summary>
-        /// Stop dig thread
-        /// </summary>
-        public void StopDig()
-        {
-            isRequestStop = true;
-        }
-
-        /// <summary>
-        /// Suspend thread for a while
-        /// </summary>
-        public void StartTeaBreak()
-        {
-            Thread.Sleep(tea_break_time);
-        }
 
         /// <summary>
         /// Connect to Guest machine
@@ -111,10 +96,11 @@ namespace Mining
                     port = port
                 };
             }
-            else {
+            else
+            {
                 throw new Exception("Can't connect to guest: " + virtualMachineName);
             }
-            
+
         }
 
         /// <summary>
@@ -123,6 +109,36 @@ namespace Mining
         private void InitFlow()
         {
             activityList = Activity.FlowBuilder.CreateFlow(guestInfo);
+        }
+
+        /// <summary>
+        /// Start determine, download and open application thread
+        /// </summary>
+        public void Start()
+        {
+            digThread = new Thread(OpenTunnel);
+            digThread.Priority = ThreadPriority.BelowNormal;
+            digThread.Start();
+        }
+
+        /// <summary>
+        /// Force stop dig thread
+        /// </summary>
+        public void StopDig()
+        {
+            isRequestStop = true;
+        }
+
+        public void FinishOnATunnel() {
+            isFinishedOnATunnel = true;
+        }
+
+        /// <summary>
+        /// Suspend thread for a while
+        /// </summary>
+        public void StartTeaBreak()
+        {
+            Thread.Sleep(tea_break_time);
         }
 
 
@@ -135,7 +151,11 @@ namespace Mining
             //then connect to another VPN
             if (fma_refresh_times == 0 || this.IsExceedMaxTimes())
             {
-                vpnConnection.Connect();
+                vpnConnection.Connect(isFakeVPN);
+            }
+            else
+            {
+                vpnConnection_OnConnected(null, null);
             }
         }
 
@@ -144,13 +164,16 @@ namespace Mining
         /// </summary>
         private void Dig()
         {
-            while (!isRequestStop)
+            while (!isRequestStop && !isFinishedOnATunnel && !IsExceedMaxTimes())
             {
                 logger.Info("Start Dig");
                 try
                 {
                     foreach (IActivity activity in this.activityList)
                     {
+                        if (isRequestStop)
+                            break;
+                        else
                         activity.Start();
                     }
                 }
@@ -160,15 +183,22 @@ namespace Mining
                     logger.Warn("NoApplicationException");
                     fma_refresh_times++;
                     StartTeaBreak();
-                    //Keep hard working Mine mine mine mine FOREVER ^_^
-                    Dig();
                 }
                 catch (Exception ex)
                 {
-                    StopDig();
                     logger.Error(ex.Message);
+                    FinishOnATunnel();
                 }
-                
+            }
+
+            if (isRequestStop)
+            {
+                logger.Info("Miner is forced to stop");
+            }
+            // Otherwis Start dig by a new tunnel
+            else if ( isFinishedOnATunnel || IsExceedMaxTimes() )
+            {
+                OpenTunnel();
             }
         }
 
@@ -184,6 +214,7 @@ namespace Mining
 
 
         #region EventHandler
+
         void vpnConnection_OnError(object sender, EventArgs e)
         {
             throw new NotImplementedException();
@@ -191,9 +222,10 @@ namespace Mining
 
         void vpnConnection_OnConnected(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Dig();
         }
 
+        
         #endregion
     }
 }

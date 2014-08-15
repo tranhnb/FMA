@@ -65,5 +65,12 @@ namespace Utils
             return (byte[])ic.ConvertTo(childImage, typeof(byte[]));
         }
 
+        public Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+
+        }
     }
 }

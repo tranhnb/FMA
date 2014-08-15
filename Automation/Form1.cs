@@ -301,7 +301,7 @@ namespace Automation
         private void btnStartMiner_Click(object sender, EventArgs e)
         {
             if (miner != null)
-                miner.StartDig();
+                miner.Start();
         }
 
         #region Tab 2

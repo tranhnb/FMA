@@ -39,6 +39,7 @@ namespace Utils
             this.port = port;
             if (!this.Connect())
             {
+                
                 throw new ADBConnectionException();
             }
         }

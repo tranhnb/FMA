@@ -13,3 +13,5 @@ D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\bin\Debug\Activity_A
 D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\bin\Debug\Activity_Accessor.pdb
 D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\bin\Debug\TestData\Child.png
 D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\bin\Debug\TestData\Parent.png
+D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\bin\Debug\NLog.dll
+D:\TranHNB\CFF\FreeMyApp\SourceCode\FMA\Automation\UnitTest\bin\Debug\NLog.xml

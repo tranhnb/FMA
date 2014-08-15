@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Utils;
 
 namespace Automation
 {
@@ -17,28 +18,29 @@ namespace Automation
     {
         private const int GUEST_PORT = 5555;
 
+        private Mining.GiftCardMiner miner;
         public MainForm()
         {
             InitializeComponent();
-            Test test = Test.Hoang;
-            switch (test) { 
-                case Test.Hoang:
-                    MessageBox.Show("Hoang");
-                    break;
-                case Test.Nguyen:
-                    MessageBox.Show("Nguyen");
-                    break;
-                default:
-                    MessageBox.Show("Error");
-                    break;
-                    
-            }
         }
 
         private void btnStartDig_Click(object sender, EventArgs e)
         {
-            Mining.GiftCardMiner miner = new Mining.GiftCardMiner(txtGuestName.Text, System.Net.IPAddress.Parse(txtGuestIP.Text), GUEST_PORT);
-            miner.StartDig();
+            miner = new Mining.GiftCardMiner(txtGuestName.Text, System.Net.IPAddress.Parse(txtGuestIP.Text), GUEST_PORT);
+            miner.Start();
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            miner.StopDig();
+        }
+
+        private void btnTakeScreenShot_Click(object sender, EventArgs e)
+        {
+            Utils.CaptureScreen screen = new CaptureScreen();
+            byte[] byteArray = screen.TakeScreenShot(miner.DisplayController);
+            Image img = screen.ByteArrayToImage(byteArray);
+            img.Save(@"C:\ScreenShot.png");
         }
     }
 }

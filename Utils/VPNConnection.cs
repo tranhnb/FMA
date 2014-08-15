@@ -7,6 +7,7 @@ using System.Net.NetworkInformation;
 using Ras;
 using System.Threading;
 using System.IO;
+using NLog;
 
 namespace Utils
 {
@@ -58,14 +59,16 @@ namespace Utils
         private Process process;
         private Byte[] buffer = new Byte[1024];
         private VPNConfInfoList vpnConfInfoList = new VPNConfInfoList(OPENVPN_DIRECTORY);
+        private const bool IsFakeVPN = false;
 
+        private Logger logger = LogManager.GetCurrentClassLogger();
         #endregion Variable and Properties
 
         #region Constructor
         
         public VPNConnection()
         {
-            process = CreateShellProcess();
+            this.process = CreateShellProcess();
         }
 
         #endregion Constructor
@@ -75,25 +78,32 @@ namespace Utils
         /// Connect to VPN. Handle the OnConnected Event to determine the connection is established.
         /// </summary>
         /// <param name="openVPNFile">OpenVPN configuration file</param>
-        public void Connect()
+        public void Connect(bool isFakeVPN)
         {
             //Get the next OpenVPN Configuration Files
-            string openVPNFile = vpnConfInfoList.LoadNext();
-            process.StartInfo.WorkingDirectory = OPENVPN_DIRECTORY;
-            process.StartInfo.Arguments = string.Format("--config \"{0}\"", openVPNFile);
-            process.Start();
-            try
+            if (isFakeVPN)
             {
-                Byte[] myByteArray = new Byte[1024];
-                process.StandardOutput.BaseStream.BeginRead(myByteArray, 0, myByteArray.Length,
-                  ReadAsyncCallback, new MyAsyncInfo(myByteArray, process.StandardOutput.BaseStream));
+                OnConnected(null, new VPNConnectionEventArgs());
             }
-            catch (IOException)
-            {
-                process.StandardOutput.BaseStream.Close();
+            else {
+                string openVPNFile = vpnConfInfoList.LoadNext();
+                logger.Info(string.Format("Start open a tunnel, config file: {0}", openVPNFile));
+                process.StartInfo.WorkingDirectory = OPENVPN_DIRECTORY;
+                process.StartInfo.Arguments = string.Format("--config \"{0}\"", openVPNFile);
+                process.Start();
+                try
+                {
+                    Byte[] myByteArray = new Byte[1024];
+                    process.StandardOutput.BaseStream.BeginRead(myByteArray, 0, myByteArray.Length,
+                      ReadAsyncCallback, new MyAsyncInfo(myByteArray, process.StandardOutput.BaseStream));
+                }
+                catch (IOException)
+                {
+                    process.StandardOutput.BaseStream.Close();
+                }
+                process.WaitForExit();
             }
-
-            process.WaitForExit();
+            
         }
 
         /// <summary>
@@ -101,13 +111,16 @@ namespace Utils
         /// </summary>
         public bool Close(int processId)
         {
-            Process process = Process.GetProcessById(processId);
+            int _processId = processId;
+            logger.Info(string.Format("Start close VPN connection: {0}, ProcessId: {1}", this.process.StartInfo.Arguments, _processId));
+            Process process = Process.GetProcessById(_processId);
             try
             {
                 process.Kill();
             }
             catch (Exception ex) {
                 //TODO Log error
+                logger.Error(ex.Message);
                 return false;
             }
             return true;

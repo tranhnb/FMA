@@ -8,6 +8,8 @@ using System.Drawing;
 using Utils;
 using System.Net;
 using Activity.Activities;
+using System.Threading;
+using NLog;
 
 
 namespace Activity
@@ -18,7 +20,10 @@ namespace Activity
 
         private const int LEFT_MOUSE_CLICK = 0x001;
         private const int LEFT_MOUSE_RELEASE = 0x000;
+        protected Logger logger = LogManager.GetCurrentClassLogger();
 
+        //Delay time after each activity excution (in milisecond);
+        protected int delay_time = 60 * 1000;
 
         protected ActivityType _ActivityType;
 
@@ -196,9 +201,12 @@ namespace Activity
             try
             {
                 Init();
+                logger.Info(string.Format("{0} started", this.ActivityType.ToString()));
                 if (IsMatchCriteria())
                 {
-                    return DoProc();
+                    ActivityResult result = DoProc();
+                    Thread.Sleep(this.delay_time);
+                    return result;
                 }
                 else
                 {
@@ -206,9 +214,9 @@ namespace Activity
                 }
 
             }
-            catch (Exception ex) { 
-                //TODO: Log exception
-                return new ActivityResult(false, ex.Message);
+            catch (Exception ex) {
+                throw ex;
+                
             }
 
         }

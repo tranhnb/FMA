@@ -75,7 +75,7 @@ namespace UnitTest
             target.OnConnected += new EventHandler(target_Connected);
             target.OnError += new EventHandler(target_OnError);
             target.OnClosed += new EventHandler(target_OnClosed);
-            target.Connect();
+            target.Connect(false);
         }
 
         void target_OnClosed(object sender, EventArgs e)

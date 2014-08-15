@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NLog">
+      <HintPath>..\Automation\Libs\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="Ras">
       <HintPath>..\Automation\Libs\Ras.dll</HintPath>
     </Reference>
