@@ -89,6 +89,7 @@
     <Compile Include="Activities\ConfirmUsingPlayStoreActivity.cs" />
     <Compile Include="Activities\DetermineApplicationActivity.cs" />
     <Compile Include="Activities\FindNewInstalledAppActivity.cs" />
+    <Compile Include="Activities\IAndroidDebugBridge.cs" />
     <Compile Include="FlowBuilder.cs" />
     <Compile Include="GuestInformation.cs" />
     <Compile Include="Activities\IActivity.cs" />

@@ -111,6 +111,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Template\FreeMyApp_Step3.png" />
+    <Content Include="Images\Template\FreeMyApp_Step4.png" />
+    <Content Include="Images\Template\FreeMyApp_Step5_Case1.png" />
+    <Content Include="Images\Template\FreeMyApp_Step5_Case2.png" />
     <Content Include="Images\Template\Refresh.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -129,6 +132,11 @@
     <Content Include="Libs\apktool.jar">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Libs\NLog.dll" />
+    <Content Include="Libs\NLog.xml" />
+    <Content Include="Libs\NSubstitute.dll" />
+    <Content Include="Libs\NSubstitute.XML" />
+    <Content Include="Libs\Ras.dll" />
     <Content Include="Notes\Parse_Manifest.xml" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

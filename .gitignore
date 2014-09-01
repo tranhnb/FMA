@@ -15,5 +15,5 @@ Mining/bin/
 Mining/obj/
 Automation/TestResults/
 Automation/UnitTest/TestData/
-Automation/UnitTest/bin/
-Automation\UnitTest\obj\Debug\
+Automation/UnitTest/bin/Debug
+TestResults/

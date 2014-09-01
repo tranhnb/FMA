@@ -9,8 +9,8 @@ using System.Xml;
 
 namespace Utils
 {
-    
-    public class AndroidDebugBridge
+
+    public class AndroidDebugBridge : IAndroidDebugBridge
     {
         #region Variable and Properties
 
@@ -91,6 +91,7 @@ namespace Utils
             return OpenApplication(FREEMYAPP_ACTIVITY_NAME);
         }
 
+        
         /// <summary>
         /// Open application by packageName and activityName
         /// </summary>

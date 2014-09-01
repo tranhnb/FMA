@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace Utils
 {
-    public class CaptureScreen
+    public class CaptureScreen : ICaptureScreen
     {
         /// <summary>
         /// Return PNG byte array of screenshot
@@ -71,6 +71,21 @@ namespace Utils
             Image returnImage = Image.FromStream(ms);
             return returnImage;
 
+        }
+
+        public byte[] imageToByteArray(System.Drawing.Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            return ms.ToArray();
+        }
+
+        public string TestDataPath
+        {
+            get
+            {
+                return Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            }
         }
     }
 }

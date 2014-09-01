@@ -37,6 +37,7 @@ namespace Automation
 
         private void btnTakeScreenShot_Click(object sender, EventArgs e)
         {
+            Mining.GiftCardMiner miner = new Mining.GiftCardMiner(txtGuestName.Text, System.Net.IPAddress.Parse(txtGuestIP.Text), GUEST_PORT);
             Utils.CaptureScreen screen = new CaptureScreen();
             byte[] byteArray = screen.TakeScreenShot(miner.DisplayController);
             Image img = screen.ByteArrayToImage(byteArray);

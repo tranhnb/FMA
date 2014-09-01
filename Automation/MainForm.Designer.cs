@@ -90,7 +90,7 @@
             this.txtGuestName.Name = "txtGuestName";
             this.txtGuestName.Size = new System.Drawing.Size(100, 20);
             this.txtGuestName.TabIndex = 3;
-            this.txtGuestName.Text = "test";
+            this.txtGuestName.Text = "Base";
             // 
             // label2
             // 
@@ -107,7 +107,7 @@
             this.txtGuestIP.Name = "txtGuestIP";
             this.txtGuestIP.Size = new System.Drawing.Size(100, 20);
             this.txtGuestIP.TabIndex = 3;
-            this.txtGuestIP.Text = "192.168.0.72";
+            this.txtGuestIP.Text = "192.168.1.14";
             // 
             // btnStop
             // 
